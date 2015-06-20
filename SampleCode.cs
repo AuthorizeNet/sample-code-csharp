@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -65,7 +65,6 @@ namespace net.authorize.sample
 
             Console.WriteLine("    VisaCheckoutDecrypt");
             Console.WriteLine("    VisaCheckoutTransaction");
-            Console.WriteLine("    ChargeCreditCard");
         }
 
         private static void RunMethod(String methodName)
@@ -78,9 +77,6 @@ namespace net.authorize.sample
                     break;
                 case "VisaCheckoutTransaction":
                     VisaCheckoutTransaction.Run();
-                    break;
-                case "ChargeCreditCard":
-                    charge_credit_card.Run();
                     break;
                 default:
                     ShowUsage();
