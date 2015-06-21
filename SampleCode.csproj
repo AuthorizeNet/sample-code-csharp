@@ -61,6 +61,7 @@
     <Compile Include="CustomerProfiles\update-customer-payment-profile.cs" />
     <Compile Include="CustomerProfiles\update-customer-profile.cs" />
     <Compile Include="CustomerProfiles\validate-customer-payment-profile.cs" />
+    <Compile Include="HostedPaymentForm\create-hosted-payment-transaction.cs" />
     <Compile Include="PaymentTransactions\authorize-credit-card.cs" />
     <Compile Include="PaymentTransactions\capture-only.cs" />
     <Compile Include="PaymentTransactions\capture-previously-authorized-amount.cs" />
@@ -71,6 +72,19 @@
     <Compile Include="PaymentTransactions\debit-bank-account.cs" />
     <Compile Include="PaymentTransactions\refund-transaction.cs" />
     <Compile Include="PaymentTransactions\void-transaction.cs" />
+    <Compile Include="PayPalExpress\paypal-credit.cs" />
+    <Compile Include="PayPalExpress\paypal-void.cs" />
+    <Compile Include="PayPalExpress\paypal-authorize-capture-continue.cs" />
+    <Compile Include="PayPalExpress\paypal-prior-authorization-capture.cs" />
+    <Compile Include="PayPalExpress\paypal-authorize-only-continue.cs" />
+    <Compile Include="PayPalExpress\paypal-get-details.cs" />
+    <Compile Include="PayPalExpress\paypal-authorize-capture.cs" />
+    <Compile Include="PayPalExpress\paypal-authorize-only.cs" />
+    <Compile Include="RecurringBilling\cancel-subscription.cs" />
+    <Compile Include="RecurringBilling\get-list-subscriptions.cs" />
+    <Compile Include="RecurringBilling\update-subscription.cs" />
+    <Compile Include="RecurringBilling\get-subscription-status.cs" />
+    <Compile Include="RecurringBilling\create-subscription.cs" />
     <Compile Include="SampleCode.cs" />
     <Compile Include="VisaCheckout\VisaCheckoutDecrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
