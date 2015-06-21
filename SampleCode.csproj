@@ -86,6 +86,10 @@
     <Compile Include="RecurringBilling\get-subscription-status.cs" />
     <Compile Include="RecurringBilling\create-subscription.cs" />
     <Compile Include="SampleCode.cs" />
+    <Compile Include="TransactionReporting\get-batch-statistics.cs" />
+    <Compile Include="TransactionReporting\get-unsettled-transaction-list.cs" />
+    <Compile Include="TransactionReporting\get-transaction-details.cs" />
+    <Compile Include="TransactionReporting\get-transaction-list.cs" />
     <Compile Include="TransactionReporting\get-settled-batch-list.cs" />
     <Compile Include="VisaCheckout\VisaCheckoutDecrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
