@@ -7,7 +7,7 @@
     <ProjectGuid>{EE8CB03C-AFF3-4480-AFD5-1C8B51540570}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleCode</RootNamespace>
+    <RootNamespace>net.authorize.sample</RootNamespace>
     <AssemblyName>SampleCode</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -45,7 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerProfiles\update-customer-shipping-address.cs" />
+    <Compile Include="CustomerProfiles\get-customer-shipping-address.cs" />
+    <Compile Include="CustomerProfiles\create-customer-shipping-address.cs" />
+    <Compile Include="CustomerProfiles\delete-customer-payment-profile.cs" />
+    <Compile Include="CustomerProfiles\create-customer-payment-profile.cs" />
+    <Compile Include="CustomerProfiles\create-customer-profile.cs" />
+    <Compile Include="CustomerProfiles\delete-customer-profile.cs" />
+    <Compile Include="CustomerProfiles\get-customer-payment-profile.cs" />
+    <Compile Include="CustomerProfiles\get-customer-profile-id.cs" />
+    <Compile Include="CustomerProfiles\get-customer-profile.cs" />
+    <Compile Include="CustomerProfiles\update-customer-payment-profile.cs" />
+    <Compile Include="CustomerProfiles\update-customer-profile.cs" />
+    <Compile Include="CustomerProfiles\validate-customer-payment-profile.cs" />
+    <Compile Include="PaymentTransactions\authorize-credit-card.cs" />
+    <Compile Include="PaymentTransactions\capture-only.cs" />
+    <Compile Include="PaymentTransactions\capture-previously-authorized-amount.cs" />
     <Compile Include="PaymentTransactions\charge-credit-card.cs" />
+    <Compile Include="PaymentTransactions\charge-customer-profile.cs" />
+    <Compile Include="PaymentTransactions\charge-tokenized-credit-card.cs" />
+    <Compile Include="PaymentTransactions\credit-bank-account.cs" />
+    <Compile Include="PaymentTransactions\debit-bank-account.cs" />
+    <Compile Include="PaymentTransactions\refund-transaction.cs" />
+    <Compile Include="PaymentTransactions\void-transaction.cs" />
     <Compile Include="SampleCode.cs" />
     <Compile Include="VisaCheckout\VisaCheckoutDecrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
