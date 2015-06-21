@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerProfiles\create-customer-profile-from-transaction.cs" />
+    <Compile Include="CustomerProfiles\get-hosted-profile-page.cs" />
+    <Compile Include="CustomerProfiles\delete-customer-shipping-address.cs" />
     <Compile Include="CustomerProfiles\update-customer-shipping-address.cs" />
     <Compile Include="CustomerProfiles\get-customer-shipping-address.cs" />
     <Compile Include="CustomerProfiles\create-customer-shipping-address.cs" />
