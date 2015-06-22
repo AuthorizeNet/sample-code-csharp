@@ -194,8 +194,3 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
-SampleCode.vshost.exe.config
-SampleCode.exe
-*.exe
-SampleCode.vshost.exe.manifest
-*.dll
