@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample.PaymentTransactions
 {
-    class charge_tokenized_credit_card
+    class RefundTransaction
     {
     }
 }

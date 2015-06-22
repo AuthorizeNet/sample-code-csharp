@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class capture_only
+    public class ChargeCreditCard
     {
         public static void Run()
         {
-            Console.WriteLine("Capture Only Sample");
+            Console.WriteLine("Charge Credit Card Sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -35,21 +36,21 @@ namespace net.authorize.sample
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.captureOnlyTransaction.ToString(),    // capture the card only
+                transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
                 amount = 5.45m,
                 payment = paymentType
             };
 
-
+            
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
-
+            
             // instantiate the contoller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
-
+            
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
-
+           
         }
     }
 }

@@ -81,10 +81,10 @@ namespace net.authorize.sample
                     VisaCheckoutTransaction.Run();
                     break;
                 case "ChargeCreditCard":
-                    charge_credit_card.Run();
+                    ChargeCreditCard.Run();
                     break;
                 case "CaptureOnly":
-                    capture_only.Run();
+                    CaptureOnly.Run();
                     break;
                 default:
                     ShowUsage();

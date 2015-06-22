@@ -8,7 +8,7 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample.PaymentTransactions
 {
-    class authorize_credit_card
+    class AuthorizeCreditCard
     {
         public static void Run()
         {

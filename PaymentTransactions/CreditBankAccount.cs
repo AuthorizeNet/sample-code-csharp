@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample.PaymentTransactions
 {
-    class credit_bank_account
+    class CreditBankAccount
     {
     }
 }

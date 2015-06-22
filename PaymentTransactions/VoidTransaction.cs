@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample.PaymentTransactions
 {
-    class capture_previously_authorized_amount
+    class VoidTransaction
     {
     }
 }
