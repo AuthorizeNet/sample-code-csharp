@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PaymentTransactions\charge-credit-card.cs" />
     <Compile Include="SampleCode.cs" />
     <Compile Include="VisaCheckout\VisaCheckoutDecrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
