@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample
 {
-    class get_customer_payment_profile
+    class GetCustomerProfileId
     {
     }
 }

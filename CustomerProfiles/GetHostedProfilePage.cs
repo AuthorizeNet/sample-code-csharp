@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample
 {
-    class delete_customer_shipping_address
+    class GetHostedProfilePage
     {
     }
 }
