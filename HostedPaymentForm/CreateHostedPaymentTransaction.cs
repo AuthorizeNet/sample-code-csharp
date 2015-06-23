@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample
 {
-    class create_hosted_payment_transaction
+    class CreateHostedPaymentTransaction
     {
     }
 }
