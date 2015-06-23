@@ -37,7 +37,7 @@ namespace net.authorize.sample
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
-                amount = 5.45m,
+                amount = 19.45m,
                 payment = paymentType
             };
 
@@ -57,7 +57,10 @@ namespace net.authorize.sample
             }
             else
             {
-                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
+                if (response.messages != null)
+                {
+                    Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
+                }
 
                 if (response.transactionResponse != null)
                 {
