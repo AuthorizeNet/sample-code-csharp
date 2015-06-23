@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample
 {
-    class paypal_get_details
+    class PayPalAuthorizationCapture
     {
     }
 }

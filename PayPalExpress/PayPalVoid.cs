@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample
 {
-    class paypal_prior_authorization_capture
+    class PayPalVoid
     {
     }
 }
