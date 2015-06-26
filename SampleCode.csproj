@@ -45,23 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerProfiles\create-customer-profile-from-transaction.cs" />
-    <Compile Include="CustomerProfiles\get-hosted-profile-page.cs" />
-    <Compile Include="CustomerProfiles\delete-customer-shipping-address.cs" />
-    <Compile Include="CustomerProfiles\update-customer-shipping-address.cs" />
-    <Compile Include="CustomerProfiles\get-customer-shipping-address.cs" />
-    <Compile Include="CustomerProfiles\create-customer-shipping-address.cs" />
-    <Compile Include="CustomerProfiles\delete-customer-payment-profile.cs" />
-    <Compile Include="CustomerProfiles\create-customer-payment-profile.cs" />
-    <Compile Include="CustomerProfiles\create-customer-profile.cs" />
-    <Compile Include="CustomerProfiles\delete-customer-profile.cs" />
-    <Compile Include="CustomerProfiles\get-customer-payment-profile.cs" />
-    <Compile Include="CustomerProfiles\get-customer-profile-id.cs" />
-    <Compile Include="CustomerProfiles\get-customer-profile.cs" />
-    <Compile Include="CustomerProfiles\update-customer-payment-profile.cs" />
-    <Compile Include="CustomerProfiles\update-customer-profile.cs" />
-    <Compile Include="CustomerProfiles\validate-customer-payment-profile.cs" />
-    <Compile Include="HostedPaymentForm\create-hosted-payment-transaction.cs" />
     <Compile Include="PaymentTransactions\AuthorizeCreditCard.cs" />
     <Compile Include="PaymentTransactions\CaptureOnly.cs" />
     <Compile Include="PaymentTransactions\CapturePreviouslyAuthorizedAmount.cs" />
@@ -72,25 +55,7 @@
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />
     <Compile Include="PaymentTransactions\VoidTransaction.cs" />
-    <Compile Include="PayPalExpress\paypal-credit.cs" />
-    <Compile Include="PayPalExpress\paypal-void.cs" />
-    <Compile Include="PayPalExpress\paypal-authorize-capture-continue.cs" />
-    <Compile Include="PayPalExpress\paypal-prior-authorization-capture.cs" />
-    <Compile Include="PayPalExpress\paypal-authorize-only-continue.cs" />
-    <Compile Include="PayPalExpress\paypal-get-details.cs" />
-    <Compile Include="PayPalExpress\paypal-authorize-capture.cs" />
-    <Compile Include="PayPalExpress\paypal-authorize-only.cs" />
-    <Compile Include="RecurringBilling\cancel-subscription.cs" />
-    <Compile Include="RecurringBilling\get-list-subscriptions.cs" />
-    <Compile Include="RecurringBilling\update-subscription.cs" />
-    <Compile Include="RecurringBilling\get-subscription-status.cs" />
-    <Compile Include="RecurringBilling\create-subscription.cs" />
     <Compile Include="SampleCode.cs" />
-    <Compile Include="TransactionReporting\get-batch-statistics.cs" />
-    <Compile Include="TransactionReporting\get-unsettled-transaction-list.cs" />
-    <Compile Include="TransactionReporting\get-transaction-details.cs" />
-    <Compile Include="TransactionReporting\get-transaction-list.cs" />
-    <Compile Include="TransactionReporting\get-settled-batch-list.cs" />
     <Compile Include="VisaCheckout\VisaCheckoutDecrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VisaCheckout\VisaCheckoutTransaction.cs" />
@@ -98,6 +63,13 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomerProfiles\" />
+    <Folder Include="HostedPaymentForm\" />
+    <Folder Include="PayPalExpress\" />
+    <Folder Include="RecurringBilling\" />
+    <Folder Include="TransactionReporting\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

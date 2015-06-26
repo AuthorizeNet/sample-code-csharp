@@ -11,15 +11,15 @@ namespace net.authorize.sample
 {
     class VisaCheckoutTransaction
     {
-        public static void Run()
+        public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Running VisaCheckoutTransaction Sample ...");
             // The test setup.
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
-                name = "5KP3u95bQpv",
+                name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = "4Ktq966gC55GAX7S",
+                Item = ApiTransactionKey,
             };
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;

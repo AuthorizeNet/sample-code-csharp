@@ -71,20 +71,24 @@ namespace net.authorize.sample
 
         private static void RunMethod(String methodName)
         {
+            // These are default transaction keys.
+            // You can create your own keys in seconds by signing up for a sandbox account here: https://developer.authorize.net/sandbox/
+            String apiLoginId = "5KP3u95bQpv";
+            String transactionKey = "4Ktq966gC55GAX7S";
 
             switch (methodName)
             {
                 case "VisaCheckoutDecrypt":
-                    VisaCheckoutDecrypt.Run();
+                    VisaCheckoutDecrypt.Run(apiLoginId, transactionKey);
                     break;
                 case "VisaCheckoutTransaction":
-                    VisaCheckoutTransaction.Run();
+                    VisaCheckoutTransaction.Run(apiLoginId, transactionKey);
                     break;
                 case "ChargeCreditCard":
-                    ChargeCreditCard.Run();
+                    ChargeCreditCard.Run(apiLoginId, transactionKey);
                     break;
                 case "CaptureOnly":
-                    CaptureOnly.Run();
+                    CaptureOnly.Run(apiLoginId, transactionKey);
                     break;
                 default:
                     ShowUsage();

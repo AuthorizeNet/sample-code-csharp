@@ -10,7 +10,7 @@ namespace net.authorize.sample.PaymentTransactions
 {
     class AuthorizeCreditCard
     {
-        public static void Run()
+        public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Authorize Credit Card Sample");
 
@@ -19,9 +19,9 @@ namespace net.authorize.sample.PaymentTransactions
             // define the merchant information (authentication / transaction id)
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
-                name = "8U6D9WxnU9t7",
+                name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = "3cEYe68N69LaA2cB",
+                Item = ApiTransactionKey,
             };
 
             var creditCard = new creditCardType
