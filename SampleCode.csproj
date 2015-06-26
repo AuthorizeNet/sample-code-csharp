@@ -7,7 +7,7 @@
     <ProjectGuid>{EE8CB03C-AFF3-4480-AFD5-1C8B51540570}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleCode</RootNamespace>
+    <RootNamespace>net.authorize.sample</RootNamespace>
     <AssemblyName>SampleCode</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -45,7 +45,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerProfiles\create-customer-profile-from-transaction.cs" />
+    <Compile Include="CustomerProfiles\get-hosted-profile-page.cs" />
+    <Compile Include="CustomerProfiles\delete-customer-shipping-address.cs" />
+    <Compile Include="CustomerProfiles\update-customer-shipping-address.cs" />
+    <Compile Include="CustomerProfiles\get-customer-shipping-address.cs" />
+    <Compile Include="CustomerProfiles\create-customer-shipping-address.cs" />
+    <Compile Include="CustomerProfiles\delete-customer-payment-profile.cs" />
+    <Compile Include="CustomerProfiles\create-customer-payment-profile.cs" />
+    <Compile Include="CustomerProfiles\create-customer-profile.cs" />
+    <Compile Include="CustomerProfiles\delete-customer-profile.cs" />
+    <Compile Include="CustomerProfiles\get-customer-payment-profile.cs" />
+    <Compile Include="CustomerProfiles\get-customer-profile-id.cs" />
+    <Compile Include="CustomerProfiles\get-customer-profile.cs" />
+    <Compile Include="CustomerProfiles\update-customer-payment-profile.cs" />
+    <Compile Include="CustomerProfiles\update-customer-profile.cs" />
+    <Compile Include="CustomerProfiles\validate-customer-payment-profile.cs" />
+    <Compile Include="HostedPaymentForm\create-hosted-payment-transaction.cs" />
+    <Compile Include="PaymentTransactions\AuthorizeCreditCard.cs" />
+    <Compile Include="PaymentTransactions\CaptureOnly.cs" />
+    <Compile Include="PaymentTransactions\CapturePreviouslyAuthorizedAmount.cs" />
+    <Compile Include="PaymentTransactions\ChargeCreditCard.cs" />
+    <Compile Include="PaymentTransactions\ChargeCustomerProfile.cs" />
+    <Compile Include="PaymentTransactions\ChargeTokenizedCreditCard.cs" />
+    <Compile Include="PaymentTransactions\CreditBankAccount.cs" />
+    <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
+    <Compile Include="PaymentTransactions\RefundTransaction.cs" />
+    <Compile Include="PaymentTransactions\VoidTransaction.cs" />
+    <Compile Include="PayPalExpress\paypal-credit.cs" />
+    <Compile Include="PayPalExpress\paypal-void.cs" />
+    <Compile Include="PayPalExpress\paypal-authorize-capture-continue.cs" />
+    <Compile Include="PayPalExpress\paypal-prior-authorization-capture.cs" />
+    <Compile Include="PayPalExpress\paypal-authorize-only-continue.cs" />
+    <Compile Include="PayPalExpress\paypal-get-details.cs" />
+    <Compile Include="PayPalExpress\paypal-authorize-capture.cs" />
+    <Compile Include="PayPalExpress\paypal-authorize-only.cs" />
+    <Compile Include="RecurringBilling\cancel-subscription.cs" />
+    <Compile Include="RecurringBilling\get-list-subscriptions.cs" />
+    <Compile Include="RecurringBilling\update-subscription.cs" />
+    <Compile Include="RecurringBilling\get-subscription-status.cs" />
+    <Compile Include="RecurringBilling\create-subscription.cs" />
     <Compile Include="SampleCode.cs" />
+    <Compile Include="TransactionReporting\get-batch-statistics.cs" />
+    <Compile Include="TransactionReporting\get-unsettled-transaction-list.cs" />
+    <Compile Include="TransactionReporting\get-transaction-details.cs" />
+    <Compile Include="TransactionReporting\get-transaction-list.cs" />
+    <Compile Include="TransactionReporting\get-settled-batch-list.cs" />
     <Compile Include="VisaCheckout\VisaCheckoutDecrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VisaCheckout\VisaCheckoutTransaction.cs" />

@@ -65,6 +65,8 @@ namespace net.authorize.sample
 
             Console.WriteLine("    VisaCheckoutDecrypt");
             Console.WriteLine("    VisaCheckoutTransaction");
+            Console.WriteLine("    ChargeCreditCard");
+            Console.WriteLine("    CaptureOnly");
         }
 
         private static void RunMethod(String methodName)
@@ -77,6 +79,12 @@ namespace net.authorize.sample
                     break;
                 case "VisaCheckoutTransaction":
                     VisaCheckoutTransaction.Run();
+                    break;
+                case "ChargeCreditCard":
+                    ChargeCreditCard.Run();
+                    break;
+                case "CaptureOnly":
+                    CaptureOnly.Run();
                     break;
                 default:
                     ShowUsage();
