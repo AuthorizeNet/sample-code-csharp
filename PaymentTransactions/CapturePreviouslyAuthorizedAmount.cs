@@ -10,6 +10,13 @@ namespace net.authorize.sample
 {
     class CapturePreviouslyAuthorizedAmount
     {
+        /// <summary>
+        /// Capture a Transaction Previously Submitted Via CaptureOnly
+        /// </summary>
+        /// <param name="ApiLoginID">Your ApiLoginID</param>
+        /// <param name="ApiTransactionKey">Your ApiTransactionKey</param>
+        /// <param name="TransactionAmount">The amount submitted with CaptureOnly</param>
+        /// <param name="TransactionID">The TransactionID of the previous CaptureOnly operation</param>
         public static void Run(String ApiLoginID, String ApiTransactionKey, decimal TransactionAmount, string TransactionID)
         {
             Console.WriteLine("Capture Previously Authorized Amount");
