@@ -39,7 +39,7 @@ namespace net.authorize.sample
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // refund type
                 payment = paymentType,
-                amount = 12.44m
+                amount = 16.44m
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
@@ -56,7 +56,7 @@ namespace net.authorize.sample
             {
                 if (response.transactionResponse != null)
                 {
-                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                    Console.WriteLine("Success, Transaction Code : " + response.transactionResponse.transId);
                 }
             }
             else
