@@ -69,6 +69,7 @@ namespace net.authorize.sample
             Console.WriteLine("    CaptureOnly");
             Console.WriteLine("    AuthorizeCreditCard");
             Console.WriteLine("    CapturePreviouslyAuthorizedAmount");
+            Console.WriteLine("    Refund");
         }
 
         private static void RunMethod(String methodName)
@@ -77,6 +78,9 @@ namespace net.authorize.sample
             // You can create your own keys in seconds by signing up for a sandbox account here: https://developer.authorize.net/sandbox/
             String apiLoginId = "5KP3u95bQpv";
             String transactionKey = "4Ktq966gC55GAX7S";
+
+            string TransactionAmount    = string.Empty;
+            string TransactionID        = string.Empty;
 
             switch (methodName)
             {
@@ -94,15 +98,24 @@ namespace net.authorize.sample
                     break;
                 case "CapturePreviouslyAuthorizedAmount":
                     Console.WriteLine("Enter An Transaction Amount");
-                    string TransactionAmount = Console.ReadLine();
+                    TransactionAmount = Console.ReadLine();
 
                     Console.WriteLine("Enter An Transaction ID");
-                    string TransactionID = Console.ReadLine();
+                    TransactionID = Console.ReadLine();
 
                     CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey, Convert.ToDecimal( TransactionAmount ), TransactionID);
                     break;
                 case "AuthorizeCreditCard":
                     AuthorizeCreditCard.Run(apiLoginId, transactionKey);
+                    break;
+                case "Refund":
+                    Console.WriteLine("Enter An Transaction Amount");
+                    TransactionAmount = Console.ReadLine();
+
+                    Console.WriteLine("Enter An Transaction ID");
+                    TransactionID = Console.ReadLine();
+
+                    RefundTransaction.Run(apiLoginId, transactionKey, Convert.ToDecimal( TransactionAmount ), TransactionID);
                     break;
                 default:
                     ShowUsage();
