@@ -39,7 +39,7 @@ namespace net.authorize.sample
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // refund type
                 payment = paymentType,
-                amount = 16.44m
+                amount = 126.44m
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };

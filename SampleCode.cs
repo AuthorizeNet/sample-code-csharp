@@ -72,6 +72,7 @@ namespace net.authorize.sample
             Console.WriteLine("    Refund");
             Console.WriteLine("    Void");
             Console.WriteLine("    DebitBankAccount");
+            Console.WriteLine("    CreditBankAccount");
         }
 
         private static void RunMethod(String methodName)
@@ -127,6 +128,12 @@ namespace net.authorize.sample
                     break;
                 case "DebitBankAccount":
                     DebitBankAccount.Run(apiLoginId, transactionKey);
+                    break;
+                case "CreditBankAccount":
+                    Console.WriteLine("Enter An Transaction ID");
+                    TransactionID = Console.ReadLine();
+
+                    CreditBankAccount.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 default:
                     ShowUsage();
