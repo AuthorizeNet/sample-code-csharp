@@ -36,8 +36,8 @@ namespace net.authorize.sample
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.captureOnlyTransaction.ToString(),    // capture the card only
-                amount = 5.45m,
-                payment = paymentType
+                amount = 25.45m,
+                payment = paymentType,
             };
 
 
@@ -49,6 +49,23 @@ namespace net.authorize.sample
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
+
+            //validate
+            if (response.messages.resultCode == messageTypeEnum.Ok)
+            {
+                if (response.transactionResponse != null)
+                {
+                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
+                if (response.transactionResponse != null)
+                {
+                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
+                }
+            }
 
         }
     }

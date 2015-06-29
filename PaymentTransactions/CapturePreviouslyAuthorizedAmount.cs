@@ -10,9 +10,9 @@ namespace net.authorize.sample
 {
     class CapturePreviouslyAuthorizedAmount
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static void Run(String ApiLoginID, String ApiTransactionKey, decimal TransactionAmount, string TransactionID)
         {
-            Console.WriteLine("Capture Previous Authorized Amount");
+            Console.WriteLine("Capture Previously Authorized Amount");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -21,7 +21,7 @@ namespace net.authorize.sample
             {
                 name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = ApiTransactionKey,
+                Item = ApiTransactionKey
             };
 
             var creditCard = new creditCardType
@@ -36,8 +36,9 @@ namespace net.authorize.sample
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.priorAuthCaptureTransaction.ToString(),    // capture prior only
-                amount = 5.45m,
-                payment = paymentType
+                payment     = paymentType,
+                amount      = TransactionAmount,
+                refTransId  = TransactionID
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
@@ -48,6 +49,23 @@ namespace net.authorize.sample
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
+
+            //validate
+            if (response.messages.resultCode == messageTypeEnum.Ok)
+            {
+                if (response.transactionResponse != null)
+                {
+                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
+                if (response.transactionResponse != null)
+                {
+                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
+                }
+            }
 
         }
     }
