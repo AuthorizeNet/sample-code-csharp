@@ -73,6 +73,7 @@ namespace net.authorize.sample
             Console.WriteLine("    Void");
             Console.WriteLine("    DebitBankAccount");
             Console.WriteLine("    CreditBankAccount");
+            Console.WriteLine("    ChargeTokenizedCard");
         }
 
         private static void RunMethod(String methodName)
@@ -134,6 +135,9 @@ namespace net.authorize.sample
                     TransactionID = Console.ReadLine();
 
                     CreditBankAccount.Run(apiLoginId, transactionKey, TransactionID);
+                    break;
+                case "ChargeTokenizedCard":
+                    ChargeTokenizedCreditCard.Run(apiLoginId, transactionKey);
                     break;
                 default:
                     ShowUsage();
