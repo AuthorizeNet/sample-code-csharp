@@ -70,6 +70,7 @@ namespace net.authorize.sample
             Console.WriteLine("    AuthorizeCreditCard");
             Console.WriteLine("    CapturePreviouslyAuthorizedAmount");
             Console.WriteLine("    Refund");
+            Console.WriteLine("    Void");
         }
 
         private static void RunMethod(String methodName)
@@ -116,6 +117,12 @@ namespace net.authorize.sample
                     TransactionID = Console.ReadLine();
 
                     RefundTransaction.Run(apiLoginId, transactionKey, Convert.ToDecimal( TransactionAmount ), TransactionID);
+                    break;
+                case "Void":
+                    Console.WriteLine("Enter An Transaction ID");
+                    TransactionID = Console.ReadLine();
+
+                    VoidTransaction.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 default:
                     ShowUsage();
