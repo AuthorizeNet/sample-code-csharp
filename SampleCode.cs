@@ -67,6 +67,7 @@ namespace net.authorize.sample
             Console.WriteLine("    VisaCheckoutTransaction");
             Console.WriteLine("    ChargeCreditCard");
             Console.WriteLine("    CaptureOnly");
+            Console.WriteLine("    CapturePrviouslyAuthorizedAmount");
         }
 
         private static void RunMethod(String methodName)
@@ -89,6 +90,9 @@ namespace net.authorize.sample
                     break;
                 case "CaptureOnly":
                     CaptureOnly.Run(apiLoginId, transactionKey);
+                    break;
+                case "CapturePrviouslyAuthorizedAmount":
+                    CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey);
                     break;
                 default:
                     ShowUsage();
