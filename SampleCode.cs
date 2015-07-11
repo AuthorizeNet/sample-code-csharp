@@ -62,7 +62,6 @@ namespace net.authorize.sample
 
         private static void ShowMethods()
         {
-
             Console.WriteLine("    VisaCheckoutDecrypt");
             Console.WriteLine("    VisaCheckoutTransaction");
             Console.WriteLine("    ChargeCreditCard");
@@ -76,14 +75,16 @@ namespace net.authorize.sample
             Console.WriteLine("    ChargeTokenizedCard");
             Console.WriteLine("    PayPalVoid");
             Console.WriteLine("    PayPalAuthorizeCapture");
+            Console.WriteLine("    PayPalAuthorizeCaptureContinue");
+            Console.WriteLine("    PayPalAuthorizeOnly");
         }
 
         private static void RunMethod(String methodName)
         {
             // These are default transaction keys.
             // You can create your own keys in seconds by signing up for a sandbox account here: https://developer.authorize.net/sandbox/
-            String apiLoginId = "5KP3u95bQpv";
-            String transactionKey = "4Ktq966gC55GAX7S";
+            String apiLoginId           = "5KP3u95bQpv";
+            String transactionKey       = "4Ktq966gC55GAX7S";
 
             string TransactionAmount    = string.Empty;
             string TransactionID        = string.Empty;
@@ -146,6 +147,12 @@ namespace net.authorize.sample
                     break;
                 case "PayPalAuthorizeCapture":
                     PayPalAuthorizeCapture.Run(apiLoginId, transactionKey);
+                    break;
+                case "PayPalAuthorizeCaptureContinue":
+                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID);
+                    break;
+                case "PayPalAuthorizeOnly":
+                    PayPalAuthorizeOnly.Run(apiLoginId, transactionKey);
                     break;
                 default:
                     ShowUsage();
