@@ -77,6 +77,7 @@ namespace net.authorize.sample
             Console.WriteLine("    PayPalAuthorizeCapture");
             Console.WriteLine("    PayPalAuthorizeCaptureContinue");
             Console.WriteLine("    PayPalAuthorizeOnly");
+            Console.WriteLine("    PayPalCredit");
         }
 
         private static void RunMethod(String methodName)
@@ -153,6 +154,12 @@ namespace net.authorize.sample
                     break;
                 case "PayPalAuthorizeOnly":
                     PayPalAuthorizeOnly.Run(apiLoginId, transactionKey);
+                    break;
+                case "PayPalAuthorizeOnlyContinue":
+                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID);
+                    break;
+                case "PayPalCredit":
+                    PayPalCredit.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 default:
                     ShowUsage();
