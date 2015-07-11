@@ -35,7 +35,7 @@ namespace net.authorize.sample
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.getDetailsTransaction.ToString(),    // refund the card only
+                transactionType = transactionTypeEnum.getDetailsTransaction.ToString(),    // get the customer PayerID, email and shipping info
                 payment         = paymentType,
                 amount          = 19.45m,
                 refTransId      = TransactionID
