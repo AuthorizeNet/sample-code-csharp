@@ -74,6 +74,8 @@ namespace net.authorize.sample
             Console.WriteLine("    DebitBankAccount");
             Console.WriteLine("    CreditBankAccount");
             Console.WriteLine("    ChargeTokenizedCard");
+            Console.WriteLine("    PayPalVoid");
+            Console.WriteLine("    PayPalAuthorizeCapture");
         }
 
         private static void RunMethod(String methodName)
@@ -138,6 +140,12 @@ namespace net.authorize.sample
                     break;
                 case "ChargeTokenizedCard":
                     ChargeTokenizedCreditCard.Run(apiLoginId, transactionKey);
+                    break;
+                case "PayPalVoid":
+                    PayPalVoid.Run(apiLoginId, transactionKey, TransactionID);
+                    break;
+                case "PayPalAuthorizeCapture":
+                    PayPalAuthorizeCapture.Run(apiLoginId, transactionKey);
                     break;
                 default:
                     ShowUsage();

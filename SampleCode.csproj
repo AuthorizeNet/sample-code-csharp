@@ -72,7 +72,7 @@
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />
     <Compile Include="PaymentTransactions\VoidTransaction.cs" />
-    <Compile Include="PayPalExpress\PayalAuthorizeOnlyContinue.cs" />
+    <Compile Include="PayPalExpress\PayPalAuthorizeOnlyContinue.cs" />
     <Compile Include="PayPalExpress\PayPalAuthorizeCapture.cs" />
     <Compile Include="PayPalExpress\PayPalAuthorizeCaptureContinue.cs" />
     <Compile Include="PayPalExpress\PayPalAuthorizeOnly.cs" />
