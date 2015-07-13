@@ -84,6 +84,7 @@ namespace net.authorize.sample
             Console.WriteLine("    CreateSubscription");
             Console.WriteLine("    GetSubscriptionList");
             Console.WriteLine("    GetSubscriptionStatus");
+            Console.WriteLine("    UpdateSubscription");
         }
 
         private static void RunMethod(String methodName)
@@ -186,6 +187,9 @@ namespace net.authorize.sample
                     break;
                 case "GetSubscriptionStatus":
                     GetSubscriptionStatus.Run(apiLoginId, transactionKey, RefID, SubscriptionID);
+                    break;
+                case "UpdateSubscription":
+                    UpdateSubscription.Run(apiLoginId, transactionKey, RefID, SubscriptionID);
                     break;
                 default:
                     ShowUsage();
