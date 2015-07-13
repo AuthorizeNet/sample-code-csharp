@@ -82,6 +82,7 @@ namespace net.authorize.sample
             Console.WriteLine("    PayPalPriorAuthorizationCapture");
             Console.WriteLine("    CancelSubscription");
             Console.WriteLine("    CreateSubscription");
+            Console.WriteLine("    GetSubscriptionList");
         }
 
         private static void RunMethod(String methodName)
@@ -93,7 +94,7 @@ namespace net.authorize.sample
 
             string TransactionAmount    = string.Empty;
             string TransactionID        = string.Empty;
-            string RefID                = Guid.NewGuid().ToString().Substring(0,4).ToString();
+            string RefID                = Guid.NewGuid().ToString().Substring(0,4).ToString();      // a random 4 digit number
 
             switch (methodName)
             {
@@ -177,6 +178,9 @@ namespace net.authorize.sample
                     break;
                 case "CreateSubscription":
                     CreateSubscription.Run(apiLoginId, transactionKey, RefID);
+                    break;
+                case "GetSubscriptionList":
+                    GetListSubscriptions.Run(apiLoginId, transactionKey, RefID);
                     break;
                 default:
                     ShowUsage();

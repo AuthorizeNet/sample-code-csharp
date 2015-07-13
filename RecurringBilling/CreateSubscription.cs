@@ -26,7 +26,7 @@ namespace net.authorize.sample
             paymentScheduleTypeInterval interval = new paymentScheduleTypeInterval();
 
             interval.length = 1;                        // months can be indicated between 1 and 12
-            interval.unit = ARBSubscriptionUnitEnum.months;
+            interval.unit   = ARBSubscriptionUnitEnum.months;
 
             paymentScheduleType schedule = new paymentScheduleType
             {
@@ -35,6 +35,7 @@ namespace net.authorize.sample
                 totalOccurrences    = 9999                          // 999 indicates no end date
             };
 
+            #region Payment Information
             var creditCard = new creditCardType
             {
                 cardNumber      = "4111111111111111",
@@ -43,6 +44,7 @@ namespace net.authorize.sample
 
             //standard api call to retrieve response
             paymentType cc = new paymentType { Item = creditCard };
+            #endregion
 
             nameAndAddressType addressInfo = new nameAndAddressType()
             {
@@ -60,13 +62,10 @@ namespace net.authorize.sample
 
             var request = new ARBCreateSubscriptionRequest { refId = RefID, subscription = subscriptionType };
 
-            // instantiate the contoller that will call the service
-            var controller = new ARBCreateSubscriptionController(request);
-
+            var controller = new ARBCreateSubscriptionController(request);          // instantiate the contoller that will call the service
             controller.Execute();
 
-            // get the response from the service (errors contained if any)
-            ARBCreateSubscriptionResponse response = controller.GetApiResponse();
+            ARBCreateSubscriptionResponse response = controller.GetApiResponse();   // get the response from the service (errors contained if any)
            
             //validate
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
