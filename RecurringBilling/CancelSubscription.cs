@@ -12,71 +12,35 @@ namespace net.authorize.sample
     {
         public static void Run(String ApiLoginID, String ApiTransactionKey, string RefID)
         {
-            Console.WriteLine("Cancel Subscription Sample");
-
-            ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
-            {
-                name = ApiLoginID,
-                ItemElementName = ItemChoiceType.transactionKey,
-                Item = ApiTransactionKey,
-            };
-
-            ARBCancelSubscriptionRequest arbSubscription = new ARBCancelSubscriptionRequest();
-
-            arbSubscription.refId                                   = RefID;    // merchant-assigned ID associated with the customer profile
-            
-            paymentScheduleTypeInterval interval = new paymentScheduleTypeInterval();
-
-            interval.length = 1;                // months can be indicated between 1 and 12
-
-            var paymentScheduleType = new paymentScheduleType
-            {
-                interval            = interval,
-                startDate           = DateTime.Now,
-                totalOccurrences    = 9999        // 999 indicates no end date          
-            };
+            Console.WriteLine("Create Subscription Sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
-            var creditCard = new creditCardType
+            ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
-                cardNumber      = "4111111111111111",
-                expirationDate  = "0718"
+                name            = ApiLoginID,
+                ItemElementName = ItemChoiceType.transactionKey,
+                Item            = ApiTransactionKey,
             };
 
-            //standard api call to retrieve response
-            var paymentType = new paymentType { Item = creditCard };
+            var request = new ARBCancelSubscriptionRequest { refId = RefID, subscriptionId = "3323" };
 
-            var transactionRequest = new transactionRequestType
-            {
-                amount = 35.45m,
-                payment = paymentType
-            };
-
-            var request = new createTransactionRequest { transactionRequest = transactionRequest, merchantAuthentication = arbSubscription.merchantAuthentication };
-
-            // instantiate the contoller that will call the service
-            var controller = new createTransactionController(request);
+            var controller = new ARBCancelSubscriptionController(request);                          // instantiate the contoller that will call the service
             controller.Execute();
 
-            // get the response from the service (errors contained if any)
-            var response = controller.GetApiResponse();
+            ARBCancelSubscriptionResponse response = controller.GetApiResponse();                   // get the response from the service (errors contained if any)
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                if (response.transactionResponse != null)
+                if (response != null && response.messages.message != null)
                 {
-                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                    Console.WriteLine("Success, Subscription Code : " + response.messages.resultCode);
                 }
             }
             else
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
-                if (response.transactionResponse != null)
-                {
-                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
-                }
             }
 
         }
