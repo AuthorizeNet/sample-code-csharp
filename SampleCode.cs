@@ -95,6 +95,7 @@ namespace net.authorize.sample
             string TransactionAmount    = string.Empty;
             string TransactionID        = string.Empty;
             string RefID                = Guid.NewGuid().ToString().Substring(0,4).ToString();      // a random 4 digit number
+            string SubscriptionID       = string.Empty;
 
             switch (methodName)
             {

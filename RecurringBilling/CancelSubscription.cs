@@ -10,9 +10,9 @@ namespace net.authorize.sample
 {
     class CancelSubscription
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string RefID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey, string RefID, string subscriptionID)
         {
-            Console.WriteLine("Create Subscription Sample");
+            Console.WriteLine("Cancel Subscription Sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -23,7 +23,7 @@ namespace net.authorize.sample
                 Item            = ApiTransactionKey,
             };
 
-            var request = new ARBCancelSubscriptionRequest { refId = RefID, subscriptionId = "3323" };
+            var request = new ARBCancelSubscriptionRequest { refId = RefID, subscriptionId = subscriptionID };
 
             var controller = new ARBCancelSubscriptionController(request);                          // instantiate the contoller that will call the service
             controller.Execute();
@@ -35,7 +35,7 @@ namespace net.authorize.sample
             {
                 if (response != null && response.messages.message != null)
                 {
-                    Console.WriteLine("Success, Subscription Code : " + response.messages.resultCode);
+                    Console.WriteLine("Success, Subscription Cancelled With RefID : " + response.refId);
                 }
             }
             else
