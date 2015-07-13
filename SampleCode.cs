@@ -81,6 +81,7 @@ namespace net.authorize.sample
             Console.WriteLine("    PayPalGetDetails");
             Console.WriteLine("    PayPalPriorAuthorizationCapture");
             Console.WriteLine("    CancelSubscription");
+            Console.WriteLine("    CreateSubscription");
         }
 
         private static void RunMethod(String methodName)
@@ -92,7 +93,7 @@ namespace net.authorize.sample
 
             string TransactionAmount    = string.Empty;
             string TransactionID        = string.Empty;
-            string RefID                = string.Empty;
+            string RefID                = Guid.NewGuid().ToString().Substring(0,4).ToString();
 
             switch (methodName)
             {
@@ -172,7 +173,10 @@ namespace net.authorize.sample
                     PayPalPriorAuthorizationCapture.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "CancelSubscription":
-                    CancelSubscription.Run(apiLoginId, transactionKey, TransactionID);
+                    CancelSubscription.Run(apiLoginId, transactionKey, RefID);
+                    break;
+                case "CreateSubscription":
+                    CreateSubscription.Run(apiLoginId, transactionKey, RefID);
                     break;
                 default:
                     ShowUsage();

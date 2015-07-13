@@ -10,18 +10,29 @@ namespace net.authorize.sample
 {
     class CreateSubscription
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey, string RefID)
         {
-            Console.WriteLine("Create Subscription");
+            Console.WriteLine("Create Subscription Sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
-            // define the merchant information (authentication / transaction id)
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
                 name            = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item            = ApiTransactionKey
+                Item            = ApiTransactionKey,
+            };
+
+            paymentScheduleTypeInterval interval = new paymentScheduleTypeInterval();
+
+            interval.length = 1;                        // months can be indicated between 1 and 12
+            interval.unit = ARBSubscriptionUnitEnum.months;
+
+            paymentScheduleType schedule = new paymentScheduleType
+            {
+                interval            = interval,
+                startDate           = DateTime.Now.AddDays(1),      // start date should be tomorrow
+                totalOccurrences    = 9999                          // 999 indicates no end date
             };
 
             var creditCard = new creditCardType
@@ -31,47 +42,43 @@ namespace net.authorize.sample
             };
 
             //standard api call to retrieve response
-            var paymentType = new paymentType { Item = creditCard };
-            var merchantAuthType = new merchantAuthenticationType { name = "Test" };
+            paymentType cc = new paymentType { Item = creditCard };
 
-            var subscriptionRequest = new ARBCreateSubscriptionRequest
+            nameAndAddressType addressInfo = new nameAndAddressType()
             {
-                merchantAuthentication = merchantAuthType,
-                
+                firstName = "Calvin",
+                lastName = "Brown"
             };
 
-            var transactionRequest = new transactionRequestType
+            ARBSubscriptionType subscriptionType = new ARBSubscriptionType()
             {
-                transactionType = transactionTypeEnum.voidTransaction.ToString(),    // refund type
-                payment = paymentType,
-                refTransId = TransactionID
+                amount = 35.55m,
+                paymentSchedule = schedule,
+                billTo = addressInfo,
+                payment = cc
             };
 
-
-            var request = new createTransactionRequest { merchantAuthentication = merchantAuthType, transactionRequest = transactionRequest };
+            var request = new ARBCreateSubscriptionRequest { refId = RefID, subscription = subscriptionType };
 
             // instantiate the contoller that will call the service
-            var controller = new createTransactionController(request);
+            var controller = new ARBCreateSubscriptionController(request);
+
             controller.Execute();
 
             // get the response from the service (errors contained if any)
-            var response = controller.GetApiResponse();
-
+            ARBCreateSubscriptionResponse response = controller.GetApiResponse();
+           
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                if (response.transactionResponse != null)
+                if (response != null && response.messages.message != null)
                 {
-                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                    Console.WriteLine("Success, Subscription Code : " + response.subscriptionId.ToString());
                 }
             }
             else
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
-                if (response.transactionResponse != null)
-                {
-                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
-                }
             }
 
         }
