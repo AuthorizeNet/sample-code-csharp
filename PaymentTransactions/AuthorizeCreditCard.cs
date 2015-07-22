@@ -6,7 +6,7 @@ using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
 
-namespace net.authorize.sample.PaymentTransactions
+namespace net.authorize.sample
 {
     class AuthorizeCreditCard
     {
@@ -26,8 +26,8 @@ namespace net.authorize.sample.PaymentTransactions
 
             var creditCard = new creditCardType
             {
-                cardNumber = "4111111111111111",
-                expirationDate = "0718"
+                cardNumber      = "4111111111111111",
+                expirationDate  = "0718"
             };
 
             //standard api call to retrieve response
@@ -36,10 +36,9 @@ namespace net.authorize.sample.PaymentTransactions
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authOnlyTransaction.ToString(),    // authorize only
-                amount = 5.45m,
+                amount = 35.45m,
                 payment = paymentType
             };
-
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
 
@@ -49,6 +48,23 @@ namespace net.authorize.sample.PaymentTransactions
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
+
+            //validate
+            if (response.messages.resultCode == messageTypeEnum.Ok)
+            {
+                if (response.transactionResponse != null)
+                {
+                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
+                if (response.transactionResponse != null)
+                {
+                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
+                }
+            }
 
         }
     }

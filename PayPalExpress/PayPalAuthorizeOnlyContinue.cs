@@ -8,11 +8,11 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class PayPalAuthorizeOnly
+    class PayPalAuthorizeOnlyContinue
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static void Run(String ApiLoginID, String ApiTransactionKey, string TransactionID, string PayerID)
         {
-            Console.WriteLine("PayPal Authorize Only Transaction");
+            Console.WriteLine("PayPal Authorize Only-Continue Transaction");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -27,7 +27,8 @@ namespace net.authorize.sample
             var payPalType = new payPalType
             {
                 cancelUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",
-                successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to            
+                successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to
+                payerID    = PayerID
             };
 
             //standard api call to retrieve response
@@ -35,9 +36,10 @@ namespace net.authorize.sample
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.authOnlyTransaction.ToString(),    // capture the card only
+                transactionType = transactionTypeEnum.authOnlyContinueTransaction.ToString(),    // capture the card only
                 payment = paymentType,
-                amount = 19.45m
+                amount = 19.45m,
+                refTransId = TransactionID,
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };

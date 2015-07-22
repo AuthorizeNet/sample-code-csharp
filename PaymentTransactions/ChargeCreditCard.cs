@@ -37,10 +37,9 @@ namespace net.authorize.sample
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
-                amount = 19.45m,
+                amount = 133.45m,
                 payment = paymentType
             };
-
             
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
             
