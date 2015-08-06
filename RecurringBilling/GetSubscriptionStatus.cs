@@ -18,9 +18,9 @@ namespace net.authorize.sample
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
-                name = ApiLoginID,
+                name            = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = ApiTransactionKey,
+                Item            = ApiTransactionKey,
             };
 
             var request = new ARBGetSubscriptionStatusRequest { refId = RefID, subscriptionId = subscriptionID };
