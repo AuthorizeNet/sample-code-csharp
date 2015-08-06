@@ -8,7 +8,9 @@ The samples are organized just like our API, which you can also try out directly
 The samples are all completely independent and self-contained so you can look at them to get a gist of how the method works, you can use the snippets to try in your own sample project, or you can run each sample from the command line.
 
 ##Running the Samples
-First build the project to produce the SampleCode console app.  Then run a sample directly by name:
+Clone this repository.
+Build the project to produce the SampleCode console app.  
+Then run a sample directly by name:
 ````
      > SampleCode [CodeSampleName]
 ````
