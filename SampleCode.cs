@@ -85,6 +85,8 @@ namespace net.authorize.sample
             Console.WriteLine("    GetSubscriptionList");
             Console.WriteLine("    GetSubscriptionStatus");
             Console.WriteLine("    UpdateSubscription");
+            Console.WriteLine("    CreateCustomerProfile");
+            Console.WriteLine("    CreateCustomerPaymentProfile");
         }
 
         private static void RunMethod(String methodName)
@@ -96,7 +98,6 @@ namespace net.authorize.sample
 
             string TransactionAmount    = string.Empty;
             string TransactionID        = string.Empty;
-            string RefID                = Guid.NewGuid().ToString().Substring(0,4).ToString();      // a random 4 digit number
             string SubscriptionID       = Guid.NewGuid().ToString().Substring(0, 4).ToString();
 
             switch (methodName)
@@ -177,19 +178,25 @@ namespace net.authorize.sample
                     PayPalPriorAuthorizationCapture.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "CancelSubscription":
-                    CancelSubscription.Run(apiLoginId, transactionKey, RefID, SubscriptionID);
+                    CancelSubscription.Run(apiLoginId, transactionKey);
                     break;
                 case "CreateSubscription":
-                    CreateSubscription.Run(apiLoginId, transactionKey, RefID);
+                    CreateSubscription.Run(apiLoginId, transactionKey);
                     break;
                 case "GetSubscriptionList":
-                    GetListSubscriptions.Run(apiLoginId, transactionKey, RefID);
+                    GetListSubscriptions.Run(apiLoginId, transactionKey);
                     break;
                 case "GetSubscriptionStatus":
-                    GetSubscriptionStatus.Run(apiLoginId, transactionKey, RefID, SubscriptionID);
+                    GetSubscriptionStatus.Run(apiLoginId, transactionKey, SubscriptionID);
                     break;
                 case "UpdateSubscription":
-                    UpdateSubscription.Run(apiLoginId, transactionKey, RefID, SubscriptionID);
+                    UpdateSubscription.Run(apiLoginId, transactionKey);
+                    break;
+                case "CreateCustomerProfile":
+                    CreateCustomerProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "CreateCustomerPaymentProfile":
+                    CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey);
                     break;
                 default:
                     ShowUsage();

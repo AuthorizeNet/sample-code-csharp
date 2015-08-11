@@ -10,7 +10,7 @@ namespace net.authorize.sample
 {
     class CancelSubscription
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string RefID, string subscriptionID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Cancel Subscription Sample");
 
@@ -23,8 +23,8 @@ namespace net.authorize.sample
                 Item            = ApiTransactionKey,
             };
 
-            var request = new ARBCancelSubscriptionRequest { refId = RefID, subscriptionId = subscriptionID };
-
+            //Enter the valid SubscriptionId you want to cancel
+            var request = new ARBCancelSubscriptionRequest { subscriptionId = "2787902" };
             var controller = new ARBCancelSubscriptionController(request);                          // instantiate the contoller that will call the service
             controller.Execute();
 

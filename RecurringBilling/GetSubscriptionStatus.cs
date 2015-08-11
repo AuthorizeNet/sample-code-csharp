@@ -10,7 +10,7 @@ namespace net.authorize.sample
 {
     class GetSubscriptionStatus
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string RefID, string subscriptionID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey, string subscriptionID)
         {
             Console.WriteLine("Get Subscription Status Sample");
 
@@ -23,7 +23,7 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey,
             };
 
-            var request = new ARBGetSubscriptionStatusRequest { refId = RefID, subscriptionId = subscriptionID };
+            var request = new ARBGetSubscriptionStatusRequest {subscriptionId = subscriptionID };
 
             var controller = new ARBGetSubscriptionStatusController(request);                          // instantiate the contoller that will call the service
             controller.Execute();

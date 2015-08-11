@@ -10,7 +10,7 @@ namespace net.authorize.sample
 {
     class GetListSubscriptions
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string RefID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Get A List of Subscriptions Sample");
 
@@ -23,7 +23,7 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey,
             };
 
-            var request = new ARBGetSubscriptionListRequest { refId = RefID, searchType = ARBGetSubscriptionListSearchTypeEnum.subscriptionActive };    // only gets active subscriptions
+            var request = new ARBGetSubscriptionListRequest {searchType = ARBGetSubscriptionListSearchTypeEnum.subscriptionActive };    // only gets active subscriptions
 
             var controller = new ARBGetSubscriptionListController(request);          // instantiate the contoller that will call the service
             controller.Execute();

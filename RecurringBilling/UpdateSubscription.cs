@@ -10,12 +10,11 @@ namespace net.authorize.sample
 {
     class UpdateSubscription
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string RefID, string subscriptionID)
+        public static void Run(string ApiLoginID, string ApiTransactionKey)
         {
             Console.WriteLine("Update Subscription Sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
-
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
                 name = ApiLoginID,
@@ -54,12 +53,12 @@ namespace net.authorize.sample
                 payment = cc
             };
 
-            var request = new ARBUpdateSubscriptionRequest { refId = RefID, subscription = subscriptionType, subscriptionId = "2323" };
-
-            var controller = new ARBUpdateSubscriptionController(request);          // instantiate the contoller that will call the service
+            //Please change the subscriptionId according to your request
+            var request = new ARBUpdateSubscriptionRequest { subscription = subscriptionType, subscriptionId = "2787902" };
+            var controller = new ARBUpdateSubscriptionController(request);         
             controller.Execute();
 
-            ARBUpdateSubscriptionResponse response = controller.GetApiResponse();   // get the response from the service (errors contained if any)
+            ARBUpdateSubscriptionResponse response = controller.GetApiResponse(); 
 
             //validate
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
