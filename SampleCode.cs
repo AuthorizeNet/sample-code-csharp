@@ -62,6 +62,8 @@ namespace net.authorize.sample
 
         private static void ShowMethods()
         {
+            Console.WriteLine("    GetTransactionDetails");
+            Console.WriteLine("    GetTransactionList");
             Console.WriteLine("    CreateAnApplePayTransaction");
             Console.WriteLine("    DecryptVisaCheckoutData");
             Console.WriteLine("    CreateVisaCheckoutTransaction");
@@ -106,6 +108,12 @@ namespace net.authorize.sample
 
             switch (methodName)
             {
+                case "GetTransactionDetails":
+                    GetTransactionDetails.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetTransactionList":
+                    GetTransactionList.Run(apiLoginId, transactionKey);
+                    break;
                 case "CreateAnApplePayTransaction":
                     CreateAnApplePayTransaction.Run(apiLoginId, transactionKey);
                     break;
