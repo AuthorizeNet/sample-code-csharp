@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -6,13 +7,13 @@ using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
 
-namespace net.authorize.sample.PaymentTransactions
+namespace net.authorize.sample
 {
-    class ChargeCustomerProfile
+    public class CaptureFundsAuthorizedThroughAnotherChannel
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
-            Console.WriteLine("Charge Customer Profile");
+            Console.WriteLine("Running CaptureFundsAuthorizedThroughAnotherChannel Sample ...");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -21,11 +22,12 @@ namespace net.authorize.sample.PaymentTransactions
             {
                 name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = ApiTransactionKey
+                Item = ApiTransactionKey,
             };
 
             var creditCard = new creditCardType
             {
+                // Change the cardNumber and expiration Date as required
                 cardNumber = "4111111111111111",
                 expirationDate = "0718"
             };
@@ -35,21 +37,27 @@ namespace net.authorize.sample.PaymentTransactions
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.voidTransaction.ToString(),    // refund type
+                // capture the funds that authorized through another channel
+                transactionType = transactionTypeEnum.captureOnlyTransaction.ToString(),
+                // Change the amount that needs to be captured as required
+                amount = 133.45m,
                 payment = paymentType,
-                refTransId = TransactionID
+                // Change the authCode that came from successfully authorized transaction through any channel.
+                authCode = "ROHNFQ"
             };
 
-            var request = new createTransactionRequest { transactionRequest = transactionRequest };
+            var request = new createTransactionRequest
+            {
+               transactionRequest = transactionRequest
+            };
 
-            // instantiate the collector that will call the service
+            // instantiate the contoller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            //validate
             if (response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.transactionResponse != null)
