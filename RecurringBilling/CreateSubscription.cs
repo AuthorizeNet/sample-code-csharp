@@ -10,7 +10,7 @@ namespace net.authorize.sample
 {
     class CreateSubscription
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string RefID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Create Subscription Sample");
 
@@ -60,7 +60,7 @@ namespace net.authorize.sample
                 payment = cc
             };
 
-            var request = new ARBCreateSubscriptionRequest { refId = RefID, subscription = subscriptionType };
+            var request = new ARBCreateSubscriptionRequest {subscription = subscriptionType };
 
             var controller = new ARBCreateSubscriptionController(request);          // instantiate the contoller that will call the service
             controller.Execute();
@@ -72,7 +72,7 @@ namespace net.authorize.sample
             {
                 if (response != null && response.messages.message != null)
                 {
-                    Console.WriteLine("Success, Subscription Code : " + response.subscriptionId.ToString());
+                    Console.WriteLine("Success, Subscription ID : " + response.subscriptionId.ToString());
                 }
             }
             else
