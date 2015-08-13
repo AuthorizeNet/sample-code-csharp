@@ -62,12 +62,16 @@ namespace net.authorize.sample
 
         private static void ShowMethods()
         {
-            Console.WriteLine("    VisaCheckoutDecrypt");
-            Console.WriteLine("    VisaCheckoutTransaction");
+            Console.WriteLine("    GetTransactionDetails");
+            Console.WriteLine("    GetTransactionList");
+            Console.WriteLine("    CreateAnApplePayTransaction");
+            Console.WriteLine("    DecryptVisaCheckoutData");
+            Console.WriteLine("    CreateVisaCheckoutTransaction");
             Console.WriteLine("    ChargeCreditCard");
             Console.WriteLine("    CaptureOnly");
             Console.WriteLine("    AuthorizeCreditCard");
             Console.WriteLine("    CapturePreviouslyAuthorizedAmount");
+            Console.WriteLine("    CaptureFundsAuthorizedThroughAnotherChannel");
             Console.WriteLine("    Refund");
             Console.WriteLine("    Void");
             Console.WriteLine("    DebitBankAccount");
@@ -84,9 +88,12 @@ namespace net.authorize.sample
             Console.WriteLine("    CreateSubscription");
             Console.WriteLine("    GetSubscriptionList");
             Console.WriteLine("    GetSubscriptionStatus");
+            Console.WriteLine("    GetUnsettledTransactionList");
             Console.WriteLine("    UpdateSubscription");
             Console.WriteLine("    CreateCustomerProfile");
             Console.WriteLine("    CreateCustomerPaymentProfile");
+            Console.WriteLine("    GetBatchStatistics");
+            Console.WriteLine("    GetSettledBatchList");
         }
 
         private static void RunMethod(String methodName)
@@ -102,11 +109,20 @@ namespace net.authorize.sample
 
             switch (methodName)
             {
-                case "VisaCheckoutDecrypt":
-                    VisaCheckoutDecrypt.Run(apiLoginId, transactionKey);
+                case "GetTransactionDetails":
+                    GetTransactionDetails.Run(apiLoginId, transactionKey);
                     break;
-                case "VisaCheckoutTransaction":
-                    VisaCheckoutTransaction.Run(apiLoginId, transactionKey);
+                case "GetTransactionList":
+                    GetTransactionList.Run(apiLoginId, transactionKey);
+                    break;
+                case "CreateAnApplePayTransaction":
+                    CreateAnApplePayTransaction.Run(apiLoginId, transactionKey);
+                    break;
+                case "DecryptVisaCheckoutData":
+                    DecryptVisaCheckoutData.Run(apiLoginId, transactionKey);
+                    break;
+                case "CreateVisaCheckoutTransaction":
+                    CreateVisaCheckoutTransaction.Run(apiLoginId, transactionKey);
                     break;
                 case "ChargeCreditCard":
                     ChargeCreditCard.Run(apiLoginId, transactionKey);
@@ -122,6 +138,9 @@ namespace net.authorize.sample
                     TransactionID = Console.ReadLine();
 
                     CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey, Convert.ToDecimal( TransactionAmount ), TransactionID);
+                    break;
+                case "CaptureFundsAuthorizedThroughAnotherChannel":
+                    CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey);
                     break;
                 case "AuthorizeCreditCard":
                     AuthorizeCreditCard.Run(apiLoginId, transactionKey);
@@ -197,6 +216,15 @@ namespace net.authorize.sample
                     break;
                 case "CreateCustomerPaymentProfile":
                     CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetUnsettledTransactionList":
+                    GetUnsettledTransactionList.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetBatchStatistics":
+                    GetBatchStatistics.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetSettledBatchList":
+                    GetSettledBatchList.Run(apiLoginId,transactionKey);
                     break;
                 default:
                     ShowUsage();

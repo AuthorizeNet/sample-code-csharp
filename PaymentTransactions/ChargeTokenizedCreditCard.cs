@@ -51,17 +51,16 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.transactionResponse != null)
+            if (response.messages.resultCode == messageTypeEnum.Ok)
             {
-                Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                if (response.transactionResponse != null)
+                {
+                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                }
             }
             else
             {
-                if (response.messages != null)
-                {
-                    Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
-                }
-
+                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
                 if (response.transactionResponse != null)
                 {
                     Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);

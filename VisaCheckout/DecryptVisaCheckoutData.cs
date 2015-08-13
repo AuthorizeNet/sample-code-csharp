@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample
 {
-    class VisaCheckoutDecrypt
+    class DecryptVisaCheckoutData
     {
         public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
