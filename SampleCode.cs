@@ -62,6 +62,15 @@ namespace net.authorize.sample
 
         private static void ShowMethods()
         {
+            Console.WriteLine("    GetCustomerShippingAddress");
+            Console.WriteLine("    GetCustomerProfileId");
+            Console.WriteLine("    GetCustomerProfile");
+            Console.WriteLine("    GetCustomerPaymentProfile");
+            Console.WriteLine("    DeleteCustomerShippingAddress");
+            Console.WriteLine("    DeleteCustomerProfile");
+            Console.WriteLine("    DeleteCustomerPaymentProfile");
+            Console.WriteLine("    CreateCustomerShippingAddress");
+            Console.WriteLine("    CreateCustomerProfileFromTransaction");
             Console.WriteLine("    GetTransactionDetails");
             Console.WriteLine("    GetTransactionList");
             Console.WriteLine("    CreateAnApplePayTransaction");
@@ -109,15 +118,42 @@ namespace net.authorize.sample
 
             switch (methodName)
             {
+                case "GetCustomerShippingAddress":
+                    GetCustomerShippingAddress.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetCustomerProfileId":
+                    GetCustomerProfileId.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetCustomerProfile":
+                    GetCustomerProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetCustomerPaymentProfile":
+                    GetCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "DeleteCustomerShippingAddress":
+                    DeleteCustomerShippingAddress.Run(apiLoginId, transactionKey);
+                    break;
+                case "DeleteCustomerProfile":
+                    DeleteCustomerProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "DeleteCustomerPaymentProfile":
+                    DeleteCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "CreateCustomerShippingAddress":
+                    CreateCustomerShippingAddress.Run(apiLoginId, transactionKey);
+                    break;
+                case "CreateCustomerProfileFromTransaction":
+                    CreateCustomerProfileFromTransaction.Run(apiLoginId, transactionKey);
+                    break;
                 case "GetTransactionDetails":
                     GetTransactionDetails.Run(apiLoginId, transactionKey);
                     break;
                 case "GetTransactionList":
                     GetTransactionList.Run(apiLoginId, transactionKey);
                     break;
-                case "CreateAnApplePayTransaction":
-                    CreateAnApplePayTransaction.Run(apiLoginId, transactionKey);
-                    break;
+                //case "CreateAnApplePayTransaction":
+                //    CreateAnApplePayTransaction.Run(apiLoginId, transactionKey);
+                //    break;
                 case "DecryptVisaCheckoutData":
                     DecryptVisaCheckoutData.Run(apiLoginId, transactionKey);
                     break;

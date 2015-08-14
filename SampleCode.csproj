@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplePayTransactions\CreateAnApplePayTransaction.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerPaymentProfile.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerProfileFromTransaction.cs" />
@@ -101,7 +100,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ApplePayTransactions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
