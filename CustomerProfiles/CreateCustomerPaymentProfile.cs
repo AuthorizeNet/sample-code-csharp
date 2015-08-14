@@ -36,7 +36,7 @@ namespace net.authorize.sample
 
             var request = new createCustomerPaymentProfileRequest
             {
-                customerProfileId = "36588993",
+                customerProfileId = "10000",
                 paymentProfile = echeckPaymentProfile,
                 validationMode = validationModeEnum.none
             };
