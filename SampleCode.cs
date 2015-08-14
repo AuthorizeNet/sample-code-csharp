@@ -87,6 +87,10 @@ namespace net.authorize.sample
             Console.WriteLine("    UpdateSubscription");
             Console.WriteLine("    CreateCustomerProfile");
             Console.WriteLine("    CreateCustomerPaymentProfile");
+            Console.WriteLine("    CreateCustomerShippingAddress");
+            Console.WriteLine("    DeleteCustomerProfile");
+            Console.WriteLine("    DeleteCustomerPaymentProfile");
+            Console.WriteLine("    DeleteCustomerShippingAddress");
         }
 
         private static void RunMethod(String methodName)
@@ -96,9 +100,8 @@ namespace net.authorize.sample
             String apiLoginId           = "5KP3u95bQpv";
             String transactionKey       = "4Ktq966gC55GAX7S";
 
-            string TransactionAmount    = string.Empty;
-            string TransactionID        = string.Empty;
-            string SubscriptionID       = Guid.NewGuid().ToString().Substring(0, 4).ToString();
+            string TransactionAmount        = string.Empty;
+            string TransactionID            = string.Empty;
 
             switch (methodName)
             {
@@ -187,7 +190,7 @@ namespace net.authorize.sample
                     GetListSubscriptions.Run(apiLoginId, transactionKey);
                     break;
                 case "GetSubscriptionStatus":
-                    GetSubscriptionStatus.Run(apiLoginId, transactionKey, SubscriptionID);
+                    GetSubscriptionStatus.Run(apiLoginId, transactionKey);
                     break;
                 case "UpdateSubscription":
                     UpdateSubscription.Run(apiLoginId, transactionKey);
@@ -197,6 +200,18 @@ namespace net.authorize.sample
                     break;
                 case "CreateCustomerPaymentProfile":
                     CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "CreateCustomerShippingAddress":
+                    CreateCustomerShippingAddress.Run(apiLoginId, transactionKey);
+                    break;
+                case "DeleteCustomerProfile":
+                    DeleteCustomerProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "DeleteCustomerPaymentProfile":
+                    DeleteCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "DeleteCustomerShippingAddress":
+                    DeleteCustomerShippingAddress.Run(apiLoginId, transactionKey);
                     break;
                 default:
                     ShowUsage();

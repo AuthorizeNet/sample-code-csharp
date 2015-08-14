@@ -10,40 +10,33 @@ namespace net.authorize.sample
     {
         public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
-            Console.WriteLine("CreateCustomerShippingAddress Sample");
+            Console.WriteLine("DeleteCustomerPaymentProfile Sample");
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
-                name            = ApiLoginID,
+                name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item            = ApiTransactionKey,
+                Item = ApiTransactionKey,
             };
 
-            customerAddressType officeAddress = new customerAddressType();
-            officeAddress.firstName = "Chris";
-            officeAddress.lastName = "brown";
-            officeAddress.address = "1200 148th AVE NE";
-            officeAddress.city = "NorthBend";
-            officeAddress.zip = "92101";
-
-
-            var request = new createCustomerShippingAddressRequest
+            //please update the subscriptionId according to your sandbox credentials
+            var request = new deleteCustomerPaymentProfileRequest
             {
-                customerProfileId = "36537239",
-                address = officeAddress,
+                customerProfileId = "10000",
+                customerPaymentProfileId = "20000"
             };
 
             //Prepare Request
-            var controller = new createCustomerShippingAddressController(request);
+            var controller = new deleteCustomerPaymentProfileController(request);
             controller.Execute();
 
-             //Send Request to EndPoint
-            createCustomerShippingAddressResponse response = controller.GetApiResponse(); 
+            //Send Request to EndPoint
+            deleteCustomerPaymentProfileResponse response = controller.GetApiResponse();
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response != null && response.messages.message != null)
                 {
-                    Console.WriteLine("Success, customerAddressId : " + response.customerAddressId);
+                    Console.WriteLine("Success, ResultCode : " + response.messages.resultCode.ToString());
                 }
             }
             else

@@ -29,7 +29,7 @@ namespace net.authorize.sample
 
             var request = new createCustomerShippingAddressRequest
             {
-                customerProfileId = "36537239",
+                customerProfileId = "36588993",
                 address = officeAddress,
             };
 
