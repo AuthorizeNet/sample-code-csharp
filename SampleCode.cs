@@ -62,6 +62,10 @@ namespace net.authorize.sample
 
         private static void ShowMethods()
         {
+            Console.WriteLine("    ValidateCustomerPaymentProfile");
+            Console.WriteLine("    UpdateCustomerShippingAddress");
+            Console.WriteLine("    UpdateCustomerProfile");
+            Console.WriteLine("    UpdateCustomerPaymentProfile");
             Console.WriteLine("    GetCustomerShippingAddress");
             Console.WriteLine("    GetCustomerProfileId");
             Console.WriteLine("    GetCustomerProfile");
@@ -118,6 +122,18 @@ namespace net.authorize.sample
 
             switch (methodName)
             {
+                case "ValidateCustomerPaymentProfile":
+                    ValidateCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "UpdateCustomerShippingAddress":
+                    UpdateCustomerShippingAddress.Run(apiLoginId, transactionKey);
+                    break;
+                case "UpdateCustomerProfile":
+                    UpdateCustomerProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "UpdateCustomerPaymentProfile":
+                    UpdateCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    break;
                 case "GetCustomerShippingAddress":
                     GetCustomerShippingAddress.Run(apiLoginId, transactionKey);
                     break;

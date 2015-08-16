@@ -10,7 +10,7 @@ namespace net.authorize.sample
     {
        public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
-            Console.WriteLine("CreateCustomerShippingAddress Sample");
+            Console.WriteLine("DeleteCustomerProfile Sample");
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
