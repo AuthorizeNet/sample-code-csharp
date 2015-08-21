@@ -10,7 +10,7 @@ The samples are all completely independent and self-contained so you can look at
 ##Running the Samples
  Clone this repository.  
  Include the Authorize.Net SDK    (https://github.com/AuthorizeNet/sdk-dotnet)  
- `PM> Install-Package AuthorizeNet`
+ `PM> Install-Package AuthorizeNet`  
  Build the project to produce the SampleCode console app.  
  Then run a sample directly by name:  
 ````
