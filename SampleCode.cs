@@ -272,18 +272,6 @@ namespace net.authorize.sample
                 case "CreateCustomerPaymentProfile":
                     CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey);
                     break;
-                case "CreateCustomerShippingAddress":
-                    CreateCustomerShippingAddress.Run(apiLoginId, transactionKey);
-                    break;
-                case "DeleteCustomerProfile":
-                    DeleteCustomerProfile.Run(apiLoginId, transactionKey);
-                    break;
-                case "DeleteCustomerPaymentProfile":
-                    DeleteCustomerPaymentProfile.Run(apiLoginId, transactionKey);
-                    break;
-                case "DeleteCustomerShippingAddress":
-                    DeleteCustomerShippingAddress.Run(apiLoginId, transactionKey);
-                    break;
                 case "GetUnsettledTransactionList":
                     GetUnsettledTransactionList.Run(apiLoginId, transactionKey);
                     break;
