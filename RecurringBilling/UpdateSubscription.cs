@@ -54,7 +54,7 @@ namespace net.authorize.sample
             };
 
             //Please change the subscriptionId according to your request
-            var request = new ARBUpdateSubscriptionRequest { subscription = subscriptionType, subscriptionId = "2787902" };
+            var request = new ARBUpdateSubscriptionRequest { subscription = subscriptionType, subscriptionId = "100748" };
             var controller = new ARBUpdateSubscriptionController(request);         
             controller.Execute();
 

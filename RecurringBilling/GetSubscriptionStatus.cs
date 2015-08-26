@@ -10,7 +10,7 @@ namespace net.authorize.sample
 {
     class GetSubscriptionStatus
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string subscriptionID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Get Subscription Status Sample");
 
@@ -23,7 +23,8 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey,
             };
 
-            var request = new ARBGetSubscriptionStatusRequest {subscriptionId = subscriptionID };
+            //please update the subscriptionId according to your sandbox credentials
+            var request = new ARBGetSubscriptionStatusRequest { subscriptionId = "100748" };
 
             var controller = new ARBGetSubscriptionStatusController(request);                          // instantiate the contoller that will call the service
             controller.Execute();

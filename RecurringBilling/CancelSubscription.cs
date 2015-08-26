@@ -15,7 +15,6 @@ namespace net.authorize.sample
             Console.WriteLine("Cancel Subscription Sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
-
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
                 name            = ApiLoginID,
@@ -23,8 +22,8 @@ namespace net.authorize.sample
                 Item            = ApiTransactionKey,
             };
 
-            //Enter the valid SubscriptionId you want to cancel
-            var request = new ARBCancelSubscriptionRequest { subscriptionId = "2787902" };
+            //Please change the subscriptionId according to your request
+            var request = new ARBCancelSubscriptionRequest { subscriptionId = "100748" };
             var controller = new ARBCancelSubscriptionController(request);                          // instantiate the contoller that will call the service
             controller.Execute();
 
