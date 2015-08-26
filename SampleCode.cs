@@ -280,6 +280,7 @@ namespace net.authorize.sample
                     break;
                 case "GetSettledBatchList":
                     GetSettledBatchList.Run(apiLoginId,transactionKey);
+                     break;
                 default:
                     ShowUsage();
                     break;
