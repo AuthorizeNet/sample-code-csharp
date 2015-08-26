@@ -21,7 +21,7 @@ namespace net.authorize.sample
 
             var bankAccount = new bankAccountType
             {
-                accountNumber = "0123454321",
+                accountNumber = "01245524321",
                 routingNumber = "000000204",
                 accountType = bankAccountTypeEnum.checking,
                 echeckType = echeckTypeEnum.WEB,
@@ -30,12 +30,13 @@ namespace net.authorize.sample
             };
 
             paymentType echeck = new paymentType {Item = bankAccount};
+
             customerPaymentProfileType echeckPaymentProfile = new customerPaymentProfileType();
             echeckPaymentProfile.payment = echeck;
 
             var request = new createCustomerPaymentProfileRequest
             {
-                customerProfileId = "36537239",
+                customerProfileId = "10000",
                 paymentProfile = echeckPaymentProfile,
                 validationMode = validationModeEnum.none
             };
@@ -50,7 +51,7 @@ namespace net.authorize.sample
             {
                 if (response != null && response.messages.message != null)
                 {
-                    Console.WriteLine("Success, CustomerProfileID : " + response.customerPaymentProfileId);
+                    Console.WriteLine("Success, createCustomerPaymentProfileID : " + response.customerPaymentProfileId);
                 }
             }
             else

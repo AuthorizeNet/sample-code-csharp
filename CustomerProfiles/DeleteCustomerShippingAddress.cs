@@ -20,9 +20,11 @@ namespace net.authorize.sample
                 Item            = ApiTransactionKey,
             };
 
+            //please update the subscriptionId according to your sandbox credentials
             var request = new deleteCustomerShippingAddressRequest
             {
-                customerProfileId = "36537239"
+                customerProfileId = "10000",
+                customerAddressId = "20000"
             };
 
             //Prepare Request
