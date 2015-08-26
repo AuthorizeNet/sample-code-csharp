@@ -21,5 +21,5 @@ e.g.
 ````
      > SampleCode ChargeACreditCard
 ````
-Running SampleCode without a parameter will give you the list of sample names.  Handy or what!
+Running SampleCode without a parameter will give you the list of sample names. 
 
