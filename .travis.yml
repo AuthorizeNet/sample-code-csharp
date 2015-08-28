@@ -1,5 +1,3 @@
 language:
     csharp
-
-script:
-    - xbuild  SampleCode.csproj
+solution: SampleCode.sln
