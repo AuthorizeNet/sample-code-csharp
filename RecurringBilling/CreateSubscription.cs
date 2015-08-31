@@ -33,7 +33,7 @@ namespace net.authorize.sample
                 interval            = interval,
                 startDate           = DateTime.Now.AddDays(1),      // start date should be tomorrow
                 totalOccurrences    = 9999,                          // 999 indicates no end date
-                trialOccurences     = 3
+                trialOccurrences     = 3
             };
 
             #region Payment Information
