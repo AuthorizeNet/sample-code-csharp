@@ -10,7 +10,7 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetCustomerProfileId
+    class GetCustomerProfileIds
     {
         public static void Run(String ApiLoginID, String ApiTransactionKey)
         {

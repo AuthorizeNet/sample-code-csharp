@@ -26,7 +26,7 @@ namespace net.authorize.sample
             };
 
             var request = new getCustomerProfileRequest();
-            request.customerProfileId = "36594444";
+            request.customerProfileId = "36731856";
 
             // instantiate the controller that will call the service
             var controller = new getCustomerProfileController(request);
@@ -39,6 +39,7 @@ namespace net.authorize.sample
             {
                 Console.WriteLine(response.messages.message[0].text);
                 Console.WriteLine("Customer Profile Id: " + response.profile.customerProfileId);
+
             }
             else
             {

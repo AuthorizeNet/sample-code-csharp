@@ -26,8 +26,8 @@ namespace net.authorize.sample
             };
 
             var request = new getCustomerPaymentProfileRequest();
-            request.customerProfileId = "36594444";
-            request.customerPaymentProfileId = "33084787";
+            request.customerProfileId = "36731856";
+            request.customerPaymentProfileId = "33211899";
 
             // instantiate the controller that will call the service
             var controller = new getCustomerPaymentProfileController(request);
