@@ -62,24 +62,7 @@ namespace net.authorize.sample
 
         private static void ShowMethods()
         {
-            Console.WriteLine("    ValidateCustomerPaymentProfile");
-            Console.WriteLine("    UpdateCustomerShippingAddress");
-            Console.WriteLine("    UpdateCustomerProfile");
-            Console.WriteLine("    UpdateCustomerPaymentProfile");
-            Console.WriteLine("    GetCustomerShippingAddress");
-            Console.WriteLine("    GetCustomerProfileId");
-            Console.WriteLine("    GetCustomerProfile");
-            Console.WriteLine("    GetCustomerPaymentProfile");
-            Console.WriteLine("    DeleteCustomerShippingAddress");
-            Console.WriteLine("    DeleteCustomerProfile");
-            Console.WriteLine("    DeleteCustomerPaymentProfile");
-            Console.WriteLine("    CreateCustomerShippingAddress");
-            Console.WriteLine("    CreateCustomerProfileFromTransaction");
-            Console.WriteLine("    GetTransactionDetails");
-            Console.WriteLine("    GetTransactionList");
-            Console.WriteLine("    CreateAnApplePayTransaction");
-            Console.WriteLine("    DecryptVisaCheckoutData");
-            Console.WriteLine("    CreateVisaCheckoutTransaction");
+            
             Console.WriteLine("    ChargeCreditCard");
             Console.WriteLine("    CaptureOnly");
             Console.WriteLine("    AuthorizeCreditCard");
@@ -89,7 +72,11 @@ namespace net.authorize.sample
             Console.WriteLine("    Void");
             Console.WriteLine("    DebitBankAccount");
             Console.WriteLine("    CreditBankAccount");
+            Console.WriteLine("    ChargeCustomerProfile");
             Console.WriteLine("    ChargeTokenizedCard");
+            Console.WriteLine("    CreateAnApplePayTransaction");
+            Console.WriteLine("    DecryptVisaCheckoutData");
+            Console.WriteLine("    CreateVisaCheckoutTransaction");
             Console.WriteLine("    PayPalVoid");
             Console.WriteLine("    PayPalAuthorizeCapture");
             Console.WriteLine("    PayPalAuthorizeCaptureContinue");
@@ -109,8 +96,23 @@ namespace net.authorize.sample
             Console.WriteLine("    DeleteCustomerProfile");
             Console.WriteLine("    DeleteCustomerPaymentProfile");
             Console.WriteLine("    DeleteCustomerShippingAddress");
+            Console.WriteLine("    ValidateCustomerPaymentProfile");
+            Console.WriteLine("    UpdateCustomerShippingAddress");
+            Console.WriteLine("    UpdateCustomerProfile");
+            Console.WriteLine("    UpdateCustomerPaymentProfile");
+            Console.WriteLine("    GetCustomerShippingAddress");
+            Console.WriteLine("    GetCustomerProfileId");
+            Console.WriteLine("    GetCustomerProfile");
+            Console.WriteLine("    GetCustomerPaymentProfile");
+            Console.WriteLine("    DeleteCustomerShippingAddress");
+            Console.WriteLine("    DeleteCustomerProfile");
+            Console.WriteLine("    DeleteCustomerPaymentProfile");
+            Console.WriteLine("    CreateCustomerShippingAddress");
+            Console.WriteLine("    CreateCustomerProfileFromTransaction");
             Console.WriteLine("    GetBatchStatistics");
             Console.WriteLine("    GetSettledBatchList");
+            Console.WriteLine("    GetTransactionDetails");
+            Console.WriteLine("    GetTransactionList");
         }
 
         private static void RunMethod(String methodName)
@@ -140,8 +142,8 @@ namespace net.authorize.sample
                 case "GetCustomerShippingAddress":
                     GetCustomerShippingAddress.Run(apiLoginId, transactionKey);
                     break;
-                case "GetCustomerProfileId":
-                    GetCustomerProfileId.Run(apiLoginId, transactionKey);
+                case "GetCustomerProfileIds":
+                    GetCustomerProfileIds.Run(apiLoginId, transactionKey);
                     break;
                 case "GetCustomerProfile":
                     GetCustomerProfile.Run(apiLoginId, transactionKey);
@@ -223,6 +225,9 @@ namespace net.authorize.sample
                     TransactionID = Console.ReadLine();
 
                     CreditBankAccount.Run(apiLoginId, transactionKey, TransactionID);
+                    break;
+                case "ChargeCustomerProfile":
+                    ChargeCustomerProfile.Run(apiLoginId, transactionKey);
                     break;
                 case "ChargeTokenizedCard":
                     ChargeTokenizedCreditCard.Run(apiLoginId, transactionKey);

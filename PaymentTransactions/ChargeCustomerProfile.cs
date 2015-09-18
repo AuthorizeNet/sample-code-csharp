@@ -6,11 +6,11 @@ using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
 
-namespace net.authorize.sample.PaymentTransactions
+namespace net.authorize.sample
 {
     class ChargeCustomerProfile
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Charge Customer Profile");
 
@@ -24,20 +24,16 @@ namespace net.authorize.sample.PaymentTransactions
                 Item = ApiTransactionKey
             };
 
-            var creditCard = new creditCardType
-            {
-                cardNumber = "4111111111111111",
-                expirationDate = "0718"
-            };
-
-            //standard api call to retrieve response
-            var paymentType = new paymentType { Item = creditCard };
+            //create a customer payment profile
+            customerProfilePaymentType profileToCharge = new customerProfilePaymentType();
+            profileToCharge.customerProfileId = "36731856";
+            profileToCharge.paymentProfile = new paymentProfile { paymentProfileId = "33211899" };
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.voidTransaction.ToString(),    // refund type
-                payment = paymentType,
-                refTransId = TransactionID
+                transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // refund type
+                amount = 2.00m,
+                profile = profileToCharge
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };

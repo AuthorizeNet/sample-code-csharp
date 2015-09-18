@@ -32,7 +32,8 @@ namespace net.authorize.sample
             {
                 interval            = interval,
                 startDate           = DateTime.Now.AddDays(1),      // start date should be tomorrow
-                totalOccurrences    = 9999                          // 999 indicates no end date
+                totalOccurrences    = 9999,                          // 999 indicates no end date
+                trialOccurrences     = 3
             };
 
             #region Payment Information
@@ -48,13 +49,14 @@ namespace net.authorize.sample
 
             nameAndAddressType addressInfo = new nameAndAddressType()
             {
-                firstName = "Calvin",
-                lastName = "Brown"
+                firstName = "John",
+                lastName = "Doe"
             };
 
             ARBSubscriptionType subscriptionType = new ARBSubscriptionType()
             {
                 amount = 35.55m,
+                trialAmount = 0.00m,
                 paymentSchedule = schedule,
                 billTo = addressInfo,
                 payment = cc
