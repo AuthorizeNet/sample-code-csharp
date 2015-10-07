@@ -55,7 +55,9 @@ namespace net.authorize.sample
             {
                 if (response.transactionResponse != null)
                 {
-                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                    var shippingResponse = response.transactionResponse.shipTo;
+                    Console.WriteLine("Shipping address : " + shippingResponse.address + ", " + shippingResponse.city + ", " + shippingResponse.state + ", " + shippingResponse.country);
+                    Console.WriteLine("Payer ID : " + response.transactionResponse.secureAcceptance.PayerID);
                 }
             }
             else
