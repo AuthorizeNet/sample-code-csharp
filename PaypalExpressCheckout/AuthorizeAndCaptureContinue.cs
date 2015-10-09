@@ -10,7 +10,7 @@ namespace net.authorize.sample
 {
     class PayPalAuthorizeCaptureContinue 
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey,  string TransactionID)
+        public static void Run(String ApiLoginID, String ApiTransactionKey,  string TransactionID, string PayerID)
         {
             Console.WriteLine("PayPal Authorize Capture-Continue Transaction");
 
@@ -27,7 +27,8 @@ namespace net.authorize.sample
             var payPalType = new payPalType
             {
                 cancelUrl  = "http://www.merchanteCommerceSite.com/Success/TC25262",
-                successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to            
+                successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to      
+                payerID = PayerID
             };
 
             //standard api call to retrieve response

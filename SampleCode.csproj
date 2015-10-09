@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplePayTransactions\CreateAnApplePayTransaction.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerPaymentProfile.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerProfileFromTransaction.cs" />
@@ -71,15 +72,16 @@
     <Compile Include="PaymentTransactions\CreditBankAccount.cs" />
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />
+    <Compile Include="PaymentTransactions\UpdateSplitTenderGroup.cs" />
     <Compile Include="PaymentTransactions\VoidTransaction.cs" />
-    <Compile Include="PayPalExpress\PayPalAuthorizeOnlyContinue.cs" />
-    <Compile Include="PayPalExpress\PayPalAuthorizeCapture.cs" />
-    <Compile Include="PayPalExpress\PayPalAuthorizeCaptureContinue.cs" />
-    <Compile Include="PayPalExpress\PayPalAuthorizeOnly.cs" />
-    <Compile Include="PayPalExpress\PayPalCredit.cs" />
-    <Compile Include="PayPalExpress\PayPalGetDetails.cs" />
-    <Compile Include="PayPalExpress\PayPalPriorAuthorizationCapture.cs" />
-    <Compile Include="PayPalExpress\PayPalVoid.cs" />
+    <Compile Include="PaypalExpressCheckout\AuthorizationAndCapture.cs" />
+    <Compile Include="PaypalExpressCheckout\AuthorizationOnly.cs" />
+    <Compile Include="PaypalExpressCheckout\AuthorizationOnlyContinued.cs" />
+    <Compile Include="PaypalExpressCheckout\AuthorizeAndCaptureContinue.cs" />
+    <Compile Include="PaypalExpressCheckout\Credit.cs" />
+    <Compile Include="PaypalExpressCheckout\GetDetails.cs" />
+    <Compile Include="PaypalExpressCheckout\PriorAuthorizationCapture.cs" />
+    <Compile Include="PaypalExpressCheckout\Void.cs" />
     <Compile Include="RecurringBilling\CancelSubscription.cs" />
     <Compile Include="RecurringBilling\CreateSubscription.cs" />
     <Compile Include="RecurringBilling\GetListSubscription.cs" />
@@ -99,9 +101,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ApplePayTransactions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
