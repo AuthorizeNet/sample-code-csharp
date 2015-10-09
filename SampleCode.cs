@@ -257,6 +257,9 @@ namespace net.authorize.sample
                     PayPalCredit.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "PayPalGetDetails":
+                    Console.WriteLine("Enter An Transaction ID");
+                    TransactionID = Console.ReadLine();
+
                     PayPalGetDetails.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "PayPalPriorAuthorizationCapture":
