@@ -1,3 +1,4 @@
+using net.authorize.sample.ApplePayTransactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -124,6 +125,7 @@ namespace net.authorize.sample
 
             string TransactionAmount        = string.Empty;
             string TransactionID            = string.Empty;
+            string payerID                  = string.Empty;
 
             switch (methodName)
             {
@@ -172,9 +174,9 @@ namespace net.authorize.sample
                 case "GetTransactionList":
                     GetTransactionList.Run(apiLoginId, transactionKey);
                     break;
-                //case "CreateAnApplePayTransaction":
-                //    CreateAnApplePayTransaction.Run(apiLoginId, transactionKey);
-                //    break;
+                case "CreateAnApplePayTransaction":
+                    CreateAnApplePayTransaction.Run(apiLoginId, transactionKey);
+                    break;
                 case "DecryptVisaCheckoutData":
                     DecryptVisaCheckoutData.Run(apiLoginId, transactionKey);
                     break;
@@ -239,13 +241,17 @@ namespace net.authorize.sample
                     PayPalAuthorizeCapture.Run(apiLoginId, transactionKey);
                     break;
                 case "PayPalAuthorizeCaptureContinue":
-                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID);
+                    Console.Write("Enter Transaction ID : ");
+                    TransactionID = Console.ReadLine();
+                    Console.Write("Enter PayerId : ");
+                    payerID = Console.ReadLine();
+                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID, payerID);
                     break;
                 case "PayPalAuthorizeOnly":
                     PayPalAuthorizeOnly.Run(apiLoginId, transactionKey);
                     break;
                 case "PayPalAuthorizeOnlyContinue":
-                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID);
+                    //PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "PayPalCredit":
                     PayPalCredit.Run(apiLoginId, transactionKey, TransactionID);
