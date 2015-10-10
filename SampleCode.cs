@@ -125,8 +125,10 @@ namespace net.authorize.sample
             String transactionKey       = "4Ktq966gC55GAX7S";
 
             string TransactionAmount        = string.Empty;
+            //Update TransactionID for which you want to run the sample code
             string TransactionID            = string.Empty;
-            string payerID                  = string.Empty;
+            //Update PayerID for which you want to run the sample code
+            string PayerID                  = string.Empty;
 
             switch (methodName)
             {
@@ -248,14 +250,14 @@ namespace net.authorize.sample
                     Console.Write("Enter Transaction ID : ");
                     TransactionID = Console.ReadLine();
                     Console.Write("Enter PayerId : ");
-                    payerID = Console.ReadLine();
-                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID, payerID);
+                    PayerID = Console.ReadLine();
+                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID, PayerID);
                     break;
                 case "PayPalAuthorizeOnly":
                     PayPalAuthorizeOnly.Run(apiLoginId, transactionKey);
                     break;
                 case "PayPalAuthorizeOnlyContinue":
-                    //PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID);
+                    PayPalAuthorizeOnlyContinue.Run(apiLoginId, transactionKey, TransactionID, PayerID);
                     break;
                 case "PayPalCredit":
                     PayPalCredit.Run(apiLoginId, transactionKey, TransactionID);
