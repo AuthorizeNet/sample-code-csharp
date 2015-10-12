@@ -1,4 +1,5 @@
 using net.authorize.sample.ApplePayTransactions;
+using net.authorize.sample.PaymentTransactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -114,6 +115,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetSettledBatchList");
             Console.WriteLine("    GetTransactionDetails");
             Console.WriteLine("    GetTransactionList");
+            Console.WriteLine("    UpdateSplitTenderGroup");
         }
 
         private static void RunMethod(String methodName)
@@ -125,7 +127,7 @@ namespace net.authorize.sample
 
             string TransactionAmount        = string.Empty;
             string TransactionID            = string.Empty;
-            string payerID                  = string.Empty;
+            string PayerID                  = string.Empty;
 
             switch (methodName)
             {
@@ -244,8 +246,8 @@ namespace net.authorize.sample
                     Console.Write("Enter Transaction ID : ");
                     TransactionID = Console.ReadLine();
                     Console.Write("Enter PayerId : ");
-                    payerID = Console.ReadLine();
-                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID, payerID);
+                    PayerID = Console.ReadLine();
+                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID, PayerID);
                     break;
                 case "PayPalAuthorizeOnly":
                     PayPalAuthorizeOnly.Run(apiLoginId, transactionKey);
@@ -291,6 +293,9 @@ namespace net.authorize.sample
                     break;
                 case "GetSettledBatchList":
                     GetSettledBatchList.Run(apiLoginId,transactionKey);
+                     break;
+                case "UpdateSplitTenderGroup":
+                     UpdateSplitTenderGroup.Run(apiLoginId, transactionKey);
                      break;
                 default:
                     ShowUsage();
