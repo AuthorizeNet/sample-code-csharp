@@ -77,7 +77,7 @@
     <Compile Include="PaypalExpressCheckout\AuthorizationAndCapture.cs" />
     <Compile Include="PaypalExpressCheckout\AuthorizationOnly.cs" />
     <Compile Include="PaypalExpressCheckout\AuthorizationOnlyContinued.cs" />
-    <Compile Include="PaypalExpressCheckout\AuthorizeAndCaptureContinue.cs" />
+    <Compile Include="PaypalExpressCheckout\AuthorizationAndCaptureContinue.cs" />
     <Compile Include="PaypalExpressCheckout\Credit.cs" />
     <Compile Include="PaypalExpressCheckout\GetDetails.cs" />
     <Compile Include="PaypalExpressCheckout\PriorAuthorizationCapture.cs" />
