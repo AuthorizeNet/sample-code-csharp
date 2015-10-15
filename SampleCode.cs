@@ -127,7 +127,9 @@ namespace net.authorize.sample
             String transactionKey       = "4Ktq966gC55GAX7S";
 
             string TransactionAmount        = string.Empty;
+            //Update TransactionID for which you want to run the sample code
             string TransactionID            = string.Empty;
+            //Update PayerID for which you want to run the sample code
             string payerID                  = string.Empty;
 
             switch (methodName)
@@ -257,7 +259,7 @@ namespace net.authorize.sample
                     PayPalAuthorizeOnly.Run(apiLoginId, transactionKey);
                     break;
                 case "PayPalAuthorizeOnlyContinue":
-                    //PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID);
+                    PayPalAuthorizeOnlyContinue.Run(apiLoginId, transactionKey, TransactionID, payerID);
                     break;
                 case "PayPalCredit":
                     PayPalCredit.Run(apiLoginId, transactionKey, TransactionID);
