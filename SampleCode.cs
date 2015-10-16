@@ -88,7 +88,7 @@ namespace net.authorize.sample
             Console.WriteLine("    PayPalPriorAuthorizationCapture");
             Console.WriteLine("    CancelSubscription");
             Console.WriteLine("    CreateSubscription");
-            Console.WriteLine("    GetSubscriptionList");
+            Console.WriteLine("    GetListodSubscriptions");
             Console.WriteLine("    GetSubscriptionStatus");
             Console.WriteLine("    GetUnsettledTransactionList");
             Console.WriteLine("    UpdateSubscription");
@@ -276,8 +276,8 @@ namespace net.authorize.sample
                 case "CreateSubscription":
                     CreateSubscription.Run(apiLoginId, transactionKey);
                     break;
-                case "GetSubscriptionList":
-                    GetListSubscriptions.Run(apiLoginId, transactionKey);
+                case "GetListOfSubscriptions":
+                    GetListOfSubscriptions.Run(apiLoginId, transactionKey);
                     break;
                 case "GetSubscriptionStatus":
                     GetSubscriptionStatus.Run(apiLoginId, transactionKey);
