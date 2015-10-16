@@ -84,7 +84,7 @@
     <Compile Include="PaypalExpressCheckout\Void.cs" />
     <Compile Include="RecurringBilling\CancelSubscription.cs" />
     <Compile Include="RecurringBilling\CreateSubscription.cs" />
-    <Compile Include="RecurringBilling\GetListSubscription.cs" />
+    <Compile Include="RecurringBilling\GetListOfSubscriptions.cs" />
     <Compile Include="RecurringBilling\GetSubscriptionStatus.cs" />
     <Compile Include="RecurringBilling\UpdateSubscription.cs" />
     <Compile Include="SampleCode.cs" />
