@@ -195,7 +195,7 @@ namespace net.authorize.sample
                     ChargeCreditCard.Run(apiLoginId, transactionKey);
                     break;
                 case "CaptureOnly":
-                    CaptureOnly.Run(apiLoginId, transactionKey);
+                    //CaptureOnly.Run(apiLoginId, transactionKey);
                     break;
                 case "CapturePreviouslyAuthorizedAmount":
                     Console.WriteLine("Enter An Transaction Amount");
