@@ -64,7 +64,6 @@
     <Compile Include="HostedPaymentForm\CreateHostedPaymentTransaction.cs" />
     <Compile Include="PaymentTransactions\AuthorizeCreditCard.cs" />
     <Compile Include="PaymentTransactions\CaptureFundsAuthorizedThroughAnotherChannel.cs" />
-    <Compile Include="PaymentTransactions\CaptureOnly.cs" />
     <Compile Include="PaymentTransactions\CapturePreviouslyAuthorizedAmount.cs" />
     <Compile Include="PaymentTransactions\ChargeCreditCard.cs" />
     <Compile Include="PaymentTransactions\ChargeCustomerProfile.cs" />

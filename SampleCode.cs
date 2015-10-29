@@ -66,7 +66,6 @@ namespace net.authorize.sample
         {
             
             Console.WriteLine("    ChargeCreditCard");
-            Console.WriteLine("    CaptureOnly");
             Console.WriteLine("    AuthorizeCreditCard");
             Console.WriteLine("    CapturePreviouslyAuthorizedAmount");
             Console.WriteLine("    CaptureFundsAuthorizedThroughAnotherChannel");
@@ -193,9 +192,6 @@ namespace net.authorize.sample
                     break;
                 case "ChargeCreditCard":
                     ChargeCreditCard.Run(apiLoginId, transactionKey);
-                    break;
-                case "CaptureOnly":
-                    CaptureOnly.Run(apiLoginId, transactionKey);
                     break;
                 case "CapturePreviouslyAuthorizedAmount":
                     Console.WriteLine("Enter An Transaction Amount");
