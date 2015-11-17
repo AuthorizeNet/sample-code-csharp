@@ -87,7 +87,7 @@ namespace net.authorize.sample
             Console.WriteLine("    PayPalPriorAuthorizationCapture");
             Console.WriteLine("    CancelSubscription");
             Console.WriteLine("    CreateSubscription");
-            Console.WriteLine("    GetListodSubscriptions");
+            Console.WriteLine("    GetListOfSubscriptions");
             Console.WriteLine("    GetSubscriptionStatus");
             Console.WriteLine("    GetUnsettledTransactionList");
             Console.WriteLine("    UpdateSubscription");
