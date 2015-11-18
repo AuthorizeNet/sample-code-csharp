@@ -21,7 +21,7 @@ The samples are all completely independent and self-contained so you can look at
 ````
 e.g.
 ````
-     > SampleCode ChargeACreditCard
+     > SampleCode ChargeCreditCard
 ````
 Running SampleCode without a parameter will give you the list of sample names. 
 
