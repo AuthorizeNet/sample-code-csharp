@@ -52,6 +52,7 @@
     <Compile Include="CustomerProfiles\DeleteCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\DeleteCustomerShippingAddress.cs" />
     <Compile Include="CustomerProfiles\GetCustomerPaymentProfile.cs" />
+    <Compile Include="CustomerProfiles\GetCustomerPaymentProfileList.cs" />
     <Compile Include="CustomerProfiles\GetCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\GetCustomerProfileIds.cs" />
     <Compile Include="CustomerProfiles\GetCustomerShippingAddress.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="RecurringBilling\CancelSubscription.cs" />
     <Compile Include="RecurringBilling\CreateSubscription.cs" />
     <Compile Include="RecurringBilling\GetListOfSubscriptions.cs" />
+    <Compile Include="RecurringBilling\GetSubscription.cs" />
     <Compile Include="RecurringBilling\GetSubscriptionStatus.cs" />
     <Compile Include="RecurringBilling\UpdateSubscription.cs" />
     <Compile Include="SampleCode.cs" />

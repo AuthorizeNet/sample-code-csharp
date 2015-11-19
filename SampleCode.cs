@@ -86,6 +86,7 @@ namespace net.authorize.sample
             Console.WriteLine("    PayPalPriorAuthorizationCapture");
             Console.WriteLine("    CancelSubscription");
             Console.WriteLine("    CreateSubscription");
+            Console.WriteLine("    GetSubscription");
             Console.WriteLine("    GetSubscriptionList");
             Console.WriteLine("    GetSubscriptionStatus");
             Console.WriteLine("    GetUnsettledTransactionList");
@@ -104,6 +105,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetCustomerProfileId");
             Console.WriteLine("    GetCustomerProfile");
             Console.WriteLine("    GetCustomerPaymentProfile");
+            Console.WriteLine("    GetCustomerPaymentProfileList");
             Console.WriteLine("    DeleteCustomerShippingAddress");
             Console.WriteLine("    DeleteCustomerProfile");
             Console.WriteLine("    DeleteCustomerPaymentProfile");
@@ -150,6 +152,9 @@ namespace net.authorize.sample
                     break;
                 case "GetCustomerPaymentProfile":
                     GetCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetCustomerPaymentProfileList":
+                    GetCustomerPaymentProfileList.Run(apiLoginId, transactionKey);
                     break;
                 case "DeleteCustomerShippingAddress":
                     DeleteCustomerShippingAddress.Run(apiLoginId, transactionKey);
@@ -267,6 +272,9 @@ namespace net.authorize.sample
                     break;
                 case "GetSubscriptionList":
                     GetListSubscriptions.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetSubscription":
+                    GetSubscription.Run(apiLoginId, transactionKey);
                     break;
                 case "GetSubscriptionStatus":
                     GetSubscriptionStatus.Run(apiLoginId, transactionKey);
