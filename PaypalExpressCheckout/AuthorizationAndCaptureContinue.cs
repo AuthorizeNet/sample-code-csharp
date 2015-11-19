@@ -8,11 +8,11 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class CaptureOnly
+    class PayPalAuthorizeCaptureContinue 
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static void Run(String ApiLoginID, String ApiTransactionKey,  string TransactionID, string PayerID)
         {
-            Console.WriteLine("Capture Only Sample");
+            Console.WriteLine("PayPal Authorize Capture-Continue Transaction");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -21,25 +21,26 @@ namespace net.authorize.sample
             {
                 name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = ApiTransactionKey,
+                Item = ApiTransactionKey
             };
 
-            var creditCard = new creditCardType
+            var payPalType = new payPalType
             {
-                cardNumber = "4111111111111111",
-                expirationDate = "0718"
+                cancelUrl  = "http://www.merchanteCommerceSite.com/Success/TC25262",
+                successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to      
+                payerID = PayerID
             };
 
             //standard api call to retrieve response
-            var paymentType = new paymentType { Item = creditCard };
+            var paymentType = new paymentType { Item = payPalType };
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.captureOnlyTransaction.ToString(),    // capture the card only
-                amount = 25.45m,
-                payment = paymentType,
+                transactionType = transactionTypeEnum.authCaptureContinueTransaction.ToString(),    // capture the card only
+                payment         = paymentType,
+                amount          = 19.45m,
+                refTransId      = TransactionID
             };
-
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
 

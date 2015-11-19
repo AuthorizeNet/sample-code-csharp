@@ -1,3 +1,5 @@
+using net.authorize.sample.ApplePayTransactions;
+using net.authorize.sample.PaymentTransactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,7 +66,6 @@ namespace net.authorize.sample
         {
             
             Console.WriteLine("    ChargeCreditCard");
-            Console.WriteLine("    CaptureOnly");
             Console.WriteLine("    AuthorizeCreditCard");
             Console.WriteLine("    CapturePreviouslyAuthorizedAmount");
             Console.WriteLine("    CaptureFundsAuthorizedThroughAnotherChannel");
@@ -86,8 +87,7 @@ namespace net.authorize.sample
             Console.WriteLine("    PayPalPriorAuthorizationCapture");
             Console.WriteLine("    CancelSubscription");
             Console.WriteLine("    CreateSubscription");
-            Console.WriteLine("    GetSubscription");
-            Console.WriteLine("    GetSubscriptionList");
+            Console.WriteLine("    GetListOfSubscriptions");
             Console.WriteLine("    GetSubscriptionStatus");
             Console.WriteLine("    GetUnsettledTransactionList");
             Console.WriteLine("    UpdateSubscription");
@@ -104,8 +104,8 @@ namespace net.authorize.sample
             Console.WriteLine("    GetCustomerShippingAddress");
             Console.WriteLine("    GetCustomerProfileId");
             Console.WriteLine("    GetCustomerProfile");
+            Console.WriteLine("    GetHostedProfilePage");
             Console.WriteLine("    GetCustomerPaymentProfile");
-            Console.WriteLine("    GetCustomerPaymentProfileList");
             Console.WriteLine("    DeleteCustomerShippingAddress");
             Console.WriteLine("    DeleteCustomerProfile");
             Console.WriteLine("    DeleteCustomerPaymentProfile");
@@ -115,6 +115,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetSettledBatchList");
             Console.WriteLine("    GetTransactionDetails");
             Console.WriteLine("    GetTransactionList");
+            Console.WriteLine("    UpdateSplitTenderGroup");
         }
 
         private static void RunMethod(String methodName)
@@ -125,7 +126,10 @@ namespace net.authorize.sample
             String transactionKey       = "4Ktq966gC55GAX7S";
 
             string TransactionAmount        = string.Empty;
+            //Update TransactionID for which you want to run the sample code
             string TransactionID            = string.Empty;
+            //Update PayerID for which you want to run the sample code
+            string payerID                  = string.Empty;
 
             switch (methodName)
             {
@@ -150,11 +154,11 @@ namespace net.authorize.sample
                 case "GetCustomerProfile":
                     GetCustomerProfile.Run(apiLoginId, transactionKey);
                     break;
+                case "GetHostedProfilePage":
+                    GetHostedProfilePage.Run(apiLoginId, transactionKey);
+                    break;
                 case "GetCustomerPaymentProfile":
                     GetCustomerPaymentProfile.Run(apiLoginId, transactionKey);
-                    break;
-                case "GetCustomerPaymentProfileList":
-                    GetCustomerPaymentProfileList.Run(apiLoginId, transactionKey);
                     break;
                 case "DeleteCustomerShippingAddress":
                     DeleteCustomerShippingAddress.Run(apiLoginId, transactionKey);
@@ -177,9 +181,9 @@ namespace net.authorize.sample
                 case "GetTransactionList":
                     GetTransactionList.Run(apiLoginId, transactionKey);
                     break;
-                //case "CreateAnApplePayTransaction":
-                //    CreateAnApplePayTransaction.Run(apiLoginId, transactionKey);
-                //    break;
+                case "CreateAnApplePayTransaction":
+                    CreateAnApplePayTransaction.Run(apiLoginId, transactionKey);
+                    break;
                 case "DecryptVisaCheckoutData":
                     DecryptVisaCheckoutData.Run(apiLoginId, transactionKey);
                     break;
@@ -188,9 +192,6 @@ namespace net.authorize.sample
                     break;
                 case "ChargeCreditCard":
                     ChargeCreditCard.Run(apiLoginId, transactionKey);
-                    break;
-                case "CaptureOnly":
-                    CaptureOnly.Run(apiLoginId, transactionKey);
                     break;
                 case "CapturePreviouslyAuthorizedAmount":
                     Console.WriteLine("Enter An Transaction Amount");
@@ -244,21 +245,22 @@ namespace net.authorize.sample
                     PayPalAuthorizeCapture.Run(apiLoginId, transactionKey);
                     break;
                 case "PayPalAuthorizeCaptureContinue":
-                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID);
+                    Console.Write("Enter Transaction ID : ");
+                    TransactionID = Console.ReadLine();
+                    Console.Write("Enter PayerId : ");
+                    payerID = Console.ReadLine();
+                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID, payerID);
                     break;
                 case "PayPalAuthorizeOnly":
                     PayPalAuthorizeOnly.Run(apiLoginId, transactionKey);
                     break;
                 case "PayPalAuthorizeOnlyContinue":
-                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, TransactionID);
+                    PayPalAuthorizeOnlyContinue.Run(apiLoginId, transactionKey, TransactionID, payerID);
                     break;
                 case "PayPalCredit":
                     PayPalCredit.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "PayPalGetDetails":
-                    Console.WriteLine("Enter An Transaction ID");
-                    TransactionID = Console.ReadLine();
-
                     PayPalGetDetails.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "PayPalPriorAuthorizationCapture":
@@ -270,11 +272,8 @@ namespace net.authorize.sample
                 case "CreateSubscription":
                     CreateSubscription.Run(apiLoginId, transactionKey);
                     break;
-                case "GetSubscriptionList":
-                    GetListSubscriptions.Run(apiLoginId, transactionKey);
-                    break;
-                case "GetSubscription":
-                    GetSubscription.Run(apiLoginId, transactionKey);
+                case "GetListOfSubscriptions":
+                    GetListOfSubscriptions.Run(apiLoginId, transactionKey);
                     break;
                 case "GetSubscriptionStatus":
                     GetSubscriptionStatus.Run(apiLoginId, transactionKey);
@@ -296,6 +295,9 @@ namespace net.authorize.sample
                     break;
                 case "GetSettledBatchList":
                     GetSettledBatchList.Run(apiLoginId,transactionKey);
+                     break;
+                case "UpdateSplitTenderGroup":
+                     UpdateSplitTenderGroup.Run(apiLoginId, transactionKey);
                      break;
                 default:
                     ShowUsage();

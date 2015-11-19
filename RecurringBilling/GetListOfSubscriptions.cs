@@ -8,7 +8,7 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetListSubscriptions
+    class GetListOfSubscriptions
     {
         public static void Run(String ApiLoginID, String ApiTransactionKey)
         {

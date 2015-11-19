@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AuthorizeNet">
-		<HintPath>packages\AuthorizeNet.1.8.5\lib\AuthorizeNet.dll</HintPath>
+      <HintPath>packages\AuthorizeNet.1.8.5\lib\AuthorizeNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplePayTransactions\CreateAnApplePayTransaction.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerPaymentProfile.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerProfileFromTransaction.cs" />
@@ -52,7 +53,6 @@
     <Compile Include="CustomerProfiles\DeleteCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\DeleteCustomerShippingAddress.cs" />
     <Compile Include="CustomerProfiles\GetCustomerPaymentProfile.cs" />
-    <Compile Include="CustomerProfiles\GetCustomerPaymentProfileList.cs" />
     <Compile Include="CustomerProfiles\GetCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\GetCustomerProfileIds.cs" />
     <Compile Include="CustomerProfiles\GetCustomerShippingAddress.cs" />
@@ -61,10 +61,8 @@
     <Compile Include="CustomerProfiles\UpdateCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerShippingAddress.cs" />
     <Compile Include="CustomerProfiles\ValidateCustomerPaymentProfile.cs" />
-    <Compile Include="HostedPaymentForm\CreateHostedPaymentTransaction.cs" />
     <Compile Include="PaymentTransactions\AuthorizeCreditCard.cs" />
     <Compile Include="PaymentTransactions\CaptureFundsAuthorizedThroughAnotherChannel.cs" />
-    <Compile Include="PaymentTransactions\CaptureOnly.cs" />
     <Compile Include="PaymentTransactions\CapturePreviouslyAuthorizedAmount.cs" />
     <Compile Include="PaymentTransactions\ChargeCreditCard.cs" />
     <Compile Include="PaymentTransactions\ChargeCustomerProfile.cs" />
@@ -72,11 +70,12 @@
     <Compile Include="PaymentTransactions\CreditBankAccount.cs" />
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />
+    <Compile Include="PaymentTransactions\UpdateSplitTenderGroup.cs" />
     <Compile Include="PaymentTransactions\VoidTransaction.cs" />
     <Compile Include="PaypalExpressCheckout\AuthorizationAndCapture.cs" />
+    <Compile Include="PaypalExpressCheckout\AuthorizationAndCaptureContinue.cs" />
     <Compile Include="PaypalExpressCheckout\AuthorizationOnly.cs" />
     <Compile Include="PaypalExpressCheckout\AuthorizationOnlyContinued.cs" />
-    <Compile Include="PaypalExpressCheckout\AuthorizeAndCaptureContinue.cs" />
     <Compile Include="PaypalExpressCheckout\Credit.cs" />
     <Compile Include="PaypalExpressCheckout\GetDetails.cs" />
     <Compile Include="PaypalExpressCheckout\PriorAuthorizationCapture.cs" />
@@ -84,7 +83,6 @@
     <Compile Include="RecurringBilling\CancelSubscription.cs" />
     <Compile Include="RecurringBilling\CreateSubscription.cs" />
     <Compile Include="RecurringBilling\GetListOfSubscriptions.cs" />
-    <Compile Include="RecurringBilling\GetSubscription.cs" />
     <Compile Include="RecurringBilling\GetSubscriptionStatus.cs" />
     <Compile Include="RecurringBilling\UpdateSubscription.cs" />
     <Compile Include="SampleCode.cs" />
@@ -101,9 +99,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ApplePayTransactions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
