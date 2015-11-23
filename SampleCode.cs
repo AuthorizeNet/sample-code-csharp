@@ -89,6 +89,7 @@ namespace net.authorize.sample
             Console.WriteLine("    CreateSubscription");
             Console.WriteLine("    GetListOfSubscriptions");
             Console.WriteLine("    GetSubscriptionStatus");
+            Console.WriteLine("    GetSubscription");
             Console.WriteLine("    GetUnsettledTransactionList");
             Console.WriteLine("    UpdateSubscription");
             Console.WriteLine("    CreateCustomerProfile");
@@ -106,6 +107,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetCustomerProfile");
             Console.WriteLine("    GetHostedProfilePage");
             Console.WriteLine("    GetCustomerPaymentProfile");
+            Console.WriteLine("    GetCustomerPaymentProfileList");
             Console.WriteLine("    DeleteCustomerShippingAddress");
             Console.WriteLine("    DeleteCustomerProfile");
             Console.WriteLine("    DeleteCustomerPaymentProfile");
@@ -159,6 +161,9 @@ namespace net.authorize.sample
                     break;
                 case "GetCustomerPaymentProfile":
                     GetCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetCustomerPaymentProfileList":
+                    GetCustomerPaymentProfileList.Run(apiLoginId, transactionKey);
                     break;
                 case "DeleteCustomerShippingAddress":
                     DeleteCustomerShippingAddress.Run(apiLoginId, transactionKey);
@@ -277,6 +282,9 @@ namespace net.authorize.sample
                     break;
                 case "GetSubscriptionStatus":
                     GetSubscriptionStatus.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetSubscription":
+                    GetSubscription.Run(apiLoginId, transactionKey);
                     break;
                 case "UpdateSubscription":
                     UpdateSubscription.Run(apiLoginId, transactionKey);
