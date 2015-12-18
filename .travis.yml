@@ -1,10 +1,5 @@
 language:
     csharp
 
-install:
-    - sudo apt-get install nunit-console
-
-script:
-    - xbuild ./SampleCode.csproj
-    - xbuild ./SampleCodeTest/SampleCodeTest.csproj
-    - nunit-console ./SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
+solution:
+    SampleCode.csproj
