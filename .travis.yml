@@ -1,3 +1,7 @@
 language:
     csharp
 solution: SampleCode.sln
+
+script:
+    - xbuild ./SampleCodeTest/SampleCodeTest.csproj
+    - nunit-console ./SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest
