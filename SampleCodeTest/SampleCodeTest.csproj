@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AuthorizeNet">
-      <HintPath>.\bin\Debug\AuthorizeNet.dll</HintPath>
+      <HintPath>..\SampleCodeTest\bin\Debug\AuthorizeNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
