@@ -1,7 +1,4 @@
 language:
     csharp
     
-install:
-    - sudo apt-get install nunit-console
-
 solution: SampleCode.sln
