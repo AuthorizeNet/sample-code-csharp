@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class PayPalAuthorizeCapture
+    public class PayPalAuthorizeCapture
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal amount)
         {
             Console.WriteLine("PayPal Authorize Capture Transaction");
 
@@ -37,7 +37,7 @@ namespace net.authorize.sample
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // capture the card only
                 payment         = paymentType,
-                amount          = 19.45m
+                amount          = amount
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
@@ -50,14 +50,14 @@ namespace net.authorize.sample
             var response = controller.GetApiResponse();
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.transactionResponse != null)
                 {
                     Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
                 if (response.transactionResponse != null)
@@ -66,6 +66,7 @@ namespace net.authorize.sample
                 }
             }
 
+            return response;
         }
     }
 }

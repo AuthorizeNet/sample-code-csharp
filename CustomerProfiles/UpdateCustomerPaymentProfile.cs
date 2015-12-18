@@ -9,9 +9,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class UpdateCustomerPaymentProfile
+    public class UpdateCustomerPaymentProfile
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId, string customerPaymentProfileId)
         {
             Console.WriteLine("Update Customer payment profile sample");
 
@@ -47,11 +47,11 @@ namespace net.authorize.sample
                     phoneNumber = "000-000-000",
                 },
                 payment = paymentType,
-                customerPaymentProfileId = "33093910"
+                customerPaymentProfileId = customerPaymentProfileId
             };
             
             var request = new updateCustomerPaymentProfileRequest();
-            request.customerProfileId = "36605093";
+            request.customerProfileId = customerProfileId;
             request.paymentProfile = paymentProfile;
             request.validationMode = validationModeEnum.liveMode;
             
@@ -63,15 +63,17 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine(response.messages.message[0].text);
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

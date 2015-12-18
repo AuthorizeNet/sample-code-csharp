@@ -18,7 +18,7 @@ namespace net.authorize.sample
     //===============================================================================================
     class SampleCode
     {
-        static void Main(string[] args)
+        static void SomeRAndomFunction(string[] args)
         {
             if (args.Length == 0)
             {
@@ -136,52 +136,52 @@ namespace net.authorize.sample
             switch (methodName)
             {
                 case "ValidateCustomerPaymentProfile":
-                    ValidateCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    ValidateCustomerPaymentProfile.Run(apiLoginId, transactionKey,"213213","21325345");
                     break;
                 case "UpdateCustomerShippingAddress":
-                    UpdateCustomerShippingAddress.Run(apiLoginId, transactionKey);
+                    UpdateCustomerShippingAddress.Run(apiLoginId, transactionKey, "21312432","123324");
                     break;
-                case "UpdateCustomerProfile":
-                    UpdateCustomerProfile.Run(apiLoginId, transactionKey);
+                case "UpdateCustomerProfile": 
+                    UpdateCustomerProfile.Run(apiLoginId, transactionKey,"1233432");
                     break;
                 case "UpdateCustomerPaymentProfile":
-                    UpdateCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    UpdateCustomerPaymentProfile.Run(apiLoginId, transactionKey, "21312432", "123324");
                     break;
                 case "GetCustomerShippingAddress":
-                    GetCustomerShippingAddress.Run(apiLoginId, transactionKey);
+                    GetCustomerShippingAddress.Run(apiLoginId, transactionKey, "21312432", "123324");
                     break;
                 case "GetCustomerProfileIds":
                     GetCustomerProfileIds.Run(apiLoginId, transactionKey);
                     break;
                 case "GetCustomerProfile":
-                    GetCustomerProfile.Run(apiLoginId, transactionKey);
+                    GetCustomerProfile.Run(apiLoginId, transactionKey, "122143");
                     break;
                 case "GetHostedProfilePage":
-                    GetHostedProfilePage.Run(apiLoginId, transactionKey);
+                    GetHostedProfilePage.Run(apiLoginId, transactionKey, "122143");
                     break;
                 case "GetCustomerPaymentProfile":
-                    GetCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    GetCustomerPaymentProfile.Run(apiLoginId, transactionKey, "122143", "122143");
                     break;
                 case "GetCustomerPaymentProfileList":
                     GetCustomerPaymentProfileList.Run(apiLoginId, transactionKey);
                     break;
                 case "DeleteCustomerShippingAddress":
-                    DeleteCustomerShippingAddress.Run(apiLoginId, transactionKey);
+                    DeleteCustomerShippingAddress.Run(apiLoginId, transactionKey, "1232143", "432423");
                     break;
                 case "DeleteCustomerProfile":
-                    DeleteCustomerProfile.Run(apiLoginId, transactionKey);
+                    DeleteCustomerProfile.Run(apiLoginId, transactionKey,"E1002");
                     break;
                 case "DeleteCustomerPaymentProfile":
-                    DeleteCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    DeleteCustomerPaymentProfile.Run(apiLoginId, transactionKey, "1232143", "432423");
                     break;
                 case "CreateCustomerShippingAddress":
-                    CreateCustomerShippingAddress.Run(apiLoginId, transactionKey);
+                    CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, "E01101");
                     break;
                 case "CreateCustomerProfileFromTransaction":
-                    CreateCustomerProfileFromTransaction.Run(apiLoginId, transactionKey);
+                    CreateCustomerProfileFromTransaction.Run(apiLoginId, transactionKey, "123453");
                     break;
                 case "GetTransactionDetails":
-                    GetTransactionDetails.Run(apiLoginId, transactionKey);
+                    GetTransactionDetails.Run(apiLoginId, transactionKey, "122143");
                     break;
                 case "GetTransactionList":
                     GetTransactionList.Run(apiLoginId, transactionKey);
@@ -196,7 +196,7 @@ namespace net.authorize.sample
                     CreateVisaCheckoutTransaction.Run(apiLoginId, transactionKey);
                     break;
                 case "ChargeCreditCard":
-                    ChargeCreditCard.Run(apiLoginId, transactionKey);
+                    ChargeCreditCard.Run(apiLoginId, transactionKey, 123.23m);
                     break;
                 case "CapturePreviouslyAuthorizedAmount":
                     Console.WriteLine("Enter An Transaction Amount");
@@ -211,7 +211,7 @@ namespace net.authorize.sample
                     CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey);
                     break;
                 case "AuthorizeCreditCard":
-                    AuthorizeCreditCard.Run(apiLoginId, transactionKey);
+                    AuthorizeCreditCard.Run(apiLoginId, transactionKey, 32.23m);
                     break;
                 case "Refund":
                     Console.WriteLine("Enter An Transaction Amount");
@@ -238,7 +238,7 @@ namespace net.authorize.sample
                     CreditBankAccount.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "ChargeCustomerProfile":
-                    ChargeCustomerProfile.Run(apiLoginId, transactionKey);
+                    ChargeCustomerProfile.Run(apiLoginId, transactionKey, "122143", "122143");
                     break;
                 case "ChargeTokenizedCard":
                     ChargeTokenizedCreditCard.Run(apiLoginId, transactionKey);
@@ -247,7 +247,7 @@ namespace net.authorize.sample
                     PayPalVoid.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "PayPalAuthorizeCapture":
-                    PayPalAuthorizeCapture.Run(apiLoginId, transactionKey);
+                    PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, 32.23m);
                     break;
                 case "PayPalAuthorizeCaptureContinue":
                     Console.Write("Enter Transaction ID : ");
@@ -272,28 +272,28 @@ namespace net.authorize.sample
                     PayPalPriorAuthorizationCapture.Run(apiLoginId, transactionKey, TransactionID);
                     break;
                 case "CancelSubscription":
-                    CancelSubscription.Run(apiLoginId, transactionKey);
+                    CancelSubscription.Run(apiLoginId, transactionKey, "12323");
                     break;
                 case "CreateSubscription":
-                    CreateSubscription.Run(apiLoginId, transactionKey);
+                    CreateSubscription.Run(apiLoginId, transactionKey, 5);
                     break;
                 case "GetListOfSubscriptions":
                     GetListOfSubscriptions.Run(apiLoginId, transactionKey);
                     break;
                 case "GetSubscriptionStatus":
-                    GetSubscriptionStatus.Run(apiLoginId, transactionKey);
+                    GetSubscriptionStatus.Run(apiLoginId, transactionKey, "100234");
                     break;
                 case "GetSubscription":
-                    GetSubscription.Run(apiLoginId, transactionKey);
+                    GetSubscription.Run(apiLoginId, transactionKey, "2314323");
                     break;
                 case "UpdateSubscription":
-                    UpdateSubscription.Run(apiLoginId, transactionKey);
+                    UpdateSubscription.Run(apiLoginId, transactionKey, "100234");
                     break;
                 case "CreateCustomerProfile":
-                    CreateCustomerProfile.Run(apiLoginId, transactionKey);
+                    CreateCustomerProfile.Run(apiLoginId, transactionKey, "test@te.com");
                     break;
                 case "CreateCustomerPaymentProfile":
-                    CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey);
+                    CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, "E1003");
                     break;
                 case "GetUnsettledTransactionList":
                     GetUnsettledTransactionList.Run(apiLoginId, transactionKey);

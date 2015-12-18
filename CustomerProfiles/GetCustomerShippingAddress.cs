@@ -9,9 +9,10 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetCustomerShippingAddress
+    public class GetCustomerShippingAddress
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId,
+            string customerAddressId)
         {
             Console.WriteLine("Get Customer Shipping Address sample");
 
@@ -25,8 +26,8 @@ namespace net.authorize.sample
             };
 
             var request = new getCustomerShippingAddressRequest();
-            request.customerProfileId = "36594444";
-            request.customerAddressId = "34743195";
+            request.customerProfileId = customerProfileId;
+            request.customerAddressId = customerAddressId;
 
             // instantiate the controller that will call the service
             var controller = new getCustomerShippingAddressController(request);
@@ -35,15 +36,17 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine(response.messages.message[0].text);
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

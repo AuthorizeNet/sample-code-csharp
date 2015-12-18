@@ -10,9 +10,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetBatchStatistics
+    public class GetBatchStatistics
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Get batch statistics sample");
 
@@ -27,8 +27,9 @@ namespace net.authorize.sample
 
 
             // unique batch id
-            string batchId = "4532808";
+            string batchId = "12345";
             var request = new getBatchStatisticsRequest();
+            request.batchId = batchId;
 
             // instantiate the controller that will call the service
             var controller = new getBatchStatisticsController(request);
@@ -37,9 +38,11 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                if (response.batch == null) return;
+                if (response.batch == null)
+                    return response;
+
                 Console.WriteLine("Batch Id: {0}", response.batch.batchId);
                 Console.WriteLine("Batch settled on (UTC): {0}", response.batch.settlementTimeUTC);
                 Console.WriteLine("Batch settled on (Local): {0}", response.batch.settlementTimeLocal);
@@ -53,11 +56,17 @@ namespace net.authorize.sample
                         item.voidCount, item.declineCount, item.errorCount);
                 }
             }
-            else
+            else if (response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+            else
+            {
+                Console.WriteLine("Null response");
+            }
+
+            return response;
         }
     }
 }

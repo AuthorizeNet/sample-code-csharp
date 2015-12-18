@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetSubscription
+    public class GetSubscription
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string subscriptionId)
         {
             Console.WriteLine("Get Subscription Sample");
 
@@ -23,7 +23,7 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey
             };
 
-            var request = new ARBGetSubscriptionRequest { subscriptionId = "2260421" };    
+            var request = new ARBGetSubscriptionRequest { subscriptionId = subscriptionId };    
 
             var controller = new ARBGetSubscriptionController(request);          // instantiate the contoller that will call the service
             controller.Execute();
@@ -54,6 +54,7 @@ namespace net.authorize.sample
                 }
             }
 
+            return response;
         }
     }
 }

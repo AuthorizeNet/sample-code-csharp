@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class CreditBankAccount
+    public class CreditBankAccount
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
         {
             Console.WriteLine("Credit Bank Account");
 
@@ -53,14 +53,14 @@ namespace net.authorize.sample
             var response = controller.GetApiResponse();
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.transactionResponse != null)
                 {
                     Console.WriteLine("Success, Transaction Code : " + response.transactionResponse.transId);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
                 if (response.transactionResponse != null)
@@ -69,6 +69,7 @@ namespace net.authorize.sample
                 }
             }
 
+            return response;
         }
     }
 }

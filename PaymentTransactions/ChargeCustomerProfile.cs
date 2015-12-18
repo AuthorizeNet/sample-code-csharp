@@ -8,9 +8,10 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class ChargeCustomerProfile
+    public class ChargeCustomerProfile
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId,
+            string customerPaymentProfileId)
         {
             Console.WriteLine("Charge Customer Profile");
 
@@ -26,8 +27,8 @@ namespace net.authorize.sample
 
             //create a customer payment profile
             customerProfilePaymentType profileToCharge = new customerProfilePaymentType();
-            profileToCharge.customerProfileId = "36731856";
-            profileToCharge.paymentProfile = new paymentProfile { paymentProfileId = "33211899" };
+            profileToCharge.customerProfileId = customerProfileId;
+            profileToCharge.paymentProfile = new paymentProfile { paymentProfileId = customerPaymentProfileId };
 
             var transactionRequest = new transactionRequestType
             {
@@ -46,14 +47,14 @@ namespace net.authorize.sample
             var response = controller.GetApiResponse();
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.transactionResponse != null)
                 {
                     Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
                 if (response.transactionResponse != null)
@@ -62,6 +63,7 @@ namespace net.authorize.sample
                 }
             }
 
+            return response;
         }
     }
 }

@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample.PaymentTransactions
 {
-    class UpdateSplitTenderGroup
+    public class UpdateSplitTenderGroup
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Update Split Tender Group Sample");
 
@@ -39,14 +39,16 @@ namespace net.authorize.sample.PaymentTransactions
             var response = controller.GetApiResponse();
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine("Successfully Updated ... ");
             }
-            else
+            else if(response != null )
             {
                 Console.WriteLine("Error : " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

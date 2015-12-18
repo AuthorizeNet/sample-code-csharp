@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetListOfSubscriptions
+    public class GetListOfSubscriptions
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Get A List of Subscriptions Sample");
 
@@ -38,11 +38,12 @@ namespace net.authorize.sample
                     Console.WriteLine("Success, " + response.totalNumInResultSet + " Results Returned ");
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }

@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AuthorizeNet">
-      <HintPath>packages\AuthorizeNet.1.8.8\lib\AuthorizeNet.dll</HintPath>
+      <HintPath>..\Authorize.NET\bin\Debug\AuthorizeNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -88,6 +88,7 @@
     <Compile Include="RecurringBilling\GetSubscriptionStatus.cs" />
     <Compile Include="RecurringBilling\UpdateSubscription.cs" />
     <Compile Include="SampleCode.cs" />
+    <Compile Include="TestRunner.cs" />
     <Compile Include="TransactionReporting\GetBatchStatistics.cs" />
     <Compile Include="TransactionReporting\GetSettledBatchList.cs" />
     <Compile Include="TransactionReporting\GetTransactionDetails.cs" />

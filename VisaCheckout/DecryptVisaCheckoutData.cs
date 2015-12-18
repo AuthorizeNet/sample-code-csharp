@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample
 {
-    class DecryptVisaCheckoutData
+    public class DecryptVisaCheckoutData
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Running VisaCheckoutDecrypt Sample ...");
 
@@ -52,6 +52,9 @@ namespace net.authorize.sample
                 Console.WriteLine("Card Number : "+decryptPaymentDataResponse.cardInfo.cardNumber);
                 Console.WriteLine("Amount : "+decryptPaymentDataResponse.paymentDetails.amount);
             }
+
+            return decryptPaymentDataResponse;
+
         }
     }
 }

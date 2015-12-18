@@ -10,9 +10,10 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetCustomerPaymentProfile
+    public class GetCustomerPaymentProfile
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId,
+            string customerPaymentProfileId)
         {
             Console.WriteLine("Get Customer Payment Profile sample");
 
@@ -26,8 +27,8 @@ namespace net.authorize.sample
             };
 
             var request = new getCustomerPaymentProfileRequest();
-            request.customerProfileId = "36731856";
-            request.customerPaymentProfileId = "33211899";
+            request.customerProfileId = customerProfileId;
+            request.customerPaymentProfileId = customerPaymentProfileId;
 
             // Set this optional property to true to return an unmasked expiration date
             //request.unmaskExpirationDateSpecified = true;
@@ -41,7 +42,7 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine(response.messages.message[0].text);
                 Console.WriteLine("Customer Payment Profile Id: " + response.paymentProfile.customerPaymentProfileId);
@@ -51,11 +52,13 @@ namespace net.authorize.sample
                     Console.WriteLine("Customer Payment Profile Expiration Date: " + (response.paymentProfile.payment.Item as creditCardMaskedType).expirationDate);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }
