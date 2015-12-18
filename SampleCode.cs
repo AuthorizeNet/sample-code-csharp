@@ -18,7 +18,7 @@ namespace net.authorize.sample
     //===============================================================================================
     class SampleCode
     {
-        static void SomeRAndomFunction(string[] args)
+        static void Main(string[] args)
         {
             if (args.Length == 0)
             {

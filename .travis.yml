@@ -2,6 +2,9 @@ language:
     csharp
 solution: SampleCode.sln
 
+install:
+    - sudo apt-get install nunit-console
+
 script:
     - xbuild ./SampleCodeTest/SampleCodeTest.csproj
     - nunit-console ./SampleCodeTest/SampleCodeTest.csproj -run=SampleCodeTest

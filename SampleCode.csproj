@@ -88,7 +88,6 @@
     <Compile Include="RecurringBilling\GetSubscriptionStatus.cs" />
     <Compile Include="RecurringBilling\UpdateSubscription.cs" />
     <Compile Include="SampleCode.cs" />
-    <Compile Include="TestRunner.cs" />
     <Compile Include="TransactionReporting\GetBatchStatistics.cs" />
     <Compile Include="TransactionReporting\GetSettledBatchList.cs" />
     <Compile Include="TransactionReporting\GetTransactionDetails.cs" />
