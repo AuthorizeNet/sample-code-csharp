@@ -1,4 +1,9 @@
 language:
     csharp
+
+install:
+    nuget restore SampleCode.sln
     
-solution: SampleCode.sln
+script:
+    - xbuild ./SampleCode.csproj
+    - xbuild ./SampleCodeTest/SampleCodeTest.csproj
