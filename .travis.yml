@@ -2,8 +2,8 @@ language:
     csharp
 
 install:
-    nuget restore SampleCode.sln
-    sudo apt-get install nunit-console
+    - nuget restore SampleCode.sln
+    - sudo apt-get install nunit-console
     
 script:
     - xbuild ./SampleCode.csproj
