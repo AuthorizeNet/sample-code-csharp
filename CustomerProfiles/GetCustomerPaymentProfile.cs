@@ -29,6 +29,11 @@ namespace net.authorize.sample
             request.customerProfileId = "36731856";
             request.customerPaymentProfileId = "33211899";
 
+            // Set this optional property to true to return an unmasked expiration date
+            //request.unmaskExpirationDateSpecified = true;
+            //request.unmaskExpirationDate = true;
+            
+
             // instantiate the controller that will call the service
             var controller = new getCustomerPaymentProfileController(request);
             controller.Execute();
@@ -40,6 +45,11 @@ namespace net.authorize.sample
             {
                 Console.WriteLine(response.messages.message[0].text);
                 Console.WriteLine("Customer Payment Profile Id: " + response.paymentProfile.customerPaymentProfileId);
+                if (response.paymentProfile.payment.Item is creditCardMaskedType)
+                {
+                    Console.WriteLine("Customer Payment Profile Last 4: " + (response.paymentProfile.payment.Item as creditCardMaskedType).cardNumber);
+                    Console.WriteLine("Customer Payment Profile Expiration Date: " + (response.paymentProfile.payment.Item as creditCardMaskedType).expirationDate);
+                }
             }
             else
             {
