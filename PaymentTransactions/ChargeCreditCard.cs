@@ -35,11 +35,17 @@ namespace net.authorize.sample
             //standard api call to retrieve response
             var paymentType = new paymentType { Item = creditCard };
 
+            // Add line Items
+            var lineItems = new lineItemType[2];
+            lineItems[0] = new lineItemType { itemId = "1", name = "t-shirt", quantity = 2, unitPrice = new Decimal(15.00) };
+            lineItems[1] = new lineItemType { itemId = "2", name = "snowboard", quantity = 1, unitPrice = new Decimal(450.00) };
+
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
                 amount = 133.45m,
-                payment = paymentType
+                payment = paymentType,
+                lineItems = lineItems
             };
             
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
