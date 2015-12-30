@@ -11,5 +11,6 @@ namespace SampleCodeTest
         public static string TRANSACTION_KEY = "4Ktq966gC55GAX7S";
         public static string TRANSACTION_ID = "123456";
         public static string PAYER_ID = "6ZSCSYG33VP8Q";
+        public static string CONFIG_FILE = "../../SampleCodeList.txt";
     }
 }

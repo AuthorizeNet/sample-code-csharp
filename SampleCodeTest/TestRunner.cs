@@ -38,7 +38,7 @@ namespace SampleCodeTest
         [TestMethod]
         public void TestAllSampleCodes()
         {
-            string fileName = "../../SampleCodeList.txt";
+            string fileName = Constants.CONFIG_FILE;
             StreamReader reader = File.OpenText(fileName);
             TestRunner tr = new TestRunner();
 
@@ -87,8 +87,7 @@ namespace SampleCodeTest
             if (className.Equals("CreateAnApplePayTransaction"))
                 namespaceString = namespaceString + "ApplePayTransactions.";
 
-            className = namespaceString + className;
-            Type classType = Type.GetType(className + ",SampleCode");            
+            Type classType = Type.GetType(namespaceString + className + ",SampleCode");            
             return (ANetApiResponse)classType.GetMethod("Run").Invoke(null, new Object[] { apiLoginId, transactionKey });
         }
 
