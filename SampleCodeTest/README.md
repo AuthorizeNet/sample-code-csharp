@@ -1,4 +1,4 @@
-# Test project for testing C# Sample Codes for Authorize.Net
+# Unit Test Project for testing C# Sample Codes for Authorize.Net
 [![Build Status](https://travis-ci.org/AuthorizeNet/sample-code-csharp.png?branch=master)]
 (https://travis-ci.org/AuthorizeNet/sample-code-csharp)
 
