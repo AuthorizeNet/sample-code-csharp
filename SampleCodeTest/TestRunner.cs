@@ -51,6 +51,8 @@ namespace SampleCodeTest
                 string isDependent = items[1];
                 string shouldApiRun = items[2];
 
+                Console.WriteLine(apiName);
+
                 if (!shouldApiRun.Equals("1"))
                     continue;
 
