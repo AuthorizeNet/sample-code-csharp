@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
@@ -10,7 +10,7 @@ using AuthorizeNet;
 
 namespace SampleCodeTest
 {
-    [TestClass]
+    [TestFixture]
     public class TestRunner
     {
         String apiLoginId = Constants.API_LOGIN_ID;
@@ -35,7 +35,7 @@ namespace SampleCodeTest
             return (Int16)r.Next(7, 365);
         }
 
-        [TestMethod]
+        [Test]
         public void TestAllSampleCodes()
         {
             string fileName = Constants.CONFIG_FILE;
