@@ -29,6 +29,7 @@ namespace net.authorize.sample
             // unique batch id
             string batchId = "4532808";
             var request = new getBatchStatisticsRequest();
+			request.batchId = batchId;
 
             // instantiate the controller that will call the service
             var controller = new getBatchStatisticsController(request);
