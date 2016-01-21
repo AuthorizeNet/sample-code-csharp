@@ -36,7 +36,7 @@ namespace net.authorize.sample
 
             var request = new createCustomerPaymentProfileRequest
             {
-                customerProfileId = "10000",
+                customerProfileId = "35772885",
                 paymentProfile = echeckPaymentProfile,
                 validationMode = validationModeEnum.none
             };
@@ -57,6 +57,10 @@ namespace net.authorize.sample
             else
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
+                if (response.messages.message[0].code == "E00039")
+                {
+                    Console.WriteLine("Duplicate ID: " + response.customerPaymentProfileId);
+                }
             }
 
         }
