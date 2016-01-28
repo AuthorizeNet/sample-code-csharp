@@ -7,6 +7,8 @@ using net.authorize.sample;
 using System.IO;
 using System.Reflection;
 using AuthorizeNet;
+using net.authorize.sample.ApplePayTransactions;
+using net.authorize.sample.PaymentTransactions;
 
 namespace SampleCodeTest
 {
@@ -81,11 +83,11 @@ namespace SampleCodeTest
         public ANetApiResponse InvokeRunMethod(string className)
         {
             string namespaceString = "net.authorize.sample.";
-            
-            if (className.Equals("UpdateSplitTenderGroup"))
+           
+            if (className.Equals(typeof(UpdateSplitTenderGroup).Name))
                 namespaceString = namespaceString + "PaymentTransactions.";
 
-            if (className.Equals("CreateAnApplePayTransaction"))
+            if (className.Equals(typeof(CreateAnApplePayTransaction).Name))
                 namespaceString = namespaceString + "ApplePayTransactions.";
 
             Type classType = Type.GetType(namespaceString + className + ",SampleCode");            
