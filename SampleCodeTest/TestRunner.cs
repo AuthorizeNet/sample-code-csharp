@@ -13,24 +13,24 @@ namespace SampleCodeTest
     [TestFixture]
     public class TestRunner
     {
-        String apiLoginId = Constants.API_LOGIN_ID;
-        String transactionKey = Constants.TRANSACTION_KEY;
+        string apiLoginId = Constants.API_LOGIN_ID;
+        string transactionKey = Constants.TRANSACTION_KEY;
         string TransactionID = Constants.TRANSACTION_ID;
         string payerID = Constants.PAYER_ID;
 
         static CryptoRandom r = new CryptoRandom();
 
-        private static string getEmail()
+        private static string GetEmail()
         {
             return r.Next(1000, 8908) + "@test.com";
         }
 
-        private static decimal getAmount()
+        private static decimal GetAmount()
         {
             return r.Next(10, 200);
         }
 
-        private static short getMonth()
+        private static short GetMonth()
         {
             return (Int16)r.Next(7, 365);
         }
@@ -52,7 +52,6 @@ namespace SampleCodeTest
                 string shouldApiRun = items[2];
 
                 Console.WriteLine(apiName);
-
                 if (!shouldApiRun.Equals("1"))
                     continue;
 
@@ -95,7 +94,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestValidateCustomerPaymentProfile()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var customerPaymentProfile = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             var validateResponse = ValidateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId, customerPaymentProfile.customerPaymentProfileId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
@@ -106,7 +105,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestUpdateCustomerShippingAddress()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var shippingResponse = (createCustomerShippingAddressResponse)CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId);
             var updateResponse = (updateCustomerShippingAddressResponse) UpdateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId, shippingResponse.customerAddressId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
@@ -116,7 +115,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestUpdateCustomerProfile()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var updateResponse = UpdateCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
                     
@@ -125,7 +124,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestUpdateCustomerPaymentProfile()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var paymentProfileResponse = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             var updateResponse = UpdateCustomerPaymentProfile.Run(apiLoginId, transactionKey,
                 response.customerProfileId, paymentProfileResponse.customerPaymentProfileId);
@@ -136,7 +135,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestGetCustomerShippingAddress()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var shippingResponse = (createCustomerShippingAddressResponse)CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId);
 
             var getResponse = GetCustomerShippingAddress.Run(apiLoginId, transactionKey, 
@@ -153,7 +152,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestGetCustomerProfile()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var profileResponse = GetCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
 
@@ -162,7 +161,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestGetHostedProfilePage()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var profileResponse = GetHostedProfilePage.Run(apiLoginId, transactionKey, response.customerProfileId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
 
@@ -171,7 +170,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestGetCustomerPaymentProfile()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var paymentProfileResponse = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             var getResponse = GetCustomerPaymentProfile.Run(apiLoginId, transactionKey,
                 response.customerProfileId, paymentProfileResponse.customerPaymentProfileId);
@@ -182,7 +181,7 @@ namespace SampleCodeTest
                     
         public ANetApiResponse TestDeleteCustomerShippingAddress()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var shippingResponse = (createCustomerShippingAddressResponse)CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId);
             var deleteResponse = DeleteCustomerShippingAddress.Run(apiLoginId, transactionKey,
                 response.customerProfileId, shippingResponse.customerAddressId);
@@ -193,13 +192,13 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestDeleteCustomerProfile()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             return DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
         }
 
         public ANetApiResponse TestDeleteCustomerPaymentProfile()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var paymentProfileResponse = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             var deleteResponse = DeleteCustomerPaymentProfile.Run(apiLoginId, transactionKey,
                 response.customerProfileId, paymentProfileResponse.customerPaymentProfileId);
@@ -210,7 +209,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestCreateCustomerShippingAddress()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var shippingResponse = (createCustomerShippingAddressResponse)CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
                     
@@ -219,13 +218,13 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestAuthorizeCreditCard()
         {
-            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, getAmount());
+            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, GetAmount());
             return response;
         }
 
         public ANetApiResponse TestCreateCustomerProfileFromTransaction()
         {
-            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, getAmount());
+            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, GetAmount());
             var profileResponse = (createCustomerProfileResponse)CreateCustomerProfileFromTransaction.Run(apiLoginId, transactionKey, response.transactionResponse.transId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, profileResponse.customerProfileId);
                     
@@ -234,31 +233,31 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestGetTransactionDetails()
         {
-            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, getAmount());
+            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, GetAmount());
             return GetTransactionDetails.Run(apiLoginId, transactionKey, response.transactionResponse.transId);
         }
 
         public ANetApiResponse TestChargeCreditCard()
         {
-            return ChargeCreditCard.Run(apiLoginId, transactionKey, getAmount());
+            return ChargeCreditCard.Run(apiLoginId, transactionKey, GetAmount());
         }
 
         public ANetApiResponse TestCapturePreviouslyAuthorizedgetAmount()
         {
-            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, getAmount());
-            return CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey, getAmount(), response.transactionResponse.transId);
+            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, GetAmount());
+            return CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey, GetAmount(), response.transactionResponse.transId);
         }
 
         public ANetApiResponse TestRefund()
         {
-            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, getAmount());
-            response = (createTransactionResponse)CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey, getAmount(), response.transactionResponse.transId);
-            return RefundTransaction.Run(apiLoginId, transactionKey, getAmount(), response.transactionResponse.transId);
+            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, GetAmount());
+            response = (createTransactionResponse)CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey, GetAmount(), response.transactionResponse.transId);
+            return RefundTransaction.Run(apiLoginId, transactionKey, GetAmount(), response.transactionResponse.transId);
         }
 
         public ANetApiResponse TestVoid()
         {
-            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, getAmount());
+            var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, GetAmount());
             return VoidTransaction.Run(apiLoginId, transactionKey, response.transactionResponse.transId);
         }
 
@@ -269,7 +268,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestChargeCustomerProfile()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var paymentProfileResponse = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             var chargeResponse = ChargeCustomerProfile.Run(apiLoginId, transactionKey,
                 response.customerProfileId, paymentProfileResponse.customerPaymentProfileId);
@@ -280,18 +279,18 @@ namespace SampleCodeTest
                     
         public ANetApiResponse TestPayPalVoid()
         {
-            var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, getAmount());
+            var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
             return PayPalVoid.Run(apiLoginId, transactionKey, response.transactionResponse.transId);
         }  
 
         public ANetApiResponse TestPayPalAuthorizeCapture()
         {
-            return PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, getAmount());
+            return PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
         }
 
         public ANetApiResponse TestPayPalAuthorizeCaptureContinue()
         {
-            var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, getAmount());
+            var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
             return PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, response.transactionResponse.transId, payerID);
         }  
                   
@@ -307,25 +306,25 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestPayPalGetDetails()
         {
-            var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, getAmount());
+            var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
             return PayPalGetDetails.Run(apiLoginId, transactionKey, response.transactionResponse.transId);
         }
 
         public ANetApiResponse TestPayPalPriorAuthorizationCapture()
         {
-            var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, getAmount());
+            var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
             return PayPalPriorAuthorizationCapture.Run(apiLoginId, transactionKey, response.transactionResponse.transId);
         }
 
         public ANetApiResponse TestCancelSubscription()
         {
-            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, getMonth());
+            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, GetMonth());
             return CancelSubscription.Run(apiLoginId, transactionKey, response.subscriptionId);
         }
                     
         public ANetApiResponse TestCreateSubscription()
         {
-            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, getMonth());
+            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, GetMonth());
             CancelSubscription.Run(apiLoginId, transactionKey, response.subscriptionId);
 
             return response;
@@ -333,7 +332,7 @@ namespace SampleCodeTest
                     
         public ANetApiResponse TestGetSubscriptionStatus()
         {
-            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, getMonth());
+            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, GetMonth());
             var subscriptionResponse = GetSubscriptionStatus.Run(apiLoginId, transactionKey, response.subscriptionId);
             
 
@@ -342,7 +341,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestGetSubscription()
         {
-            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, getMonth());
+            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, GetMonth());
             var getResponse = GetSubscription.Run(apiLoginId, transactionKey, response.subscriptionId);
             CancelSubscription.Run(apiLoginId, transactionKey, response.subscriptionId);
             return getResponse;
@@ -350,7 +349,7 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestUpdateSubscription()
         {
-            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, getMonth());
+            var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, GetMonth());
             var updateResponse = UpdateSubscription.Run(apiLoginId, transactionKey, response.subscriptionId);
             CancelSubscription.Run(apiLoginId, transactionKey, response.subscriptionId);
 
@@ -359,12 +358,12 @@ namespace SampleCodeTest
 
         public ANetApiResponse TestCreateCustomerProfile()
         {
-            return CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            return CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
         }
                     
         public ANetApiResponse TestCreateCustomerPaymentProfile()
         {
-            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, getEmail());
+            var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             return CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
         }
     }
