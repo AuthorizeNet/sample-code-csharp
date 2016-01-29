@@ -65,7 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\sample-code-csharp\SampleCode.csproj">
+    <ProjectReference Include="..\SampleCode.csproj">
       <Project>{ee8cb03c-aff3-4480-afd5-1c8b51540570}</Project>
       <Name>SampleCode</Name>
     </ProjectReference>
