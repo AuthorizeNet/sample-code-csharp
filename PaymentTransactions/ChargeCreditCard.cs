@@ -32,6 +32,15 @@ namespace net.authorize.sample
                 cardCode = "123"
             };
 
+            var billingAddress = new customerAddressType
+            {
+                firstName = "John",
+                lastName = "Doe",
+                address = "123 My St",
+                city = "OurTown",
+                zip = "98004"
+            };
+
             //standard api call to retrieve response
             var paymentType = new paymentType { Item = creditCard };
 
@@ -45,6 +54,7 @@ namespace net.authorize.sample
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
                 amount = 133.45m,
                 payment = paymentType,
+                billTo = billingAddress,
                 lineItems = lineItems
             };
             
