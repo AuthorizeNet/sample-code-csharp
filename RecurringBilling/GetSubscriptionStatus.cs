@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetSubscriptionStatus
+    public class GetSubscriptionStatus
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string subscriptionId)
         {
             Console.WriteLine("Get Subscription Status Sample");
 
@@ -24,7 +24,7 @@ namespace net.authorize.sample
             };
 
             //please update the subscriptionId according to your sandbox credentials
-            var request = new ARBGetSubscriptionStatusRequest { subscriptionId = "100748" };
+            var request = new ARBGetSubscriptionStatusRequest { subscriptionId = subscriptionId };
 
             var controller = new ARBGetSubscriptionStatusController(request);                          // instantiate the contoller that will call the service
             controller.Execute();
@@ -44,6 +44,7 @@ namespace net.authorize.sample
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }

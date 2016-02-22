@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class UpdateSubscription
+    public class UpdateSubscription
     {
-        public static void Run(string ApiLoginID, string ApiTransactionKey)
+        public static ANetApiResponse Run(string ApiLoginID, string ApiTransactionKey, string subscriptionId)
         {
             Console.WriteLine("Update Subscription Sample");
 
@@ -54,7 +54,7 @@ namespace net.authorize.sample
             };
 
             //Please change the subscriptionId according to your request
-            var request = new ARBUpdateSubscriptionRequest { subscription = subscriptionType, subscriptionId = "100748" };
+            var request = new ARBUpdateSubscriptionRequest { subscription = subscriptionType, subscriptionId = subscriptionId };
             var controller = new ARBUpdateSubscriptionController(request);         
             controller.Execute();
 
@@ -68,11 +68,12 @@ namespace net.authorize.sample
                     Console.WriteLine("Success, RefID Code : " + response.refId);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }

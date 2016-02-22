@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class PayPalAuthorizeOnlyContinue
+    public class PayPalAuthorizeOnlyContinue
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string TransactionID, string PayerID)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID, string PayerID)
         {
             Console.WriteLine("PayPal Authorize Only-Continue Transaction");
 
@@ -52,14 +52,14 @@ namespace net.authorize.sample
             var response = controller.GetApiResponse();
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.transactionResponse != null)
                 {
                     Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
                 if (response.transactionResponse != null)
@@ -68,6 +68,7 @@ namespace net.authorize.sample
                 }
             }
 
+            return response;
         }
     }
 }

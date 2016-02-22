@@ -9,9 +9,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetTransactionList
+    public class GetTransactionList
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Get transaction list sample");
 
@@ -25,7 +25,7 @@ namespace net.authorize.sample
             };
 
             // unique batch id
-            string batchId = "4551107";
+            string batchId = "12345";
 
             var request = new getTransactionListRequest();
             request.batchId = batchId;
@@ -37,10 +37,11 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                if (response.transactions == null) return;
+                if (response.transactions == null)
+                    return response;
+
                 foreach (var transaction in response.transactions)
                 {
                     Console.WriteLine("Transaction Id: {0}", transaction.transId);
@@ -49,11 +50,13 @@ namespace net.authorize.sample
                     Console.WriteLine("Settle amount: {0}", transaction.settleAmount);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

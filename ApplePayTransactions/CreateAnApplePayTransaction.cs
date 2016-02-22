@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample.ApplePayTransactions
 {
-    class CreateAnApplePayTransaction
+    public class CreateAnApplePayTransaction
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Create Apple Pay Transaction Sample");
 
@@ -48,14 +48,14 @@ namespace net.authorize.sample.ApplePayTransactions
 
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.transactionResponse != null)
                 {
                     Console.WriteLine("Successfully made a purchase, authorization code : " + response.transactionResponse.authCode);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
                 if (response.transactionResponse != null)
@@ -63,6 +63,8 @@ namespace net.authorize.sample.ApplePayTransactions
                     Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
                 }
             }
+
+            return response;
 
         }
     }

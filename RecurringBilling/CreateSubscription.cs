@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class CreateSubscription
+    public class CreateSubscription
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, short intervalLength)
         {
             Console.WriteLine("Create Subscription Sample");
 
@@ -25,8 +25,8 @@ namespace net.authorize.sample
 
             paymentScheduleTypeInterval interval = new paymentScheduleTypeInterval();
 
-            interval.length = 1;                        // months can be indicated between 1 and 12
-            interval.unit   = ARBSubscriptionUnitEnum.months;
+            interval.length = intervalLength;                        // months can be indicated between 1 and 12
+            interval.unit   = ARBSubscriptionUnitEnum.days;
 
             paymentScheduleType schedule = new paymentScheduleType
             {
@@ -77,11 +77,12 @@ namespace net.authorize.sample
                     Console.WriteLine("Success, Subscription ID : " + response.subscriptionId.ToString());
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }

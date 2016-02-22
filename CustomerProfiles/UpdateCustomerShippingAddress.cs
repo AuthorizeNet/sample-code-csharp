@@ -9,9 +9,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class UpdateCustomerShippingAddress
+    public class UpdateCustomerShippingAddress
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileID, string customerAddressId)
         {
             Console.WriteLine("Update customer shipping address sample");
 
@@ -42,11 +42,11 @@ namespace net.authorize.sample
                 zip = "98004",
                 country = "USA",
                 phoneNumber = "000-000-000",
-                customerAddressId = "34750930"
+                customerAddressId = customerAddressId
             };
 
             var request = new updateCustomerShippingAddressRequest();
-            request.customerProfileId = "36605093";
+            request.customerProfileId = customerProfileID;
             request.address = address;
 
 
@@ -57,15 +57,17 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine(response.messages.message[0].text);
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

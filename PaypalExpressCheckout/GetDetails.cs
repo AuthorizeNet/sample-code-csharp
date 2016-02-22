@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class PayPalGetDetails
+    public class PayPalGetDetails
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
         {
             Console.WriteLine("PayPal Get Details Transaction");
 
@@ -51,16 +51,18 @@ namespace net.authorize.sample
             var response = controller.GetApiResponse();
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.transactionResponse != null)
                 {
                     var shippingResponse = response.transactionResponse.shipTo;
                     Console.WriteLine("Shipping address : " + shippingResponse.address + ", " + shippingResponse.city + ", " + shippingResponse.state + ", " + shippingResponse.country);
-                    Console.WriteLine("Payer ID : " + response.transactionResponse.secureAcceptance.PayerID);
+
+                    if (response.transactionResponse.secureAcceptance != null)
+                        Console.WriteLine("Payer ID : " + response.transactionResponse.secureAcceptance.PayerID);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
                 if (response.transactionResponse != null)
@@ -69,6 +71,7 @@ namespace net.authorize.sample
                 }
             }
 
+            return response;
         }
     }
 }

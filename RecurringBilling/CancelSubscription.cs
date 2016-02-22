@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class CancelSubscription
+    public class CancelSubscription
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string subscriptionId)
         {
             Console.WriteLine("Cancel Subscription Sample");
 
@@ -23,7 +23,7 @@ namespace net.authorize.sample
             };
 
             //Please change the subscriptionId according to your request
-            var request = new ARBCancelSubscriptionRequest { subscriptionId = "100748" };
+            var request = new ARBCancelSubscriptionRequest { subscriptionId = subscriptionId };
             var controller = new ARBCancelSubscriptionController(request);                          // instantiate the contoller that will call the service
             controller.Execute();
 
@@ -37,11 +37,12 @@ namespace net.authorize.sample
                     Console.WriteLine("Success, Subscription Cancelled With RefID : " + response.refId);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }

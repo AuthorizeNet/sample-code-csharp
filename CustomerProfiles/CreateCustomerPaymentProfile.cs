@@ -6,9 +6,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class CreateCustomerPaymentProfile
+    public class CreateCustomerPaymentProfile
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId)
         {
             Console.WriteLine("CreateCustomerPaymentProfile Sample");
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
@@ -36,7 +36,7 @@ namespace net.authorize.sample
 
             var request = new createCustomerPaymentProfileRequest
             {
-                customerProfileId = "35772885",
+                customerProfileId = customerProfileId,
                 paymentProfile = echeckPaymentProfile,
                 validationMode = validationModeEnum.none
             };
@@ -62,6 +62,8 @@ namespace net.authorize.sample
                     Console.WriteLine("Duplicate ID: " + response.customerPaymentProfileId);
                 }
             }
+
+            return response;
 
         }
     }

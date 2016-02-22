@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class AuthorizeCreditCard
+    public class AuthorizeCreditCard
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal amount)
         {
             Console.WriteLine("Authorize Credit Card Sample");
 
@@ -36,7 +36,7 @@ namespace net.authorize.sample
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authOnlyTransaction.ToString(),    // authorize only
-                amount = 35.45m,
+                amount = amount,
                 payment = paymentType
             };
 
@@ -50,14 +50,14 @@ namespace net.authorize.sample
             var response = controller.GetApiResponse();
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.transactionResponse != null)
                 {
                     Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
                 if (response.transactionResponse != null)
@@ -66,6 +66,7 @@ namespace net.authorize.sample
                 }
             }
 
+            return response;
         }
     }
 }

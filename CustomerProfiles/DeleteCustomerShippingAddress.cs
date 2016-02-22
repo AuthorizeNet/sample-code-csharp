@@ -7,9 +7,10 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class DeleteCustomerShippingAddress
+    public class DeleteCustomerShippingAddress
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId,
+            string customerAddressId)
         {
             Console.WriteLine("DeleteCustomerShippingAddress Sample");
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
@@ -23,8 +24,8 @@ namespace net.authorize.sample
             //please update the subscriptionId according to your sandbox credentials
             var request = new deleteCustomerShippingAddressRequest
             {
-                customerProfileId = "10000",
-                customerAddressId = "20000"
+                customerProfileId = customerProfileId,
+                customerAddressId = customerAddressId
             };
 
             //Prepare Request
@@ -40,11 +41,12 @@ namespace net.authorize.sample
                     Console.WriteLine("Success, ResultCode : " + response.messages.resultCode.ToString());
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }

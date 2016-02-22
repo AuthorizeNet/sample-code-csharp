@@ -10,9 +10,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetCustomerPaymentProfileList
+    public class GetCustomerPaymentProfileList
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Get Customer Payment Profile List sample");
 
@@ -65,6 +65,8 @@ namespace net.authorize.sample
                     Console.WriteLine("Null response received : " + controller.GetErrorResponse().messages.message[0].text);
                 }
             }
+
+            return response;
         }
     }
 }
