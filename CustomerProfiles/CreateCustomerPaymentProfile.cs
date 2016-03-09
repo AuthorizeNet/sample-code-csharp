@@ -31,8 +31,14 @@ namespace net.authorize.sample
 
             paymentType echeck = new paymentType {Item = bankAccount};
 
+            var billTo = new customerAddressType
+            {
+                firstName = "John",
+                lastName = "Snow"
+            };
             customerPaymentProfileType echeckPaymentProfile = new customerPaymentProfileType();
             echeckPaymentProfile.payment = echeck;
+            echeckPaymentProfile.billTo = billTo;
 
             var request = new createCustomerPaymentProfileRequest
             {

@@ -57,9 +57,9 @@ namespace SampleCodeTest
                 if (!shouldApiRun.Equals("1"))
                     continue;
 
+                ANetApiResponse response = null;
                 try
-                {
-                    ANetApiResponse response = null;
+                {    
                     if (isDependent.Equals("0"))
                     {
                         response = InvokeRunMethod(apiName); 
@@ -69,6 +69,7 @@ namespace SampleCodeTest
                         response = (ANetApiResponse)typeof(TestRunner).GetMethod("Test" + apiName).Invoke(tr, new Object[] { });
                     }
 
+                    //Console.WriteLine(apiName);
                     Assert.IsNotNull(response);
                     Assert.AreEqual(response.messages.resultCode, messageTypeEnum.Ok);
                 }
@@ -76,6 +77,7 @@ namespace SampleCodeTest
                 {
                     Console.WriteLine(apiName);
                     Console.WriteLine(e.ToString());
+                    Assert.IsNotNull(response);
                 }
             }
         }
@@ -323,7 +325,22 @@ namespace SampleCodeTest
             var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, GetMonth());
             return CancelSubscription.Run(apiLoginId, transactionKey, response.subscriptionId);
         }
-                    
+
+        public ANetApiResponse TestCreateSubscriptionFromCustomerProfile()
+        {
+            var profileResponse = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
+            var paymentProfileResponse = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, profileResponse.customerProfileId);
+            var shippingResponse = (createCustomerShippingAddressResponse)CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, profileResponse.customerProfileId);
+
+            var response = (ARBCreateSubscriptionResponse)CreateSubscriptionFromCustomerProfile.Run(apiLoginId, transactionKey, GetMonth(),
+                profileResponse.customerProfileId, paymentProfileResponse.customerPaymentProfileId,
+                shippingResponse.customerAddressId);
+
+            CancelSubscription.Run(apiLoginId, transactionKey, response.subscriptionId);
+            DeleteCustomerProfile.Run(apiLoginId, transactionKey, profileResponse.customerProfileId);
+            return response;
+        }
+    
         public ANetApiResponse TestCreateSubscription()
         {
             var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, GetMonth());

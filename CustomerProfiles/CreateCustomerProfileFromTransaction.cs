@@ -20,7 +20,22 @@ namespace net.authorize.sample
                 Item            = ApiTransactionKey,
             };
 
-            var request = new createCustomerProfileFromTransactionRequest { transId = transactionId };
+            var customerProfile = new customerProfileBaseType
+            {
+                merchantCustomerId = "123212",
+                email = "hello@castleblack.com",
+                description = "This is a sample customer profile"
+            };
+
+            var request = new createCustomerProfileFromTransactionRequest 
+            { 
+                transId = transactionId,
+                // You can either specify the customer information in form of customerProfileBaseType object
+                customer = customerProfile
+                //  OR   
+                // You can just provide the customer Profile ID
+                // customerProfileId = "123343"                
+            };
 
             var controller = new createCustomerProfileFromTransactionController(request); 
             controller.Execute();
