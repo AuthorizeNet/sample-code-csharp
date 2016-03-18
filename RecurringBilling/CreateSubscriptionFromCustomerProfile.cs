@@ -48,12 +48,6 @@ namespace net.authorize.sample
             paymentType cc = new paymentType { Item = creditCard };
             #endregion
 
-            nameAndAddressType addressInfo = new nameAndAddressType()
-            {
-                firstName = "John",
-                lastName = "Doe"
-            };
-
             customerProfileIdType customerProfile = new customerProfileIdType()
             {
                 customerProfileId = customerProfileId,
