@@ -50,6 +50,13 @@ namespace net.authorize.sample
                 {
                     Console.WriteLine("Customer Payment Profile Last 4: " + (response.paymentProfile.payment.Item as creditCardMaskedType).cardNumber);
                     Console.WriteLine("Customer Payment Profile Expiration Date: " + (response.paymentProfile.payment.Item as creditCardMaskedType).expirationDate);
+
+                    if (response.paymentProfile.subscriptionIds != null && response.paymentProfile.subscriptionIds.Length > 0)
+                    {
+                        Console.WriteLine("List of subscriptions : ");
+                        for (int i = 0; i < response.paymentProfile.subscriptionIds.Length; i++)
+                            Console.WriteLine(response.paymentProfile.subscriptionIds[i]);
+                    }                
                 }
             }
             else if(response != null)

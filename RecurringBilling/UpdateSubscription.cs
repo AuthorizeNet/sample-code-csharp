@@ -45,12 +45,21 @@ namespace net.authorize.sample
                 lastName = "Brown"
             };
 
+            customerProfileIdType customerProfile = new customerProfileIdType()
+            {
+                customerProfileId = "1232312",
+                customerPaymentProfileId = "2132132",
+                customerAddressId = "1233432"
+            };
+
             ARBSubscriptionType subscriptionType = new ARBSubscriptionType()
             {
                 amount = 35.55m,
                 paymentSchedule = schedule,
                 billTo = addressInfo,
                 payment = cc
+                //You can pass a profile to update subscription
+                //,profile = customerProfile
             };
 
             //Please change the subscriptionId according to your request
