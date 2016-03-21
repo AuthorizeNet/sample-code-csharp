@@ -40,6 +40,13 @@ namespace net.authorize.sample
                 Console.WriteLine(response.messages.message[0].text);
                 Console.WriteLine("Customer Profile Id: " + response.profile.customerProfileId);
 
+                if (response.subscriptionIds != null && response.subscriptionIds.Length > 0)
+                {
+                    Console.WriteLine("List of subscriptions : ");
+                    for (int i = 0; i < response.subscriptionIds.Length; i++)
+                        Console.WriteLine(response.subscriptionIds[i]);
+                }
+
             }
             else if(response != null)
             {
