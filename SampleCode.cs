@@ -76,6 +76,7 @@ namespace net.authorize.sample
             Console.WriteLine("    ChargeCustomerProfile");
             Console.WriteLine("    ChargeTokenizedCard");
             Console.WriteLine("    ChargeEncryptedTrackData");
+            Console.WriteLine("    ChargeTrackData");
             Console.WriteLine("    CreateAnApplePayTransaction");
             Console.WriteLine("    DecryptVisaCheckoutData");
             Console.WriteLine("    CreateVisaCheckoutTransaction");
@@ -210,6 +211,9 @@ namespace net.authorize.sample
                     break;
                 case "ChargeEncryptedTrackData":
                     ChargeEncryptedTrackData.Run(apiLoginId, transactionKey, amount);
+                    break;
+                case "ChargeTrackData":
+                    ChargeTrackData.Run(apiLoginId, transactionKey, amount);
                     break;
                 case "CapturePreviouslyAuthorizedAmount":
                     CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey, amount, transactionId);
