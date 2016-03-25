@@ -10,11 +10,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 namespace net.authorize.sample
 {
     /// <summary>
-    /// This sample demonstrates making a credit card charge using encrypted track data, e.g. data from approved Authorize.Net
-    /// card readers.  Readers are available at https://partner.posportal.com/authorizenet/auth/ 
-    /// Remember to order sandbox readers for testing and production readers for merchant business use
+    /// This sample demonstrates making a credit card charge using mag stripe track data. 
     /// 
-    /// NOTE:  You must pass the retails fields of DeviceType and MarketType, e.g. 
+    /// NOTE:  You must pass the retail fields of DeviceType and MarketType, e.g. 
     /// 
     ///         retail = new transRetailInfoType { deviceType = "1", marketType = "2" }
     ///         
