@@ -43,6 +43,7 @@ namespace SampleCodeTest
             string fileName = Constants.CONFIG_FILE;
             StreamReader reader = File.OpenText(fileName);
             TestRunner tr = new TestRunner();
+            var numRetries = 3;
 
             string line;
             while ((line = reader.ReadLine()) != null)
@@ -58,27 +59,30 @@ namespace SampleCodeTest
                     continue;
 
                 ANetApiResponse response = null;
-                try
-                {    
-                    if (isDependent.Equals("0"))
-                    {
-                        response = InvokeRunMethod(apiName); 
-                    }
-                    else
-                    {
-                        response = (ANetApiResponse)typeof(TestRunner).GetMethod("Test" + apiName).Invoke(tr, new Object[] { });
-                    }
-
-                    //Console.WriteLine(apiName);
-                    Assert.IsNotNull(response);
-                    Assert.AreEqual(response.messages.resultCode, messageTypeEnum.Ok);
-                }
-                catch (Exception e)
+                for (int i = 0; i < numRetries; ++i)
                 {
-                    Console.WriteLine(apiName);
-                    Console.WriteLine(e.ToString());
-                    Assert.IsNotNull(response);
+                    try
+                    {
+                        if (isDependent.Equals("0"))
+                        {
+                            response = InvokeRunMethod(apiName);
+                        }
+                        else
+                        {
+                            response = (ANetApiResponse)typeof(TestRunner).GetMethod("Test" + apiName).Invoke(tr, new Object[] { });
+                        }
+
+                        if ((response != null) && (response.messages.resultCode == messageTypeEnum.Ok))
+                            break;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(apiName);
+                        Console.WriteLine(e.ToString());
+                    }
                 }
+                Assert.IsNotNull(response);
+                Assert.AreEqual(response.messages.resultCode, messageTypeEnum.Ok);
             }
         }
 
