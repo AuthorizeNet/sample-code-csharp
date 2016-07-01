@@ -237,7 +237,7 @@ namespace net.authorize.sample
                     CreditBankAccount.Run(apiLoginId, transactionKey, transactionId);
                     break;
                 case "ChargeCustomerProfile":
-                    ChargeCustomerProfile.Run(apiLoginId, transactionKey, customerProfileId, customerPaymentProfileId);
+                    ChargeCustomerProfile.Run(apiLoginId, transactionKey, customerProfileId, customerPaymentProfileId, amount);
                     break;
                 case "ChargeTokenizedCard":
                     ChargeTokenizedCreditCard.Run(apiLoginId, transactionKey);

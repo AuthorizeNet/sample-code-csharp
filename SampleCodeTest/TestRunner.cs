@@ -291,7 +291,7 @@ namespace SampleCodeTest
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var paymentProfileResponse = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             var chargeResponse = ChargeCustomerProfile.Run(apiLoginId, transactionKey,
-                response.customerProfileId, paymentProfileResponse.customerPaymentProfileId);
+                response.customerProfileId, paymentProfileResponse.customerPaymentProfileId, GetAmount());
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
 
             return chargeResponse;
