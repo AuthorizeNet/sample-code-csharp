@@ -219,7 +219,7 @@ namespace net.authorize.sample
                     CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey, amount, transactionId);
                     break;
                 case "CaptureFundsAuthorizedThroughAnotherChannel":
-                    CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey);
+                    CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey, amount);
                     break;
                 case "AuthorizeCreditCard":
                     AuthorizeCreditCard.Run(apiLoginId, transactionKey, amount);
