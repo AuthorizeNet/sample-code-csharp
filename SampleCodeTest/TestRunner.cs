@@ -118,6 +118,11 @@ namespace SampleCodeTest
             return CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey, GetAmount());                 
         }
 
+        public ANetApiResponse TestDebitBankAccount()
+        {
+            return DebitBankAccount.Run(apiLoginId, transactionKey, GetAmount());
+        }
+        
         public ANetApiResponse TestUpdateCustomerShippingAddress()
         {
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());

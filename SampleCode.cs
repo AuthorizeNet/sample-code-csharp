@@ -231,7 +231,7 @@ namespace net.authorize.sample
                     VoidTransaction.Run(apiLoginId, transactionKey, transactionId);
                     break;
                 case "DebitBankAccount":
-                    DebitBankAccount.Run(apiLoginId, transactionKey);
+                    DebitBankAccount.Run(apiLoginId, transactionKey, amount);
                     break;
                 case "CreditBankAccount":
                     CreditBankAccount.Run(apiLoginId, transactionKey, transactionId);
