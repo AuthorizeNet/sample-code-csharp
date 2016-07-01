@@ -296,7 +296,12 @@ namespace SampleCodeTest
 
             return chargeResponse;
         }
-                    
+
+        public ANetApiResponse TestPayPalAuthorizeOnly()
+        {
+            return PayPalAuthorizeOnly.Run(apiLoginId, transactionKey, GetAmount());
+        }  
+            
         public ANetApiResponse TestPayPalVoid()
         {
             var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());

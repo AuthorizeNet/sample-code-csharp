@@ -252,7 +252,7 @@ namespace net.authorize.sample
                     PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, transactionId, payerId);
                     break;
                 case "PayPalAuthorizeOnly":
-                    PayPalAuthorizeOnly.Run(apiLoginId, transactionKey);
+                    PayPalAuthorizeOnly.Run(apiLoginId, transactionKey, amount);
                     break;
                 case "PayPalAuthorizeOnlyContinue":
                     PayPalAuthorizeOnlyContinue.Run(apiLoginId, transactionKey, transactionId, payerId);

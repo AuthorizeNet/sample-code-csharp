@@ -10,7 +10,7 @@ CaptureFundsAuthorizedThroughAnotherChannel	1	1
 AuthorizeCreditCard	1	1
 DebitBankAccount	1	1
 ChargeTokenizedCreditCard	0	0
-PayPalAuthorizeOnly	0	1
+PayPalAuthorizeOnly	1	1
 GetListOfSubscriptions	0	1
 GetUnsettledTransactionList	0	1
 GetBatchStatistics	0	1
