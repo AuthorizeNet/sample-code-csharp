@@ -9,6 +9,7 @@ using System.Reflection;
 using AuthorizeNet;
 using net.authorize.sample.ApplePayTransactions;
 using net.authorize.sample.PaymentTransactions;
+using System.Threading;
 
 namespace SampleCodeTest
 {
@@ -54,10 +55,12 @@ namespace SampleCodeTest
                 string isDependent = items[1];
                 string shouldApiRun = items[2];
 
-                Console.WriteLine(apiName);
                 if (!shouldApiRun.Equals("1"))
                     continue;
 
+                Console.WriteLine(new String('-', 20));
+                Console.WriteLine("Running test case for :: " + apiName);
+                Console.WriteLine(new String('-', 20));
                 ANetApiResponse response = null;
                 for (int i = 0; i < numRetries; ++i)
                 {
@@ -110,7 +113,16 @@ namespace SampleCodeTest
             return validateResponse;
         }
 
+        public ANetApiResponse TestCaptureFundsAuthorizedThroughAnotherChannel()
+        {
+            return CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey, GetAmount());                 
+        }
 
+        public ANetApiResponse TestDebitBankAccount()
+        {
+            return DebitBankAccount.Run(apiLoginId, transactionKey, GetAmount());
+        }
+        
         public ANetApiResponse TestUpdateCustomerShippingAddress()
         {
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
@@ -279,12 +291,17 @@ namespace SampleCodeTest
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var paymentProfileResponse = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             var chargeResponse = ChargeCustomerProfile.Run(apiLoginId, transactionKey,
-                response.customerProfileId, paymentProfileResponse.customerPaymentProfileId);
+                response.customerProfileId, paymentProfileResponse.customerPaymentProfileId, GetAmount());
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
 
             return chargeResponse;
         }
-                    
+
+        public ANetApiResponse TestPayPalAuthorizeOnly()
+        {
+            return PayPalAuthorizeOnly.Run(apiLoginId, transactionKey, GetAmount());
+        }  
+            
         public ANetApiResponse TestPayPalVoid()
         {
             var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
@@ -335,6 +352,8 @@ namespace SampleCodeTest
             var profileResponse = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var paymentProfileResponse = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, profileResponse.customerProfileId);
             var shippingResponse = (createCustomerShippingAddressResponse)CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, profileResponse.customerProfileId);
+
+            Thread.Sleep(10000);
 
             var response = (ARBCreateSubscriptionResponse)CreateSubscriptionFromCustomerProfile.Run(apiLoginId, transactionKey, GetMonth(),
                 profileResponse.customerProfileId, paymentProfileResponse.customerPaymentProfileId,

@@ -11,7 +11,7 @@ namespace net.authorize.sample
 {
     public class CaptureFundsAuthorizedThroughAnotherChannel
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal Amount)
         {
             Console.WriteLine("Running CaptureFundsAuthorizedThroughAnotherChannel Sample ...");
 
@@ -40,7 +40,7 @@ namespace net.authorize.sample
                 // capture the funds that authorized through another channel
                 transactionType = transactionTypeEnum.captureOnlyTransaction.ToString(),
                 // Change the amount that needs to be captured as required
-                amount = 133.45m,
+                amount = Amount,
                 payment = paymentType,
                 // Change the authCode that came from successfully authorized transaction through any channel.
                 authCode = "ROHNFQ"

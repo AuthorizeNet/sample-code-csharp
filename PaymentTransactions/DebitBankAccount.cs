@@ -10,7 +10,7 @@ namespace net.authorize.sample
 {
     public class DebitBankAccount
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal Amount)
         {
             Console.WriteLine("Debit Bank Account Transaction");
 
@@ -39,7 +39,7 @@ namespace net.authorize.sample
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // refund type
                 payment = paymentType,
-                amount = 126.44m
+                amount = Amount
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };

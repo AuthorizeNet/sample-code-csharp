@@ -11,7 +11,7 @@ namespace net.authorize.sample
     public class ChargeCustomerProfile
     {
         public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId,
-            string customerPaymentProfileId)
+            string customerPaymentProfileId, decimal Amount)
         {
             Console.WriteLine("Charge Customer Profile");
 
@@ -33,7 +33,7 @@ namespace net.authorize.sample
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // refund type
-                amount = 2.00m,
+                amount = Amount,
                 profile = profileToCharge
             };
 

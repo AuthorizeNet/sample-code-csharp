@@ -219,7 +219,7 @@ namespace net.authorize.sample
                     CapturePreviouslyAuthorizedAmount.Run(apiLoginId, transactionKey, amount, transactionId);
                     break;
                 case "CaptureFundsAuthorizedThroughAnotherChannel":
-                    CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey);
+                    CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey, amount);
                     break;
                 case "AuthorizeCreditCard":
                     AuthorizeCreditCard.Run(apiLoginId, transactionKey, amount);
@@ -231,13 +231,13 @@ namespace net.authorize.sample
                     VoidTransaction.Run(apiLoginId, transactionKey, transactionId);
                     break;
                 case "DebitBankAccount":
-                    DebitBankAccount.Run(apiLoginId, transactionKey);
+                    DebitBankAccount.Run(apiLoginId, transactionKey, amount);
                     break;
                 case "CreditBankAccount":
                     CreditBankAccount.Run(apiLoginId, transactionKey, transactionId);
                     break;
                 case "ChargeCustomerProfile":
-                    ChargeCustomerProfile.Run(apiLoginId, transactionKey, customerProfileId, customerPaymentProfileId);
+                    ChargeCustomerProfile.Run(apiLoginId, transactionKey, customerProfileId, customerPaymentProfileId, amount);
                     break;
                 case "ChargeTokenizedCard":
                     ChargeTokenizedCreditCard.Run(apiLoginId, transactionKey);
@@ -252,7 +252,7 @@ namespace net.authorize.sample
                     PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, transactionId, payerId);
                     break;
                 case "PayPalAuthorizeOnly":
-                    PayPalAuthorizeOnly.Run(apiLoginId, transactionKey);
+                    PayPalAuthorizeOnly.Run(apiLoginId, transactionKey, amount);
                     break;
                 case "PayPalAuthorizeOnlyContinue":
                     PayPalAuthorizeOnlyContinue.Run(apiLoginId, transactionKey, transactionId, payerId);

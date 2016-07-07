@@ -10,7 +10,7 @@ namespace net.authorize.sample
 {
     public class PayPalAuthorizeOnly
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal Amount)
         {
             Console.WriteLine("PayPal Authorize Only Transaction");
 
@@ -37,7 +37,7 @@ namespace net.authorize.sample
             {
                 transactionType = transactionTypeEnum.authOnlyTransaction.ToString(),    // capture the card only
                 payment = paymentType,
-                amount = 19.45m
+                amount = Amount
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
