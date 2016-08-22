@@ -6,11 +6,11 @@ using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
 
-namespace net.authorize.sample.ApplePayTransactions
+namespace net.authorize.sample.MobileInAppTransactions
 {
     public class CreateAnApplePayTransaction
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, Decimal Amount)
         {
             Console.WriteLine("Create Apple Pay Transaction Sample");
 
@@ -33,7 +33,7 @@ namespace net.authorize.sample.ApplePayTransactions
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString() ,    // authorize and capture transaction
-                amount = 39.86m,
+                amount = Amount,
                 payment = paymentType
             };
 
@@ -50,9 +50,13 @@ namespace net.authorize.sample.ApplePayTransactions
             //validate
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                if (response.transactionResponse != null)
+                if (response.transactionResponse.responseCode == "1")
                 {
-                    Console.WriteLine("Successfully made a purchase, authorization code : " + response.transactionResponse.authCode);
+                    Console.WriteLine("Successfully created an Apple pay transaction with Transaction ID : " + response.transactionResponse.authCode);
+                }
+                else
+                {
+                    Console.WriteLine("The Transaction failed with response code :" + response.transactionResponse.responseCode); 
                 }
             }
             else if(response != null)
@@ -63,9 +67,12 @@ namespace net.authorize.sample.ApplePayTransactions
                     Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
                 }
             }
+            else
+            {
+                Console.WriteLine("The response was null");
+            }
 
             return response;
-
         }
     }
 }

@@ -7,9 +7,9 @@ using net.authorize.sample;
 using System.IO;
 using System.Reflection;
 using AuthorizeNet;
-using net.authorize.sample.ApplePayTransactions;
 using net.authorize.sample.PaymentTransactions;
 using System.Threading;
+using net.authorize.sample.MobileInAppTransactions;
 
 namespace SampleCodeTest
 {
@@ -407,6 +407,22 @@ namespace SampleCodeTest
         {
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             return CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
+        }
+
+        public ANetApiResponse TestCreateAnApplePayTransaction()
+        {
+            var response = (createTransactionResponse)CreateAnApplePayTransaction.Run(apiLoginId, transactionKey, GetAmount());
+            return response;
+        }
+        public ANetApiResponse TestCreateAnAndroidPayTransaction()
+        {
+            var response = (createTransactionResponse)CreateAnAndroidPayTransaction.Run(apiLoginId, transactionKey, GetAmount());
+            return response;
+        }
+        public ANetApiResponse TestCreateAnAcceptTransaction()
+        {
+            var response = (createTransactionResponse)CreateAnAcceptTransaction.Run(apiLoginId, transactionKey, GetAmount());
+            return response;
         }
     }
 }
