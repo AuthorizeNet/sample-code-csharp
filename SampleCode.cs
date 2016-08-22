@@ -1,4 +1,4 @@
-using net.authorize.sample.ApplePayTransactions;
+using net.authorize.sample.MobileInAppTransactions;
 using net.authorize.sample.PaymentTransactions;
 using System;
 using System.Collections.Generic;
@@ -78,6 +78,8 @@ namespace net.authorize.sample
             Console.WriteLine("    ChargeEncryptedTrackData");
             Console.WriteLine("    ChargeTrackData");
             Console.WriteLine("    CreateAnApplePayTransaction");
+            Console.WriteLine("    CreateAnAndroidPayTransaction");
+            Console.WriteLine("    CreateAnAcceptTransaction");
             Console.WriteLine("    DecryptVisaCheckoutData");
             Console.WriteLine("    CreateVisaCheckoutTransaction");
             Console.WriteLine("    PayPalVoid");
@@ -198,7 +200,13 @@ namespace net.authorize.sample
                     GetTransactionList.Run(apiLoginId, transactionKey);
                     break;
                 case "CreateAnApplePayTransaction":
-                    CreateAnApplePayTransaction.Run(apiLoginId, transactionKey);
+                    CreateAnApplePayTransaction.Run(apiLoginId, transactionKey, 12.23m);
+                    break;
+                case "CreateAnAndroidPayTransaction":
+                    CreateAnAndroidPayTransaction.Run(apiLoginId, transactionKey, 12.23m);
+                    break;
+                case "CreateAnAcceptTransaction":
+                    CreateAnAcceptTransaction.Run(apiLoginId, transactionKey, 12.23m);
                     break;
                 case "DecryptVisaCheckoutData":
                     DecryptVisaCheckoutData.Run(apiLoginId, transactionKey);
