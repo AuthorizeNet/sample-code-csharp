@@ -9,7 +9,7 @@ using System.Reflection;
 using AuthorizeNet;
 using net.authorize.sample.PaymentTransactions;
 using System.Threading;
-using net.authorize.sample.MobileInAppTransactions;
+using net.authorize.sample.MobileInappTransactions;
 
 namespace SampleCodeTest
 {
