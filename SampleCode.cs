@@ -1,4 +1,4 @@
-using net.authorize.sample.MobileInAppTransactions;
+using net.authorize.sample.MobileInappTransactions;
 using net.authorize.sample.PaymentTransactions;
 using System;
 using System.Collections.Generic;
