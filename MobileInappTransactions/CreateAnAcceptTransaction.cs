@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace net.authorize.sample.MobileInAppTransactions
+namespace net.authorize.sample.MobileInappTransactions
 {
     public class CreateAnAcceptTransaction
     {
