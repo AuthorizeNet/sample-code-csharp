@@ -51,7 +51,7 @@ namespace net.authorize.sample.MobileInappTransactions
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    if (response.transactionResponse.responseCode == "1")
+                    if(response.transactionResponse.messages != null)
                     {
                         Console.WriteLine("Successfully created an Android pay transaction with Transaction ID: " + response.transactionResponse.transId);
                         Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);

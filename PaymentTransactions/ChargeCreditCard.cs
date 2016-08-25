@@ -73,7 +73,7 @@ namespace net.authorize.sample
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    if (response.transactionResponse.responseCode == "1")
+                    if(response.transactionResponse.messages != null)
                     {
                         Console.WriteLine("Successfully created transaction with Transaction ID: " + response.transactionResponse.transId);
                         Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);

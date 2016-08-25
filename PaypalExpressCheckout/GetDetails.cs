@@ -55,7 +55,7 @@ namespace net.authorize.sample
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    if (response.transactionResponse.responseCode == "1")
+                    if(response.transactionResponse.messages != null)
                     {
                         var shippingResponse = response.transactionResponse.shipTo;
                         Console.WriteLine("Shipping address : " + shippingResponse.address + ", " + shippingResponse.city + ", " + shippingResponse.state + ", " + shippingResponse.country);

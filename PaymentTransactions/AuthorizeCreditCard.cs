@@ -52,7 +52,8 @@ namespace net.authorize.sample
             //validate
             if(response != null){
 			    if(response.messages.resultCode == messageTypeEnum.Ok){
-				    if(response.transactionResponse.responseCode == "1"){
+				    if(response.transactionResponse.messages != null)
+                    {
 					    Console.WriteLine("Successfully created transaction with Transaction ID: " + response.transactionResponse.transId);
 					    Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
 						Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
@@ -72,7 +73,8 @@ namespace net.authorize.sample
                         Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
                         Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
 				    }
-				    else {
+				    else 
+                    {
 					    Console.WriteLine("Error Code: " + response.messages.message[0].code);
                         Console.WriteLine("Error message: " + response.messages.message[0].text);
 				    }
