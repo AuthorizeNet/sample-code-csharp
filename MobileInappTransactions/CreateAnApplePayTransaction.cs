@@ -46,30 +46,44 @@ namespace net.authorize.sample.MobileInappTransactions
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-
             //validate
-            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null)
             {
-                if (response.transactionResponse.responseCode == "1")
+                if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    Console.WriteLine("Successfully created an Apple pay transaction with Transaction ID : " + response.transactionResponse.authCode);
+                    if (response.transactionResponse.responseCode == "1")
+                    {
+                        Console.WriteLine("Successfully created an Apple pay transaction with Transaction ID: " + response.transactionResponse.transId);
+                        Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed Transaction.");
+                        if (response.transactionResponse.errors != null)
+                        {
+                            Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                            Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                        }
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("The Transaction failed with response code :" + response.transactionResponse.responseCode); 
-                }
-            }
-            else if(response != null)
-            {
-                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
-                if (response.transactionResponse != null)
-                {
-                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
+                    Console.WriteLine("Failed Transaction.");
+                    if (response.transactionResponse != null && response.transactionResponse.errors != null)
+                    {
+                        Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                        Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error Code: " + response.messages.message[0].code);
+                        Console.WriteLine("Error message: " + response.messages.message[0].text);
+                    }
                 }
             }
             else
             {
-                Console.WriteLine("The response was null");
+                Console.WriteLine("Null Response.");
             }
 
             return response;
