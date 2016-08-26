@@ -54,6 +54,8 @@ namespace net.authorize.sample.MobileInappTransactions
                     if(response.transactionResponse.messages != null)
                     {
                         Console.WriteLine("Successfully created an accept transaction with Transaction ID: " + response.transactionResponse.transId);
+                        Console.WriteLine("Response Code: " + response.transactionResponse.responseCode);
+                        Console.WriteLine("Message Code: " + response.transactionResponse.messages[0].code);
                         Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
                     }
                     else

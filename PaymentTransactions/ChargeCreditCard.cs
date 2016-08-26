@@ -76,6 +76,8 @@ namespace net.authorize.sample
                     if(response.transactionResponse.messages != null)
                     {
                         Console.WriteLine("Successfully created transaction with Transaction ID: " + response.transactionResponse.transId);
+                        Console.WriteLine("Response Code: " + response.transactionResponse.responseCode);
+                        Console.WriteLine("Message Code: " + response.transactionResponse.messages[0].code);
                         Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
 						Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
                     }
