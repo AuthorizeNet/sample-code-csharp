@@ -30,6 +30,19 @@ namespace net.authorize.sample
                 expirationDate = "0718"
             };
 
+            //===========================================================================
+            // NOTE:  For updating just the address, not the credit card/payment data 
+            //        you can pass the masked values returned from 
+            //        GetCustomerPaymentProfile or GetCustomerProfile
+            //        E.g.
+            //                * literal values shown below
+            //===========================================================================
+            /*var creditCard = new creditCardType
+            {
+                cardNumber = "XXXX1111",
+                expirationDate = "XXXX"
+            };*/
+
             var paymentType = new paymentType { Item = creditCard };
 
             var paymentProfile = new customerPaymentProfileExType
