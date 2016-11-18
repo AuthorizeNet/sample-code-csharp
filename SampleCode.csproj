@@ -59,7 +59,7 @@
     <Compile Include="CustomerProfiles\GetCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\GetCustomerProfileIds.cs" />
     <Compile Include="CustomerProfiles\GetCustomerShippingAddress.cs" />
-    <Compile Include="CustomerProfiles\GetHostedProfilePage.cs" />
+    <Compile Include="CustomerProfiles\GetAcceptCustomerProfilePage.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerPaymentProfile.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerShippingAddress.cs" />

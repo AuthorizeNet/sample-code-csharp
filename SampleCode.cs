@@ -110,7 +110,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetCustomerShippingAddress");
             Console.WriteLine("    GetCustomerProfileId");
             Console.WriteLine("    GetCustomerProfile");
-            Console.WriteLine("    GetHostedProfilePage");
+            Console.WriteLine("    GetAcceptCustomerProfilePage");
             Console.WriteLine("    GetCustomerPaymentProfile");
             Console.WriteLine("    GetCustomerPaymentProfileList");
             Console.WriteLine("    DeleteCustomerShippingAddress");
@@ -169,8 +169,8 @@ namespace net.authorize.sample
                 case "GetCustomerProfile":
                     GetCustomerProfile.Run(apiLoginId, transactionKey, customerProfileId);
                     break;
-                case "GetHostedProfilePage":
-                    GetHostedProfilePage.Run(apiLoginId, transactionKey, customerProfileId);
+                case "GetAcceptCustomerProfilePage":
+                    GetAcceptCustomerProfilePage.Run(apiLoginId, transactionKey, customerProfileId);
                     break;
                 case "GetCustomerPaymentProfile":
                     GetCustomerPaymentProfile.Run(apiLoginId, transactionKey, customerProfileId, customerPaymentProfileId);

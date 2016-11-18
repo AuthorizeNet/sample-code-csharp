@@ -179,10 +179,10 @@ namespace SampleCodeTest
             return profileResponse;
         }
 
-        public ANetApiResponse TestGetHostedProfilePage()
+        public ANetApiResponse TestGetAcceptCustomerProfilePage()
         {
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
-            var profileResponse = GetHostedProfilePage.Run(apiLoginId, transactionKey, response.customerProfileId);
+            var profileResponse = GetAcceptCustomerProfilePage.Run(apiLoginId, transactionKey, response.customerProfileId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
 
             return profileResponse;
