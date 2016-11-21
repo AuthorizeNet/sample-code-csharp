@@ -6,9 +6,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class CreateCustomerShippingAddress
+    public class CreateCustomerShippingAddress
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId)
         {
             Console.WriteLine("CreateCustomerShippingAddress Sample");
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
@@ -29,7 +29,7 @@ namespace net.authorize.sample
 
             var request = new createCustomerShippingAddressRequest
             {
-                customerProfileId = "10000",
+                customerProfileId = customerProfileId,
                 address = officeAddress,
             };
 
@@ -46,11 +46,12 @@ namespace net.authorize.sample
                     Console.WriteLine("Success, customerAddressId : " + response.customerAddressId);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }

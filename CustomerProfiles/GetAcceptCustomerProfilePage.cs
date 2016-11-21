@@ -9,11 +9,11 @@ using AuthorizeNet.Api.Controllers;
 
 namespace net.authorize.sample
 {
-    class GetHostedProfilePage
+    public class GetAcceptCustomerProfilePage
     {
-        public static void Run(string ApiLoginId, string ApiTransactionKey)
+        public static ANetApiResponse Run(string ApiLoginId, string ApiTransactionKey, string customerProfileId)
         {
-            Console.WriteLine("Get Hosted Profile Page sample");
+            Console.WriteLine("Get Accept Customer Profile Page sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
             // define the merchant information (authentication / transaction id)
@@ -23,8 +23,6 @@ namespace net.authorize.sample
                 ItemElementName = ItemChoiceType.transactionKey,
                 Item = ApiTransactionKey,
             };
-
-            var customerProfileId = "36152116";
 
             settingType[] settings = new settingType[]{
                                                 new settingType()
@@ -50,11 +48,13 @@ namespace net.authorize.sample
                 Console.WriteLine(response.messages.message[0].text);
                 Console.WriteLine("Token: " + response.token.ToString());
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                               response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

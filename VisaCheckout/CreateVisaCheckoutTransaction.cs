@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace net.authorize.sample
 {
-    class CreateVisaCheckoutTransaction
+    public class CreateVisaCheckoutTransaction
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Running VisaCheckoutTransaction Sample ...");
             // The test setup.
@@ -49,21 +49,49 @@ namespace net.authorize.sample
             var response = controller.GetApiResponse();
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null)
             {
-                if (response.transactionResponse != null)
+                if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                    if(response.transactionResponse.messages != null)
+                    {
+                        Console.WriteLine("Successfully created transaction with Transaction ID: " + response.transactionResponse.transId);
+                        Console.WriteLine("Response Code: " + response.transactionResponse.responseCode);
+                        Console.WriteLine("Message Code: " + response.transactionResponse.messages[0].code);
+                        Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
+						Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed Transaction.");
+                        if (response.transactionResponse.errors != null)
+                        {
+                            Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                            Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Failed Transaction.");
+                    if (response.transactionResponse != null && response.transactionResponse.errors != null)
+                    {
+                        Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                        Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error Code: " + response.messages.message[0].code);
+                        Console.WriteLine("Error message: " + response.messages.message[0].text);
+                    }
                 }
             }
             else
             {
-                Console.WriteLine("Error: " + response.messages.message[0].code +"  "+response.messages.message[0].text);
-                if (response.transactionResponse != null)
-                {
-                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
-                }
+                Console.WriteLine("Null Response.");
             }
+
+            return response;
 
         }
     }

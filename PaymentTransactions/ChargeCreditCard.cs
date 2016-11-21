@@ -11,7 +11,7 @@ namespace net.authorize.sample
 {
     public class ChargeCreditCard
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal amount)
         {
             Console.WriteLine("Charge Credit Card Sample");
 
@@ -28,17 +28,35 @@ namespace net.authorize.sample
             var creditCard = new creditCardType
             {
                 cardNumber = "4111111111111111",
-                expirationDate = "0718"
+                expirationDate = "0718",
+                cardCode = "123"
+            };
+
+            var billingAddress = new customerAddressType
+            {
+                firstName = "John",
+                lastName = "Doe",
+                address = "123 My St",
+                city = "OurTown",
+                zip = "98004"
             };
 
             //standard api call to retrieve response
             var paymentType = new paymentType { Item = creditCard };
 
+            // Add line Items
+            var lineItems = new lineItemType[2];
+            lineItems[0] = new lineItemType { itemId = "1", name = "t-shirt", quantity = 2, unitPrice = new Decimal(15.00) };
+            lineItems[1] = new lineItemType { itemId = "2", name = "snowboard", quantity = 1, unitPrice = new Decimal(450.00) };
+
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
-                amount = 133.45m,
-                payment = paymentType
+
+                amount = amount,
+                payment = paymentType,
+                billTo = billingAddress,
+                lineItems = lineItems
             };
             
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
@@ -50,22 +68,50 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            //validate
+            if (response != null)
             {
-                if (response.transactionResponse != null)
+                if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                    if(response.transactionResponse.messages != null)
+                    {
+                        Console.WriteLine("Successfully created transaction with Transaction ID: " + response.transactionResponse.transId);
+                        Console.WriteLine("Response Code: " + response.transactionResponse.responseCode);
+                        Console.WriteLine("Message Code: " + response.transactionResponse.messages[0].code);
+                        Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
+						Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed Transaction.");
+                        if (response.transactionResponse.errors != null)
+                        {
+                            Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                            Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Failed Transaction.");
+                    if (response.transactionResponse != null && response.transactionResponse.errors != null)
+                    {
+                        Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                        Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error Code: " + response.messages.message[0].code);
+                        Console.WriteLine("Error message: " + response.messages.message[0].text);
+                    }
                 }
             }
             else
             {
-                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
-                if (response.transactionResponse != null)
-                {
-                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
-                }
+                Console.WriteLine("Null Response.");
             }
-           
+
+            return response;
         }
     }
 }

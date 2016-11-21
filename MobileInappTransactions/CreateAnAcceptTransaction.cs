@@ -1,25 +1,18 @@
-﻿using System;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Generic;
+﻿using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers;
-using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace net.authorize.sample
+namespace net.authorize.sample.MobileInappTransactions
 {
-    public class CapturePreviouslyAuthorizedAmount
+    public class CreateAnAcceptTransaction
     {
-        /// <summary>
-        /// Capture a Transaction Previously Submitted Via CaptureOnly
-        /// </summary>
-        /// <param name="ApiLoginID">Your ApiLoginID</param>
-        /// <param name="ApiTransactionKey">Your ApiTransactionKey</param>
-        /// <param name="TransactionAmount">The amount submitted with CaptureOnly</param>
-        /// <param name="TransactionID">The TransactionID of the previous CaptureOnly operation</param>
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal TransactionAmount, string TransactionID)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, Decimal Amount)
         {
-            Console.WriteLine("Capture Previously Authorized Amount");
+            Console.WriteLine("Create an Accept Transaction Sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -28,15 +21,20 @@ namespace net.authorize.sample
             {
                 name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = ApiTransactionKey
+                Item = ApiTransactionKey,
             };
 
+            //set up data based on transaction
+            var opaqueData = new opaqueDataType { dataDescriptor = "COMMON.ACCEPT.INAPP.PAYMENT", dataValue = "9471471570959063005001" };
+
+            //standard api call to retrieve response
+            var paymentType = new paymentType { Item = opaqueData };
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.priorAuthCaptureTransaction.ToString(),    // capture prior only
-                amount      = TransactionAmount,
-                refTransId  = TransactionID
+                transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // authorize and capture transaction
+                amount = Amount,
+                payment = paymentType
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
@@ -55,11 +53,10 @@ namespace net.authorize.sample
                 {
                     if(response.transactionResponse.messages != null)
                     {
-                        Console.WriteLine("Successfully created transaction with Transaction ID: " + response.transactionResponse.transId);
+                        Console.WriteLine("Successfully created an accept transaction with Transaction ID: " + response.transactionResponse.transId);
                         Console.WriteLine("Response Code: " + response.transactionResponse.responseCode);
                         Console.WriteLine("Message Code: " + response.transactionResponse.messages[0].code);
                         Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
-						Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
                     }
                     else
                     {

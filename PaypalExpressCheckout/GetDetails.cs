@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class PayPalGetDetails
+    public class PayPalGetDetails
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
         {
             Console.WriteLine("PayPal Get Details Transaction");
 
@@ -51,22 +51,49 @@ namespace net.authorize.sample
             var response = controller.GetApiResponse();
 
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null)
             {
-                if (response.transactionResponse != null)
+                if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
+                    if(response.transactionResponse.messages != null)
+                    {
+                        var shippingResponse = response.transactionResponse.shipTo;
+                        Console.WriteLine("Shipping address : " + shippingResponse.address + ", " + shippingResponse.city + ", " + shippingResponse.state + ", " + shippingResponse.country);
+
+                        if (response.transactionResponse.secureAcceptance != null)
+                            Console.WriteLine("Payer ID : " + response.transactionResponse.secureAcceptance.PayerID);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed Transaction.");
+                        if (response.transactionResponse.errors != null)
+                        {
+                            Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                            Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Failed Transaction.");
+                    if (response.transactionResponse != null && response.transactionResponse.errors != null)
+                    {
+                        Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                        Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error Code: " + response.messages.message[0].code);
+                        Console.WriteLine("Error message: " + response.messages.message[0].text);
+                    }
                 }
             }
             else
             {
-                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
-                if (response.transactionResponse != null)
-                {
-                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
-                }
+                Console.WriteLine("Null Response.");
             }
 
+            return response;
         }
     }
 }

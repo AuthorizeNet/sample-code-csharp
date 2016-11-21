@@ -6,11 +6,11 @@ using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
 
-namespace net.authorize.sample.ApplePayTransactions
+namespace net.authorize.sample.MobileInappTransactions
 {
-    class CreateAnApplePayTransaction
+    public class CreateAnApplePayTransaction
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, Decimal Amount)
         {
             Console.WriteLine("Create Apple Pay Transaction Sample");
 
@@ -33,7 +33,7 @@ namespace net.authorize.sample.ApplePayTransactions
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString() ,    // authorize and capture transaction
-                amount = 39.86m,
+                amount = Amount,
                 payment = paymentType
             };
 
@@ -46,24 +46,49 @@ namespace net.authorize.sample.ApplePayTransactions
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-
             //validate
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null)
             {
-                if (response.transactionResponse != null)
+                if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    Console.WriteLine("Successfully made a purchase, authorization code : " + response.transactionResponse.authCode);
+                    if(response.transactionResponse.messages != null)
+                    {
+                        Console.WriteLine("Successfully created an Apple pay transaction with Transaction ID: " + response.transactionResponse.transId);
+                        Console.WriteLine("Response Code: " + response.transactionResponse.responseCode);
+                        Console.WriteLine("Message Code: " + response.transactionResponse.messages[0].code);
+                        Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed Transaction.");
+                        if (response.transactionResponse.errors != null)
+                        {
+                            Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                            Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Failed Transaction.");
+                    if (response.transactionResponse != null && response.transactionResponse.errors != null)
+                    {
+                        Console.WriteLine("Error Code: " + response.transactionResponse.errors[0].errorCode);
+                        Console.WriteLine("Error message: " + response.transactionResponse.errors[0].errorText);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error Code: " + response.messages.message[0].code);
+                        Console.WriteLine("Error message: " + response.messages.message[0].text);
+                    }
                 }
             }
             else
             {
-                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
-                if (response.transactionResponse != null)
-                {
-                    Console.WriteLine("Transaction Error : " + response.transactionResponse.errors[0].errorCode + " " + response.transactionResponse.errors[0].errorText);
-                }
+                Console.WriteLine("Null Response.");
             }
 
+            return response;
         }
     }
 }

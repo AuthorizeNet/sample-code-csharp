@@ -8,9 +8,10 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class CreateSubscription
+    public class CreateSubscriptionFromCustomerProfile
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, short intervalLength)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, short intervalLength,
+            string customerProfileId, string customerPaymentProfileId, string customerAddressId)
         {
             Console.WriteLine("Create Subscription Sample");
 
@@ -20,7 +21,7 @@ namespace net.authorize.sample
             {
                 name            = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item            = ApiTransactionKey,
+                Item            = ApiTransactionKey
             };
 
             paymentScheduleTypeInterval interval = new paymentScheduleTypeInterval();
@@ -47,10 +48,11 @@ namespace net.authorize.sample
             paymentType cc = new paymentType { Item = creditCard };
             #endregion
 
-            nameAndAddressType addressInfo = new nameAndAddressType()
+            customerProfileIdType customerProfile = new customerProfileIdType()
             {
-                firstName = "John",
-                lastName = "Doe"
+                customerProfileId = customerProfileId,
+                customerPaymentProfileId = customerPaymentProfileId,
+                customerAddressId = customerAddressId
             };
 
             ARBSubscriptionType subscriptionType = new ARBSubscriptionType()
@@ -58,8 +60,7 @@ namespace net.authorize.sample
                 amount = 35.55m,
                 trialAmount = 0.00m,
                 paymentSchedule = schedule,
-                billTo = addressInfo,
-                payment = cc
+                profile = customerProfile
             };
 
             var request = new ARBCreateSubscriptionRequest {subscription = subscriptionType };
