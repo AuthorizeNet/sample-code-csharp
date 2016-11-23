@@ -29,6 +29,16 @@ namespace net.authorize.sample
 
             var request = new getTransactionListRequest();
             request.batchId = batchId;
+            request.paging = new Paging
+            {
+                limit = 10,
+                offset = 1
+            };
+            request.sorting = new TransactionListSorting
+            {
+                orderBy = TransactionListOrderFieldEnum.id,
+                orderDescending = true
+            };
 
             // instantiate the controller that will call the service
             var controller = new getTransactionListController(request);

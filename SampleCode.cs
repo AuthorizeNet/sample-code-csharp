@@ -123,6 +123,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetTransactionDetails");
             Console.WriteLine("    GetTransactionList");
             Console.WriteLine("    UpdateSplitTenderGroup");
+            Console.WriteLine("    UpdateHeldTransaction");
         }
 
         private static void RunMethod(String methodName)
@@ -313,6 +314,9 @@ namespace net.authorize.sample
                 case "UpdateSplitTenderGroup":
                      UpdateSplitTenderGroup.Run(apiLoginId, transactionKey);
                      break;
+                case "UpdateHeldTransaction":
+                    UpdateHeldTransaction.Run(apiLoginId, transactionKey);
+                    break;
                 default:
                     ShowUsage();
                     break;
