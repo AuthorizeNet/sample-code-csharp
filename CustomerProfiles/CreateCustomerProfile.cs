@@ -6,9 +6,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class CreateCustomerProfile
+    public class CreateCustomerProfile
     {
-        public static void Run(string ApiLoginID, string ApiTransactionKey)
+        public static ANetApiResponse Run(string ApiLoginID, string ApiTransactionKey, string emailId)
         {
             Console.WriteLine("CreateCustomerProfile Sample");
 
@@ -29,8 +29,8 @@ namespace net.authorize.sample
 
             var bankAccount = new bankAccountType
             {
-                accountNumber = "0123454321",
-                routingNumber = "000000204",
+                accountNumber = "231323342",
+                routingNumber = "000000224",
                 accountType = bankAccountTypeEnum.checking,
                 echeckType = echeckTypeEnum.WEB,
                 nameOnAccount = "test",
@@ -69,7 +69,7 @@ namespace net.authorize.sample
 
             customerProfileType customerProfile = new customerProfileType();
             customerProfile.merchantCustomerId = "Test CustomerID";
-            customerProfile.email = "test@test.com";
+            customerProfile.email = emailId;
             customerProfile.paymentProfiles = paymentProfileList.ToArray();
             customerProfile.shipToList = addressInfoList.ToArray();
 
@@ -90,11 +90,12 @@ namespace net.authorize.sample
                     Console.WriteLine("Success, CustomerShippingProfileID : " + response.customerShippingAddressIdList[0]);
                 }
             }
-            else
+            else if(response != null )
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }

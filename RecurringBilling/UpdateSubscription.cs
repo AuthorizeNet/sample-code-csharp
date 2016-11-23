@@ -8,9 +8,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class UpdateSubscription
+    public class UpdateSubscription
     {
-        public static void Run(string ApiLoginID, string ApiTransactionKey)
+        public static ANetApiResponse Run(string ApiLoginID, string ApiTransactionKey, string subscriptionId)
         {
             Console.WriteLine("Update Subscription Sample");
 
@@ -45,16 +45,25 @@ namespace net.authorize.sample
                 lastName = "Brown"
             };
 
+            customerProfileIdType customerProfile = new customerProfileIdType()
+            {
+                customerProfileId = "1232312",
+                customerPaymentProfileId = "2132132",
+                customerAddressId = "1233432"
+            };
+
             ARBSubscriptionType subscriptionType = new ARBSubscriptionType()
             {
                 amount = 35.55m,
                 paymentSchedule = schedule,
                 billTo = addressInfo,
                 payment = cc
+                //You can pass a profile to update subscription
+                //,profile = customerProfile
             };
 
             //Please change the subscriptionId according to your request
-            var request = new ARBUpdateSubscriptionRequest { subscription = subscriptionType, subscriptionId = "100748" };
+            var request = new ARBUpdateSubscriptionRequest { subscription = subscriptionType, subscriptionId = subscriptionId };
             var controller = new ARBUpdateSubscriptionController(request);         
             controller.Execute();
 
@@ -68,11 +77,12 @@ namespace net.authorize.sample
                     Console.WriteLine("Success, RefID Code : " + response.refId);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }

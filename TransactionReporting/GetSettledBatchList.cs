@@ -10,9 +10,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetSettledBatchList
+    public class GetSettledBatchList
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Get settled batch list sample");
 
@@ -45,9 +45,11 @@ namespace net.authorize.sample
             var response = controller.GetApiResponse();
 
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                if (response.batchList == null) return;
+                if (response.batchList == null)
+                    return response;
+
                 foreach (var batch in response.batchList)
                 {
                     Console.WriteLine("Batch Id: {0}", batch.batchId);
@@ -66,11 +68,13 @@ namespace net.authorize.sample
                     }
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

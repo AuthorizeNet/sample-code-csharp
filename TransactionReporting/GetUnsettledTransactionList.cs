@@ -10,9 +10,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetUnsettledTransactionList
+    public class GetUnsettledTransactionList
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Get unsettled transaction list sample");
 
@@ -34,20 +34,24 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                if (response.transactions == null) return;
+                if (response.transactions == null) 
+                    return response;
+
                 foreach (var item in response.transactions)
                 {
                     Console.WriteLine("Transaction Id: {0} was submitted on {1}", item.transId,
                         item.submitTimeLocal);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

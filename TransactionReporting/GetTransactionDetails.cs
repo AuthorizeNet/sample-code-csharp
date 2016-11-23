@@ -9,9 +9,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetTransactionDetails
+    public class GetTransactionDetails
     {
-      public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string transactionId)
       {
           Console.WriteLine("Get transaction details sample");
 
@@ -24,9 +24,6 @@ namespace net.authorize.sample
               Item = ApiTransactionKey,
           };
 
-          // unique transaction id
-          string transactionId = "2238300325";
-
           var request = new getTransactionDetailsRequest();
           request.transId = transactionId;
 
@@ -37,21 +34,24 @@ namespace net.authorize.sample
           // get the response from the service (errors contained if any)
           var response = controller.GetApiResponse();
 
-
-          if (response.messages.resultCode == messageTypeEnum.Ok)
+          if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
           {
-              if (response.transaction == null) return;
+              if (response.transaction == null)
+                  return response;
+
               Console.WriteLine("Transaction Id: {0}", response.transaction.transId);
               Console.WriteLine("Transaction type: {0}", response.transaction.transactionType);
               Console.WriteLine("Transaction status: {0}", response.transaction.transactionStatus);
               Console.WriteLine("Transaction auth amount: {0}", response.transaction.authAmount);
               Console.WriteLine("Transaction settle amount: {0}", response.transaction.settleAmount);
           }
-          else
+          else if (response != null)
           {
               Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                 response.messages.message[0].text);
           }
+
+          return response;
       }
     }
 }

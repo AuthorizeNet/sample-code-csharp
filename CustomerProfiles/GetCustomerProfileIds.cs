@@ -10,9 +10,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class GetCustomerProfileIds
+    public class GetCustomerProfileIds
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
             Console.WriteLine("Get Customer Profile Id sample");
 
@@ -34,7 +34,7 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine(response.messages.message[0].text);
                 Console.WriteLine("Customer Profile Ids: ");
@@ -43,11 +43,13 @@ namespace net.authorize.sample
                     Console.WriteLine(id);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

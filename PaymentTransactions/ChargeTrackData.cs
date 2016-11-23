@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -8,18 +9,19 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class CapturePreviouslyAuthorizedAmount
+    /// <summary>
+    /// This sample demonstrates making a credit card charge using mag stripe track data. 
+    /// 
+    /// NOTE:  You must pass the retail fields of DeviceType and MarketType, e.g. 
+    /// 
+    ///         retail = new transRetailInfoType { deviceType = "1", marketType = "2" }
+    ///         
+    /// </summary>
+    public class ChargeTrackData
     {
-        /// <summary>
-        /// Capture a Transaction Previously Submitted Via CaptureOnly
-        /// </summary>
-        /// <param name="ApiLoginID">Your ApiLoginID</param>
-        /// <param name="ApiTransactionKey">Your ApiTransactionKey</param>
-        /// <param name="TransactionAmount">The amount submitted with CaptureOnly</param>
-        /// <param name="TransactionID">The TransactionID of the previous CaptureOnly operation</param>
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal TransactionAmount, string TransactionID)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal amount)
         {
-            Console.WriteLine("Capture Previously Authorized Amount");
+            Console.WriteLine("Charge Track Data Sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -28,15 +30,29 @@ namespace net.authorize.sample
             {
                 name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = ApiTransactionKey
+                Item = ApiTransactionKey,
             };
 
+            // You can pass either track 1 or track 2 but not both
+            var trackData = new creditCardTrackType { ItemElementName = ItemChoiceType1.track2, Item = "4111111111111111=170310199999888" };
+
+            //standard api call, simply use cardData in place of creditcard type
+            var paymentType = new paymentType { Item = trackData };
+
+            // Add line Items
+            var lineItems = new lineItemType[2];
+            lineItems[0] = new lineItemType { itemId = "1", name = "t-shirt", quantity = 2, unitPrice = new Decimal(15.00) };
+            lineItems[1] = new lineItemType { itemId = "2", name = "snowboard", quantity = 1, unitPrice = new Decimal(450.00) };
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.priorAuthCaptureTransaction.ToString(),    // capture prior only
-                amount      = TransactionAmount,
-                refTransId  = TransactionID
+                transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
+
+                amount = amount,
+                payment = paymentType,
+                lineItems = lineItems,
+                // Retail data required for POS transactions
+                retail = new transRetailInfoType { deviceType = "1", marketType = "2" }
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };

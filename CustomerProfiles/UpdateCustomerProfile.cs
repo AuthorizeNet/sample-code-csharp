@@ -9,9 +9,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class UpdateCustomerProfile
+    public class UpdateCustomerProfile
     {
-        public static void Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId)
         {
             Console.WriteLine("Update customer profile sample");
 
@@ -29,7 +29,7 @@ namespace net.authorize.sample
                 merchantCustomerId = "custId123",
                 description = "some description",
                 email = "newaddress@example.com",
-                customerProfileId = "36605093"
+                customerProfileId = customerProfileId
             };
 
             var request = new updateCustomerProfileRequest();
@@ -42,15 +42,17 @@ namespace net.authorize.sample
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            if (response.messages.resultCode == messageTypeEnum.Ok)
+            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine(response.messages.message[0].text);
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
+
+            return response;
         }
     }
 }

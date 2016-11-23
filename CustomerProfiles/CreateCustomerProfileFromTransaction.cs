@@ -6,9 +6,9 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    class CreateCustomerProfileFromTransaction
+    public class CreateCustomerProfileFromTransaction
     {
-        public static void Run(string ApiLoginID, string ApiTransactionKey)
+        public static ANetApiResponse Run(string ApiLoginID, string ApiTransactionKey, string transactionId)
         {
             Console.WriteLine("CreateCustomerProfileFromTransaction Sample");
 
@@ -20,7 +20,22 @@ namespace net.authorize.sample
                 Item            = ApiTransactionKey,
             };
 
-            var request = new createCustomerProfileFromTransactionRequest { transId = "2238147175" };
+            var customerProfile = new customerProfileBaseType
+            {
+                merchantCustomerId = "123212",
+                email = "hello@castleblack.com",
+                description = "This is a sample customer profile"
+            };
+
+            var request = new createCustomerProfileFromTransactionRequest 
+            { 
+                transId = transactionId,
+                // You can either specify the customer information in form of customerProfileBaseType object
+                customer = customerProfile
+                //  OR   
+                // You can just provide the customer Profile ID
+                // customerProfileId = "123343"                
+            };
 
             var controller = new createCustomerProfileFromTransactionController(request); 
             controller.Execute();
@@ -37,11 +52,12 @@ namespace net.authorize.sample
                     Console.WriteLine("Success, CustomerShippingProfileID : " + response.customerShippingAddressIdList[0]);
                 }
             }
-            else
+            else if(response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
+            return response;
         }
     }
 }
