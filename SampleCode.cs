@@ -1,5 +1,6 @@
 using net.authorize.sample.MobileInappTransactions;
 using net.authorize.sample.PaymentTransactions;
+using net.authorize.sample.TransactionReporting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -123,6 +124,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetTransactionDetails");
             Console.WriteLine("    GetTransactionList");
             Console.WriteLine("    UpdateSplitTenderGroup");
+            Console.WriteLine("    GetMerchantDetails");
         }
 
         private static void RunMethod(String methodName)
@@ -313,11 +315,13 @@ namespace net.authorize.sample
                 case "UpdateSplitTenderGroup":
                      UpdateSplitTenderGroup.Run(apiLoginId, transactionKey);
                      break;
+                case "GetMerchantDetails":
+                     GetMerchantDetails.Run(apiLoginId, transactionKey);
+                     break;
                 default:
                     ShowUsage();
                     break;
             }
         }
-
     }
 }
