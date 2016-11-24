@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerProfiles\GetHostedPaymentPage.cs" />
     <Compile Include="MobileInappTransactions\CreateAnAcceptTransaction.cs" />
     <Compile Include="MobileInappTransactions\CreateAnAndroidPayTransaction.cs" />
     <Compile Include="MobileInappTransactions\CreateAnApplePayTransaction.cs" />
