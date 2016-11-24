@@ -25,7 +25,7 @@ namespace SampleCodeTest
 
         private static string GetEmail()
         {
-            return r.Next(1000, 8908) + "@test.com";
+            return r.Next(1000, 89999999) + "@test.com";
         }
 
         private static decimal GetAmount()
