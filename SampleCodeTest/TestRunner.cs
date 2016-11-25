@@ -9,6 +9,7 @@ using System.Reflection;
 using AuthorizeNet;
 using net.authorize.sample.PaymentTransactions;
 using System.Threading;
+using net.authorize.sample.CustomerProfiles;
 using net.authorize.sample.MobileInappTransactions;
 
 namespace SampleCodeTest
@@ -423,6 +424,11 @@ namespace SampleCodeTest
         {
             var response = (createTransactionResponse)CreateAnAcceptTransaction.Run(apiLoginId, transactionKey, GetAmount());
             return response;
+        }
+
+        public ANetApiResponse TestGetHostedPaymentPage()
+        {
+            return GetHostedPaymentPage.Run(apiLoginId, transactionKey, GetAmount());
         }
     }
 }
