@@ -9,6 +9,7 @@ using System.Reflection;
 using AuthorizeNet;
 using net.authorize.sample.PaymentTransactions;
 using System.Threading;
+using net.authorize.sample.CustomerProfiles;
 using net.authorize.sample.MobileInappTransactions;
 
 namespace SampleCodeTest
@@ -25,7 +26,7 @@ namespace SampleCodeTest
 
         private static string GetEmail()
         {
-            return r.Next(1000, 8908) + "@test.com";
+            return r.Next(1000, 89999999) + "@test.com";
         }
 
         private static decimal GetAmount()
@@ -423,6 +424,11 @@ namespace SampleCodeTest
         {
             var response = (createTransactionResponse)CreateAnAcceptTransaction.Run(apiLoginId, transactionKey, GetAmount());
             return response;
+        }
+
+        public ANetApiResponse TestGetHostedPaymentPage()
+        {
+            return GetHostedPaymentPage.Run(apiLoginId, transactionKey, GetAmount());
         }
     }
 }

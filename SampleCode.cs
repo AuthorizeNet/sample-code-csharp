@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using net.authorize.sample.CustomerProfiles;
 
 namespace net.authorize.sample
 {
@@ -125,6 +126,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetTransactionList");
             Console.WriteLine("    UpdateSplitTenderGroup");
             Console.WriteLine("    GetMerchantDetails");
+            Console.WriteLine("    GetHostedPaymentPage");
         }
 
         private static void RunMethod(String methodName)
@@ -318,6 +320,9 @@ namespace net.authorize.sample
                 case "GetMerchantDetails":
                      GetMerchantDetails.Run(apiLoginId, transactionKey);
                      break;
+                case "GetHostedPaymentPage":
+                    GetHostedPaymentPage.Run(apiLoginId, transactionKey, 12.23m);
+                    break;
                 default:
                     ShowUsage();
                     break;

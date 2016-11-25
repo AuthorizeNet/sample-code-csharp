@@ -52,4 +52,4 @@ GetSubscription	1	1
 UpdateSubscription	1	1
 CreateCustomerProfile	1	1
 CreateCustomerPaymentProfile	1	1
-GetMerchantDetails	0	1
+GetMerchantDetails	0	1GetHostedPaymentPage	1	1

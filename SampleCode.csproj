@@ -32,9 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AuthorizeNet, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Code\sdk-dotnet-future\Authorize.NET\bin\Debug\AuthorizeNet.dll</HintPath>
+    <Reference Include="AuthorizeNet">
+      <HintPath>packages\AuthorizeNet.1.9.1\lib\AuthorizeNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PaymentTransactions\GetHostedPaymentPage.cs" />
     <Compile Include="MobileInappTransactions\CreateAnAcceptTransaction.cs" />
     <Compile Include="MobileInappTransactions\CreateAnAndroidPayTransaction.cs" />
     <Compile Include="MobileInappTransactions\CreateAnApplePayTransaction.cs" />
