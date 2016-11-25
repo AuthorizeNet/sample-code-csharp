@@ -33,11 +33,11 @@ namespace net.authorize.sample.CustomerProfiles
 
             settingType[] settings = new settingType[2];
 
-            settings[0] = new setting();
+            settings[0] = new settingType();
             settings[0].settingName = settingNameEnum.hostedPaymentButtonOptions.ToString();
             settings[0].settingValue = "{\"text\": \"Pay\"}";
             
-            settings[1] = new setting();
+            settings[1] = new settingType();
             settings[1].settingName = settingNameEnum.hostedPaymentOrderOptions.ToString();
             settings[1].settingValue = "{\"show\": false}";
 
