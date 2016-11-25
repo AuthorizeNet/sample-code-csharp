@@ -76,6 +76,7 @@
     <Compile Include="PaymentTransactions\CreditBankAccount.cs" />
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />
+    <Compile Include="PaymentTransactions\UpdateHeldTransaction.cs" />
     <Compile Include="PaymentTransactions\UpdateSplitTenderGroup.cs" />
     <Compile Include="PaymentTransactions\VoidTransaction.cs" />
     <Compile Include="PaypalExpressCheckout\AuthorizationAndCapture.cs" />

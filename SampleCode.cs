@@ -124,6 +124,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetTransactionDetails");
             Console.WriteLine("    GetTransactionList");
             Console.WriteLine("    UpdateSplitTenderGroup");
+            Console.WriteLine("    UpdateHeldTransaction");
             Console.WriteLine("    GetMerchantDetails");
             Console.WriteLine("    GetHostedPaymentPage");
         }
@@ -316,6 +317,9 @@ namespace net.authorize.sample
                 case "UpdateSplitTenderGroup":
                      UpdateSplitTenderGroup.Run(apiLoginId, transactionKey);
                      break;
+                case "UpdateHeldTransaction":
+                    UpdateHeldTransaction.Run(apiLoginId, transactionKey);
+                    break;
                 case "GetMerchantDetails":
                      GetMerchantDetails.Run(apiLoginId, transactionKey);
                      break;
