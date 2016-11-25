@@ -21,16 +21,6 @@ namespace net.authorize.sample.CustomerProfiles
                 Item = ApiTransactionKey,
             };
 
-            var creditCard = new creditCardType
-            {
-                cardNumber = "4111111111111111",
-                expirationDate = "0718",
-                cardCode = "123"
-            };
-
-            //standard api call to retrieve response
-            var paymentType = new paymentType { Item = creditCard };
-
             settingType[] settings = new settingType[2];
 
             settings[0] = new settingType();
@@ -44,8 +34,7 @@ namespace net.authorize.sample.CustomerProfiles
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // authorize capture only
-                amount = amount,
-                payment = paymentType
+                amount = amount
             };
 
             var request = new getHostedPaymentPageRequest();
