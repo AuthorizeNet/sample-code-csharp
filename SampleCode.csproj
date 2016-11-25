@@ -95,6 +95,7 @@
     <Compile Include="RecurringBilling\UpdateSubscription.cs" />
     <Compile Include="SampleCode.cs" />
     <Compile Include="TransactionReporting\GetBatchStatistics.cs" />
+    <Compile Include="TransactionReporting\GetMerchantDetails.cs" />
     <Compile Include="TransactionReporting\GetSettledBatchList.cs" />
     <Compile Include="TransactionReporting\GetTransactionDetails.cs" />
     <Compile Include="TransactionReporting\GetTransactionList.cs" />
