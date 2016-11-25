@@ -1,6 +1,5 @@
 using net.authorize.sample.MobileInappTransactions;
 using net.authorize.sample.PaymentTransactions;
-using net.authorize.sample.TransactionReporting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
