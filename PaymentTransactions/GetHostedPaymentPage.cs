@@ -31,9 +31,13 @@ namespace net.authorize.sample.CustomerProfiles
             //standard api call to retrieve response
             var paymentType = new paymentType { Item = creditCard };
 
-            settingType[] settings = new settingType[]{ new settingType() };
-            settings[0].settingName = settingNameEnum.hostedPaymentReturnOptions.ToString();
-            settings[0].settingValue = "https://returnurl.com/return/";
+            settingType[] settings = new settingType[2];
+
+            settings[0].settingName = settingNameEnum.hostedPaymentButtonOptions.ToString();
+            settings[0].settingValue = "{\"text\": \"Pay\"}";
+            
+            settings[1].settingName = settingNameEnum.hostedPaymentOrderOptions.ToString();
+            settings[1].settingValue = "{\"show\": false}";
 
             var transactionRequest = new transactionRequestType
             {
