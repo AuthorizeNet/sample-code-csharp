@@ -10,11 +10,11 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample.PaymentTransactions
 {
-    class UpdateHeldTransaction
+    class ApproveOrDeclineHeldTransaction
     {
         public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
-            Console.WriteLine("Update held transaction sample");
+            Console.WriteLine("Approve held transaction sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
             // define the merchant information (authentication / transaction id)
@@ -29,7 +29,7 @@ namespace net.authorize.sample.PaymentTransactions
             request.heldTransactionRequest = new heldTransactionRequestType
             {
                 action = afdsTransactionEnum.approve,
-                refTransId = "12345"
+                refTransId = "60012192922"
             };
             
             // instantiate the controller that will call the service
@@ -40,7 +40,7 @@ namespace net.authorize.sample.PaymentTransactions
             var response = controller.GetApiResponse();
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                Console.WriteLine(response.ToString());
+                Console.WriteLine("Transaction Approved: "+response.transactionResponse.transId);
             }
             else if (response != null)
             {

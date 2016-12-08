@@ -65,6 +65,8 @@
     <Compile Include="CustomerProfiles\UpdateCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerShippingAddress.cs" />
     <Compile Include="CustomerProfiles\ValidateCustomerPaymentProfile.cs" />
+    <Compile Include="FraudManagement\GetHeldTransactionList.cs" />
+    <Compile Include="FraudManagement\ApproveOrDeclineHeldTransaction.cs" />
     <Compile Include="PaymentTransactions\AuthorizeCreditCard.cs" />
     <Compile Include="PaymentTransactions\CaptureFundsAuthorizedThroughAnotherChannel.cs" />
     <Compile Include="PaymentTransactions\CapturePreviouslyAuthorizedAmount.cs" />
@@ -76,7 +78,6 @@
     <Compile Include="PaymentTransactions\CreditBankAccount.cs" />
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />
-    <Compile Include="PaymentTransactions\UpdateHeldTransaction.cs" />
     <Compile Include="PaymentTransactions\UpdateSplitTenderGroup.cs" />
     <Compile Include="PaymentTransactions\VoidTransaction.cs" />
     <Compile Include="PaypalExpressCheckout\AuthorizationAndCapture.cs" />

@@ -10,11 +10,11 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class GetUnsettledTransactionList
+    public class GetHeldTransactionList
     {
         public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
         {
-            Console.WriteLine("Get unsettled transaction list sample");
+            Console.WriteLine("Get suspicious transaction list sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
             // define the merchant information (authentication / transaction id)
@@ -26,7 +26,7 @@ namespace net.authorize.sample
             };
 
             var request = new getUnsettledTransactionListRequest();
-            request.status  = TransactionGroupStatusEnum.any;
+            request.status  = TransactionGroupStatusEnum.pendingApproval;
             request.statusSpecified = true;
             request.paging = new Paging
             {
