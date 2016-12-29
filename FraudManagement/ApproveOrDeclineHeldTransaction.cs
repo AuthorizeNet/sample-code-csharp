@@ -8,7 +8,7 @@ using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
 
-namespace net.authorize.sample.PaymentTransactions
+namespace net.authorize.sample.FraudManagement
 {
     class ApproveOrDeclineHeldTransaction
     {
