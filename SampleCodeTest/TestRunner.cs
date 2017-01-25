@@ -426,9 +426,9 @@ namespace SampleCodeTest
             return response;
         }
 
-        public ANetApiResponse TestGetHostedPaymentPage()
+        public ANetApiResponse TestGetAnAcceptPaymentPage()
         {
-            return GetHostedPaymentPage.Run(apiLoginId, transactionKey, GetAmount());
+            return GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, GetAmount());
         }
     }
 }
