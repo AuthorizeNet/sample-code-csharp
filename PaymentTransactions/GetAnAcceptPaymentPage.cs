@@ -8,11 +8,11 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample.CustomerProfiles
 {
-    public class GetHostedPaymentPage
+    public class GetAnAcceptPaymentPage
     {
         public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal amount)
         {
-            Console.WriteLine("GetHostedPaymentPage Sample");
+            Console.WriteLine("GetAnAcceptPaymentPage Sample");
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
