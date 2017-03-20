@@ -1,6 +1,5 @@
 # Sample C# Code for Authorize.Net
-[![Build Status](https://travis-ci.org/AuthorizeNet/sample-code-csharp.png?branch=master)]
-(https://travis-ci.org/AuthorizeNet/sample-code-csharp)
+[![Build Status](https://travis-ci.org/AuthorizeNet/sample-code-csharp.png?branch=master)](https://travis-ci.org/AuthorizeNet/sample-code-csharp)
 
 This repository contains working code samples which demonstrate C# integration with the Authorize.Net .NET SDK
 The samples are organized just like our API, which you can also try out directly here: http://developer.authorize.net/api/reference
@@ -16,12 +15,12 @@ The samples are all completely independent and self-contained so you can look at
  `PM> Install-Package AuthorizeNet`  
  Build the project to produce the SampleCode console app.  
  Then run a sample directly by name:  
-````
+```
      > SampleCode [CodeSampleName]
-````
+```
 e.g.
-````
+```
      > SampleCode ChargeCreditCard
-````
+```
 Running SampleCode without a parameter will give you the list of sample names. 
 
