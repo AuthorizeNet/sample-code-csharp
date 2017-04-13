@@ -101,6 +101,7 @@
     <Compile Include="TransactionReporting\GetSettledBatchList.cs" />
     <Compile Include="TransactionReporting\GetTransactionDetails.cs" />
     <Compile Include="TransactionReporting\GetTransactionList.cs" />
+    <Compile Include="TransactionReporting\GetCustomerProfileTransactionList.cs" />
     <Compile Include="TransactionReporting\GetUnsettledTransactionList.cs" />
     <Compile Include="VisaCheckout\DecryptVisaCheckoutData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

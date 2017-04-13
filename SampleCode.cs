@@ -128,6 +128,7 @@ namespace net.authorize.sample
             Console.WriteLine("    ApproveOrDeclineHeldTransaction");
             Console.WriteLine("    GetMerchantDetails");
             Console.WriteLine("    GetAnAcceptPaymentPage");
+            Console.WriteLine("    GetCustomerProfileTransactionList");
         }
 
         private static void RunMethod(String methodName)
@@ -329,6 +330,9 @@ namespace net.authorize.sample
                      break;
                 case "GetAnAcceptPaymentPage":
                     GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, 12.23m);
+                    break;
+                case "GetCustomerProfileTransactionList":
+                    GetCustomerProfileTransactionList.Run(apiLoginId, transactionKey, customerProfileId);
                     break;
                 default:
                     ShowUsage();
