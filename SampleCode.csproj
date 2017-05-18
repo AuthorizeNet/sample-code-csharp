@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AuthorizeNet">
-      <HintPath>packages\AuthorizeNet.1.9.2\lib\AuthorizeNet.dll</HintPath>
+      <HintPath>packages\AuthorizeNet.1.9.3\lib\AuthorizeNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
