@@ -28,11 +28,11 @@ namespace net.authorize.sample
             string month = "2017-07";
 
             // Build tbe request object
-            var request = new getAccountUpdaterJobSummaryRequest();
+            var request = new getAUJobSummaryRequest();
             request.month = month;
 
             // Instantiate the controller that will call the service
-            var controller = new getAccountUpdaterJobSummaryController(request);
+            var controller = new getAUJobSummaryController(request);
             controller.Execute();
 
             // Get the response from the service (errors contained if any)
