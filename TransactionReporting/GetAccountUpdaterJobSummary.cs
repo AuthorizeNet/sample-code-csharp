@@ -24,42 +24,41 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey,
             };
 
-            // parameters for request
-            string month = "2017-06";
+            // Set a valid month for the request
+            string month = "2017-07";
 
-
+            // Build tbe request object
             var request = new getAccountUpdaterJobSummaryRequest();
             request.month = month;
 
-
-
-
-
-
-
-            // instantiate the controller that will call the service
+            // Instantiate the controller that will call the service
             var controller = new getAccountUpdaterJobSummaryController(request);
             controller.Execute();
 
-            // get the response from the service (errors contained if any)
+            // Get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
+                Console.WriteLine("SUCCESS: Get Account Updater Summary for Month : " + month);
                 if (response.auSummary == null)
+                {
+                    Console.WriteLine("No Account Updater summary for this month.");
                     return response;
+                }
 
+                // Displaying the summary of each response in the list
                 foreach (var result in response.auSummary)
                 {
-                    Console.WriteLine("Reason Code: {0}", result.auReasonCode);
-                    Console.WriteLine("Reason Description: {0}", result.reasonDescription);
-                    Console.WriteLine("# of Profiles updated for this reason: {0}", result.profileCount);
+                    Console.WriteLine("		Reason Code        : " + result.auReasonCode);
+                    Console.WriteLine("		Reason Description : " + result.reasonDescription);
+                    Console.WriteLine("		# of Profiles updated for this reason : " + result.profileCount);
                 }
             }
             else if (response != null)
             {
-                Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
-                                  response.messages.message[0].text);
+                Console.WriteLine("ERROR :  Invalid response");
+                Console.WriteLine("Response : " + response.messages.message[0].code + "  " + response.messages.message[0].text);
             }
 
             return response;
