@@ -55,3 +55,4 @@ CreateCustomerPaymentProfile	1	1
 GetMerchantDetails	0	1
 GetAnAcceptPaymentPage	1	1
 UpdateHeldTransaction	1	0
+GetAccountUpdaterJobSummary 1   1
