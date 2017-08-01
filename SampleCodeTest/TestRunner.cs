@@ -430,5 +430,10 @@ namespace SampleCodeTest
         {
             return GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, GetAmount());
         }
+
+        public ANetApiResponse TestGetAccountUpdaterJobSummary()
+        {
+            return GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
+        }
     }
 }
