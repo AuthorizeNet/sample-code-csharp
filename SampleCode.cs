@@ -335,9 +335,9 @@ namespace net.authorize.sample
                 case "GetCustomerProfileTransactionList":
                     GetCustomerProfileTransactionList.Run(apiLoginId, transactionKey, customerProfileId);
                     break;
-                case "GetAccountUpdaterJobSummary":
-                    GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
-                    break;
+                //case "GetAccountUpdaterJobSummary":
+                //    GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
+                //    break;
                 default:
                     ShowUsage();
                     break;
