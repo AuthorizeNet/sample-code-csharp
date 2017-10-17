@@ -18,7 +18,9 @@ You can also run each sample directly from the command line.
     $ git clone https://github.com/AuthorizeNet/sample-code-csharp.git
 ```
 * Include the [Authorize.Net .NET SDK](https://github.com/AuthorizeNet/sdk-dotnet):
- `PM> Install-Package AuthorizeNet`  
+```
+    PM> Install-Package AuthorizeNet
+```
  Build the project to produce the SampleCode console app.
 * Run the individual samples by name. For example:
 ```
