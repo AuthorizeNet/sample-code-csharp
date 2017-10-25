@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using net.authorize.sample.CustomerProfiles;
+using System.Security.Authentication;
+using System.Net;
 
 namespace net.authorize.sample
 {
@@ -152,7 +154,9 @@ namespace net.authorize.sample
             const string subscriptionId = "1223213";
             const short day = 45;
             const string emailId = "test@test.com";
-
+            const SslProtocols _Tls12 = (SslProtocols)0x00000C00;
+            const SecurityProtocolType Tls12 = (SecurityProtocolType)_Tls12;
+            ServicePointManager.SecurityProtocol = Tls12;
             switch (methodName)
             {
                 case "ValidateCustomerPaymentProfile":
