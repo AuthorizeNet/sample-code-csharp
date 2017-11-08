@@ -12,7 +12,7 @@ namespace net.authorize.sample
     {
         public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID, string PayerID)
         {
-            Console.WriteLine("PayPal Authorize Only-Continue Transaction");
+            Console.WriteLine("PayPal Authorize Only, Continued Transaction");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 

@@ -84,7 +84,7 @@
     <Compile Include="PaymentTransactions\UpdateSplitTenderGroup.cs" />
     <Compile Include="PaymentTransactions\VoidTransaction.cs" />
     <Compile Include="PayPalExpressCheckout\AuthorizationAndCapture.cs" />
-    <Compile Include="PayPalExpressCheckout\AuthorizationAndCaptureContinue.cs" />
+    <Compile Include="PayPalExpressCheckout\AuthorizationAndCaptureContinued.cs" />
     <Compile Include="PayPalExpressCheckout\AuthorizationOnly.cs" />
     <Compile Include="PayPalExpressCheckout\AuthorizationOnlyContinued.cs" />
     <Compile Include="PayPalExpressCheckout\Credit.cs" />

@@ -87,6 +87,7 @@ namespace net.authorize.sample
             Console.WriteLine("    PayPalAuthorizeCapture");
             Console.WriteLine("    PayPalAuthorizeCaptureContinued");
             Console.WriteLine("    PayPalAuthorizeOnly");
+            Console.WriteLine("    PayPalAuthorizeOnlyContinued");
             Console.WriteLine("    PayPalCredit");
             Console.WriteLine("    PayPalGetDetails");
             Console.WriteLine("    PayPalPriorAuthorizationCapture");
