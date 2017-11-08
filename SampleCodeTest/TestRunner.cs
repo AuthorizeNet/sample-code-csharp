@@ -314,15 +314,15 @@ namespace SampleCodeTest
             return PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
         }
 
-        public ANetApiResponse TestPayPalAuthorizeCaptureContinue()
+        public ANetApiResponse TestPayPalAuthorizeCaptureContinued()
         {
             var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
-            return PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, response.transactionResponse.transId, payerID);
+            return PayPalAuthorizeCaptureContinued.Run(apiLoginId, transactionKey, response.transactionResponse.transId, payerID);
         }  
                   
-        public ANetApiResponse TestPayPalAuthorizeOnlyContinue()
+        public ANetApiResponse TestPayPalAuthorizeOnlyContinued()
         {
-            return PayPalAuthorizeOnlyContinue.Run(apiLoginId, transactionKey, TransactionID, payerID);
+            return PayPalAuthorizeOnlyContinued.Run(apiLoginId, transactionKey, TransactionID, payerID);
         }
                     
         public ANetApiResponse TestPayPalCredit()

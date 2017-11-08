@@ -8,7 +8,7 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class PayPalAuthorizeOnlyContinue
+    public class PayPalAuthorizeOnlyContinued
     {
         public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID, string PayerID)
         {

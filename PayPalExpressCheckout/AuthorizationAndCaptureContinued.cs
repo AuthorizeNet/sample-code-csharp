@@ -8,11 +8,11 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class PayPalAuthorizeCaptureContinue 
+    public class PayPalAuthorizeCaptureContinued
     {
         public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID, string PayerID)
         {
-            Console.WriteLine("PayPal Authorize Capture-Continue Transaction");
+            Console.WriteLine("PayPal Authorization and Capture, Continued Transaction");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 

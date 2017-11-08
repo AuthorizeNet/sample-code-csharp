@@ -85,7 +85,7 @@ namespace net.authorize.sample
             Console.WriteLine("    CreateVisaCheckoutTransaction");
             Console.WriteLine("    PayPalVoid");
             Console.WriteLine("    PayPalAuthorizeCapture");
-            Console.WriteLine("    PayPalAuthorizeCaptureContinue");
+            Console.WriteLine("    PayPalAuthorizeCaptureContinued");
             Console.WriteLine("    PayPalAuthorizeOnly");
             Console.WriteLine("    PayPalCredit");
             Console.WriteLine("    PayPalGetDetails");
@@ -263,14 +263,14 @@ namespace net.authorize.sample
                 case "PayPalAuthorizeCapture":
                     PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, amount);
                     break;
-                case "PayPalAuthorizeCaptureContinue":                    
-                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, transactionId, payerId);
+                case "PayPalAuthorizeCaptureContinued":                    
+                    PayPalAuthorizeCaptureContinued.Run(apiLoginId, transactionKey, transactionId, payerId);
                     break;
                 case "PayPalAuthorizeOnly":
                     PayPalAuthorizeOnly.Run(apiLoginId, transactionKey, amount);
                     break;
-                case "PayPalAuthorizeOnlyContinue":
-                    PayPalAuthorizeOnlyContinue.Run(apiLoginId, transactionKey, transactionId, payerId);
+                case "PayPalAuthorizeOnlyContinued":
+                    PayPalAuthorizeOnlyContinued.Run(apiLoginId, transactionKey, transactionId, payerId);
                     break;
                 case "PayPalCredit":
                     PayPalCredit.Run(apiLoginId, transactionKey, transactionId);
