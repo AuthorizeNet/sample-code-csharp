@@ -26,7 +26,7 @@ namespace net.authorize.sample
             //please update the subscriptionId according to your sandbox credentials
             var request = new ARBGetSubscriptionStatusRequest { subscriptionId = subscriptionId };
 
-            var controller = new ARBGetSubscriptionStatusController(request);                          // instantiate the contoller that will call the service
+            var controller = new ARBGetSubscriptionStatusController(request);                          // instantiate the controller that will call the service
             controller.Execute();
 
             ARBGetSubscriptionStatusResponse response = controller.GetApiResponse();                   // get the response from the service (errors contained if any)

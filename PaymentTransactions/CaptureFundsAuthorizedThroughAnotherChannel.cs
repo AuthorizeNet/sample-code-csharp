@@ -51,7 +51,7 @@ namespace net.authorize.sample
                transactionRequest = transactionRequest
             };
 
-            // instantiate the contoller that will call the service
+            // instantiate the controller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
 

@@ -75,7 +75,7 @@ namespace net.authorize.sample
 
             var request = new createCustomerProfileRequest{ profile = customerProfile, validationMode = validationModeEnum.none};
 
-            var controller = new createCustomerProfileController(request);          // instantiate the contoller that will call the service
+            var controller = new createCustomerProfileController(request);          // instantiate the controller that will call the service
             controller.Execute();
 
             createCustomerProfileResponse response = controller.GetApiResponse();   // get the response from the service (errors contained if any)

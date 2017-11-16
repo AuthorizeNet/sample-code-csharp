@@ -24,7 +24,7 @@ namespace net.authorize.sample
 
             //Please change the subscriptionId according to your request
             var request = new ARBCancelSubscriptionRequest { subscriptionId = subscriptionId };
-            var controller = new ARBCancelSubscriptionController(request);                          // instantiate the contoller that will call the service
+            var controller = new ARBCancelSubscriptionController(request);                          // instantiate the controller that will call the service
             controller.Execute();
 
             ARBCancelSubscriptionResponse response = controller.GetApiResponse();                   // get the response from the service (errors contained if any)
