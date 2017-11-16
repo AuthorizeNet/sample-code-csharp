@@ -38,7 +38,7 @@ namespace net.authorize.sample.PaymentTransactions
             controller.Execute();
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine("Successfully Updated ... ");

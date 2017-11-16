@@ -30,7 +30,7 @@ namespace net.authorize.sample
 
             ARBGetSubscriptionResponse response = controller.GetApiResponse();   // get the response from the service (errors contained if any)
 
-            //validate
+            // validate response
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.subscription != null)

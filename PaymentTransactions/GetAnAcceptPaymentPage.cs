@@ -48,7 +48,7 @@ namespace net.authorize.sample.CustomerProfiles
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine("Message code : " + response.messages.message[0].code);

@@ -48,7 +48,7 @@ namespace net.authorize.sample
             controller.Execute();
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null)
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)
