@@ -10,16 +10,18 @@ namespace net.authorize.sample
     {
         public static ANetApiResponse Run(string ApiLoginID, string ApiTransactionKey, string emailId)
         {
-            Console.WriteLine("CreateCustomerProfile Sample");
+            Console.WriteLine("Create Customer Profile Sample");
 
+            // set whether to use the sandbox environment, or production enviornment
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
+
+            // define the merchant information (authentication / transaction id)
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
                 name            = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
                 Item            = ApiTransactionKey,
             };
-
 
             var creditCard = new creditCardType
             {
@@ -37,7 +39,7 @@ namespace net.authorize.sample
                 bankName = "Bank Of America"
             };
 
-            //standard api call to retrieve response
+            // standard api call to retrieve response
             paymentType cc = new paymentType { Item = creditCard };
             paymentType echeck = new paymentType {Item = bankAccount};
 
@@ -75,24 +77,35 @@ namespace net.authorize.sample
 
             var request = new createCustomerProfileRequest{ profile = customerProfile, validationMode = validationModeEnum.none};
 
-            var controller = new createCustomerProfileController(request);          // instantiate the controller that will call the service
+            // instantiate the controller that will call the service
+            var controller = new createCustomerProfileController(request);
             controller.Execute();
 
-            createCustomerProfileResponse response = controller.GetApiResponse();   // get the response from the service (errors contained if any)
+            // get the response from the service (errors contained if any)
+            createCustomerProfileResponse response = controller.GetApiResponse();
            
-            // validate response
-            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
+            // validate response 
+            if (response != null)
             {
-                if (response != null && response.messages.message != null)
+                if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    Console.WriteLine("Success, CustomerProfileID : " + response.customerProfileId);
-                    Console.WriteLine("Success, CustomerPaymentProfileID : " + response.customerPaymentProfileIdList[0]);
-                    Console.WriteLine("Success, CustomerShippingProfileID : " + response.customerShippingAddressIdList[0]);
+                    if(response.messages.message != null)
+                    {
+                        Console.WriteLine("Success!");
+                        Console.WriteLine("Customer Profile ID: " + response.customerProfileId);
+                        Console.WriteLine("Payment Profile ID: " + response.customerPaymentProfileIdList[0]);
+                        Console.WriteLine("Shipping Profile ID: " + response.customerShippingAddressIdList[0]);                    }
+                }
+                else
+                {
+                    Console.WriteLine("Customer Profile Creation Failed.");
+                    Console.WriteLine("Error Code: " + response.messages.message[0].code);
+                    Console.WriteLine("Error message: " + response.messages.message[0].text);
                 }
             }
-            else if(response != null )
+            else
             {
-                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
+                Console.WriteLine("Null Response.");
             }
 
             return response;

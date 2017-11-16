@@ -8,10 +8,14 @@ namespace net.authorize.sample
 {
     public class CreateCustomerPaymentProfile
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId)
+        public static ANetApiResponse Run(string ApiLoginID, string ApiTransactionKey, string customerProfileId)
         {
-            Console.WriteLine("CreateCustomerPaymentProfile Sample");
+            Console.WriteLine("Create Customer Payment Profile Sample");
+
+            // set whether to use the sandbox environment, or production enviornment
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
+
+            // define the merchant information (authentication / transaction id)
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
                 name            = ApiLoginID,
@@ -47,26 +51,37 @@ namespace net.authorize.sample
                 validationMode = validationModeEnum.none
             };
 
-            //Prepare Request
+            // instantiate the controller that will call the service
             var controller = new createCustomerPaymentProfileController(request);
             controller.Execute();
 
-             //Send Request to EndPoint
-            createCustomerPaymentProfileResponse response = controller.GetApiResponse(); 
-            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
+            // get the response from the service (errors contained if any)
+            createCustomerPaymentProfileResponse response = controller.GetApiResponse();
+
+            // validate response 
+            if (response != null)
             {
-                if (response != null && response.messages.message != null)
+                if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    Console.WriteLine("Success, createCustomerPaymentProfileID : " + response.customerPaymentProfileId);
+                    if(response.messages.message != null)
+                    {
+                        Console.WriteLine("Success! Customer Payment Profile ID: " + response.customerPaymentProfileId);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Customer Payment Profile Creation Failed.");
+                    Console.WriteLine("Error Code: " + response.messages.message[0].code);
+                    Console.WriteLine("Error message: " + response.messages.message[0].text);
+                    if (response.messages.message[0].code == "E00039")
+                    {
+                        Console.WriteLine("Duplicate Payment Profile ID: " + response.customerPaymentProfileId);
+                    }
                 }
             }
             else
             {
-                Console.WriteLine("Error: " + response.messages.message[0].code + "  " + response.messages.message[0].text);
-                if (response.messages.message[0].code == "E00039")
-                {
-                    Console.WriteLine("Duplicate ID: " + response.customerPaymentProfileId);
-                }
+                Console.WriteLine("Null Response.");
             }
 
             return response;
