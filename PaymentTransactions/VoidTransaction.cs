@@ -24,19 +24,9 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey
             };
 
-            var creditCard = new creditCardType
-            {
-                cardNumber = "4111111111111111",
-                expirationDate = "0718"
-            };
-
-            //standard api call to retrieve response
-            var paymentType = new paymentType { Item = creditCard };
-
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.voidTransaction.ToString(),    // refund type
-                payment         = paymentType,
                 refTransId      = TransactionID
             };
 
