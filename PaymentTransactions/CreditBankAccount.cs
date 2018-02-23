@@ -27,7 +27,7 @@ namespace net.authorize.sample
             var bankAccount = new bankAccountType
             {
                 accountType     = bankAccountTypeEnum.checking,
-                routingNumber   = "121042882",
+                routingNumber   = "125000105",
                 accountNumber   = "1234567890",
                 nameOnAccount   = "John Doe",
                 echeckType      = echeckTypeEnum.WEB,   // change based on how you take the payment (web, telephone, etc)
