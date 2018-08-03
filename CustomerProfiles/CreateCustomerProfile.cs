@@ -18,15 +18,15 @@ namespace net.authorize.sample
             // define the merchant information (authentication / transaction id)
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
-                name            = ApiLoginID,
+                name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item            = ApiTransactionKey,
+                Item = ApiTransactionKey,
             };
 
             var creditCard = new creditCardType
             {
-                cardNumber      = "4111111111111111",
-                expirationDate  = "0718"
+                cardNumber = "4111111111111111",
+                expirationDate = "0828"
             };
 
             var bankAccount = new bankAccountType
@@ -41,12 +41,12 @@ namespace net.authorize.sample
 
             // standard api call to retrieve response
             paymentType cc = new paymentType { Item = creditCard };
-            paymentType echeck = new paymentType {Item = bankAccount};
+            paymentType echeck = new paymentType { Item = bankAccount };
 
             List<customerPaymentProfileType> paymentProfileList = new List<customerPaymentProfileType>();
             customerPaymentProfileType ccPaymentProfile = new customerPaymentProfileType();
             ccPaymentProfile.payment = cc;
-            
+
             customerPaymentProfileType echeckPaymentProfile = new customerPaymentProfileType();
             echeckPaymentProfile.payment = echeck;
 
@@ -75,7 +75,7 @@ namespace net.authorize.sample
             customerProfile.paymentProfiles = paymentProfileList.ToArray();
             customerProfile.shipToList = addressInfoList.ToArray();
 
-            var request = new createCustomerProfileRequest{ profile = customerProfile, validationMode = validationModeEnum.none};
+            var request = new createCustomerProfileRequest { profile = customerProfile, validationMode = validationModeEnum.none };
 
             // instantiate the controller that will call the service
             var controller = new createCustomerProfileController(request);
@@ -83,18 +83,19 @@ namespace net.authorize.sample
 
             // get the response from the service (errors contained if any)
             createCustomerProfileResponse response = controller.GetApiResponse();
-           
+
             // validate response 
             if (response != null)
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    if(response.messages.message != null)
+                    if (response.messages.message != null)
                     {
                         Console.WriteLine("Success!");
                         Console.WriteLine("Customer Profile ID: " + response.customerProfileId);
                         Console.WriteLine("Payment Profile ID: " + response.customerPaymentProfileIdList[0]);
-                        Console.WriteLine("Shipping Profile ID: " + response.customerShippingAddressIdList[0]);                    }
+                        Console.WriteLine("Shipping Profile ID: " + response.customerShippingAddressIdList[0]);
+                    }
                 }
                 else
                 {
