@@ -24,11 +24,14 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey
             };
 
+            Random rand = new Random();
+            int randomAccountNumber = rand.Next(100000000, int.MaxValue);
+
             var bankAccount = new bankAccountType
             {
-                accountType     = bankAccountTypeEnum.checking,
-                routingNumber   = "125008547",
-                accountNumber   = "1234567890",
+                accountType     = bankAccountTypeEnum.savings,
+                routingNumber   = "121141754",//"125008547",
+                accountNumber   = randomAccountNumber.ToString(), //"1234567890",
                 nameOnAccount   = "John Doe",
                 echeckType      = echeckTypeEnum.WEB,   // change based on how you take the payment (web, telephone, etc)
                 bankName        = "Wells Fargo Bank NA",
