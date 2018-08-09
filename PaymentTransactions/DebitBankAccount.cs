@@ -24,7 +24,7 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey
             };
 
-            Random rand = new Random();
+            Random rand = new Random(); 
             int randomAccountNumber = rand.Next(100000000, int.MaxValue);
 
             var bankAccount = new bankAccountType
