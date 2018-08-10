@@ -29,7 +29,7 @@ namespace net.authorize.sample
 
             var bankAccount = new bankAccountType
             {
-                accountType     = bankAccountTypeEnum.savings,
+                accountType     = bankAccountTypeEnum.checking,
                 routingNumber   = "125008547",
                 accountNumber   = randomAccountNumber.ToString(), 
                 nameOnAccount   = "John Doe",
