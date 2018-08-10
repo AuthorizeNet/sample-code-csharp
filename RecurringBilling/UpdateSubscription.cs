@@ -69,7 +69,7 @@ namespace net.authorize.sample
 
             ARBUpdateSubscriptionResponse response = controller.GetApiResponse(); 
 
-            //validate
+            // validate response
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response != null && response.messages.message != null)

@@ -44,7 +44,7 @@ namespace net.authorize.sample
 
             if (decryptPaymentDataResponse != null)
             {
-                //validate response
+                // validate response
                 Console.WriteLine("Result : "+decryptPaymentDataResponse.messages.message);
                 Console.WriteLine("       : "+decryptPaymentDataResponse.messages.resultCode);
                 Console.WriteLine("First Name : "+decryptPaymentDataResponse.billingInfo.firstName);

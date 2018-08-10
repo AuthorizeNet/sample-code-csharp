@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AuthorizeNet;
-using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Contracts.V1;
+using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class GetUnsettledTransactionList
+    public class GetCustomerProfileTransactionList
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string customerProfileId)
         {
-            Console.WriteLine("Get unsettled transaction list sample");
+            Console.WriteLine("Get transaction list sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
             // define the merchant information (authentication / transaction id)
@@ -25,37 +24,30 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey,
             };
 
-            var request = new getUnsettledTransactionListRequest();
-            request.status  = TransactionGroupStatusEnum.any;
-            request.statusSpecified = true;
-            request.paging = new Paging
-            {
-                limit = 10,
-                offset = 1
-            };
-            request.sorting = new TransactionListSorting
-            {
-                orderBy = TransactionListOrderFieldEnum.id,
-                orderDescending = true
-            };
+            var request = new getTransactionListForCustomerRequest();
+            request.customerProfileId = "1811474252";
+
             // instantiate the controller that will call the service
-            var controller = new getUnsettledTransactionListController(request);
+            var controller = new getTransactionListForCustomerController(request);
             controller.Execute();
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
+
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                if (response.transactions == null) 
+                if (response.transactions == null)
                     return response;
 
-                foreach (var item in response.transactions)
+                foreach (var transaction in response.transactions)
                 {
-                    Console.WriteLine("Transaction Id: {0} was submitted on {1}", item.transId,
-                        item.submitTimeLocal);
+                    Console.WriteLine("Transaction Id: {0}", transaction.transId);
+                    Console.WriteLine("Submitted on (Local): {0}", transaction.submitTimeLocal);
+                    Console.WriteLine("Status: {0}", transaction.transactionStatus);
+                    Console.WriteLine("Settle amount: {0}", transaction.settleAmount);
                 }
             }
-            else if(response != null)
+            else if (response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);

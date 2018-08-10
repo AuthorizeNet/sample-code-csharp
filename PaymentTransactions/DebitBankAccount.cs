@@ -26,13 +26,16 @@ namespace net.authorize.sample
 
             var bankAccount = new bankAccountType
             {
-                accountNumber   = "4111111",
-                routingNumber   = "325070760",
+                accountType     = bankAccountTypeEnum.checking,
+                routingNumber   = "122000661",
+                accountNumber   = "1234567890",
+                nameOnAccount   = "John Doe",
                 echeckType      = echeckTypeEnum.WEB,   // change based on how you take the payment (web, telephone, etc)
-                nameOnAccount   = "Test Name"
+                bankName        = "Wells Fargo Bank NA",
+                // checkNumber     = "101"                 // needed if echeckType is "ARC" or "BOC"
             };
 
-            //standard api call to retrieve response
+            // standard api call to retrieve response
             var paymentType = new paymentType { Item = bankAccount };
 
             var transactionRequest = new transactionRequestType
@@ -44,14 +47,14 @@ namespace net.authorize.sample
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
 
-            // instantiate the contoller that will call the service
+            // instantiate the controller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null)
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)

@@ -25,12 +25,12 @@ namespace net.authorize.sample
 
             var request = new ARBGetSubscriptionRequest { subscriptionId = subscriptionId };    
 
-            var controller = new ARBGetSubscriptionController(request);          // instantiate the contoller that will call the service
+            var controller = new ARBGetSubscriptionController(request);          // instantiate the controller that will call the service
             controller.Execute();
 
             ARBGetSubscriptionResponse response = controller.GetApiResponse();   // get the response from the service (errors contained if any)
 
-            //validate
+            // validate response
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response.subscription != null)

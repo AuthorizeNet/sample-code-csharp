@@ -1,4 +1,4 @@
-﻿SampleCode	IsDependent	RunApi
+SampleCode	IsDependent	RunApi
 CreateSubscription	1	1
 CreateSubscriptionFromCustomerProfile	1	1
 GetCustomerPaymentProfileList	0	1
@@ -41,8 +41,8 @@ CreditBankAccount	1	0
 ChargeCustomerProfile	1	1
 PayPalVoid	1	0
 PayPalAuthorizeCapture	1	1
-PayPalAuthorizeCaptureContinue	1	1
-PayPalAuthorizeOnlyContinue	1	0
+PayPalAuthorizeCaptureContinued	1	1
+PayPalAuthorizeOnlyContinued	1	0
 PayPalCredit	1	0
 PayPalGetDetails	1	1
 PayPalPriorAuthorizationCapture	1	0
@@ -52,3 +52,7 @@ GetSubscription	1	1
 UpdateSubscription	1	1
 CreateCustomerProfile	1	1
 CreateCustomerPaymentProfile	1	1
+GetMerchantDetails	0	1
+GetAnAcceptPaymentPage	1	1
+UpdateHeldTransaction	1	0
+GetAccountUpdaterJobSummary	1	0

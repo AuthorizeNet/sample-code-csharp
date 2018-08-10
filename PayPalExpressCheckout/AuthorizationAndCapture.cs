@@ -8,25 +8,25 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class PayPalGetDetails
+    public class PayPalAuthorizeCapture
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal amount)
         {
-            Console.WriteLine("PayPal Get Details Transaction");
+            Console.WriteLine("PayPal Authorize Capture Transaction");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
             // define the merchant information (authentication / transaction id)
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
-                name = ApiLoginID,
+                name            = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = ApiTransactionKey
+                Item            = ApiTransactionKey
             };
 
             var payPalType = new payPalType
             {
-                cancelUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",
+                cancelUrl   = "http://www.merchanteCommerceSite.com/Success/TC25262",
                 successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to            
             };
 
@@ -35,33 +35,31 @@ namespace net.authorize.sample
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.getDetailsTransaction.ToString(),    // get the customer PayerID, email and shipping info
+                transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // capture the card only
                 payment         = paymentType,
-                amount          = 19.45m,
-                refTransId      = TransactionID
+                amount          = amount
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
 
-            // instantiate the contoller that will call the service
+            // instantiate the controller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null)
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
                     if(response.transactionResponse.messages != null)
                     {
-                        var shippingResponse = response.transactionResponse.shipTo;
-                        Console.WriteLine("Shipping address : " + shippingResponse.address + ", " + shippingResponse.city + ", " + shippingResponse.state + ", " + shippingResponse.country);
-
-                        if (response.transactionResponse.secureAcceptance != null)
-                            Console.WriteLine("Payer ID : " + response.transactionResponse.secureAcceptance.PayerID);
+                        Console.WriteLine("Successfully created transaction with Transaction ID: " + response.transactionResponse.transId);
+                        Console.WriteLine("Response Code: " + response.transactionResponse.responseCode);
+                        Console.WriteLine("Message Code: " + response.transactionResponse.messages[0].code);
+                        Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
                     }
                     else
                     {

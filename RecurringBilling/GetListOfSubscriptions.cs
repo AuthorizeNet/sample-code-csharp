@@ -25,12 +25,12 @@ namespace net.authorize.sample
 
             var request = new ARBGetSubscriptionListRequest {searchType = ARBGetSubscriptionListSearchTypeEnum.subscriptionActive };    // only gets active subscriptions
 
-            var controller = new ARBGetSubscriptionListController(request);          // instantiate the contoller that will call the service
+            var controller = new ARBGetSubscriptionListController(request);          // instantiate the controller that will call the service
             controller.Execute();
 
             ARBGetSubscriptionListResponse response = controller.GetApiResponse();   // get the response from the service (errors contained if any)
 
-            //validate
+            // validate response
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 if (response != null && response.messages.message != null && response.subscriptionDetails != null)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class PayPalAuthorizeOnly
+    public class CreateAnAcceptPaymentTransaction
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal Amount)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal amount)
         {
-            Console.WriteLine("PayPal Authorize Only Transaction");
+            Console.WriteLine("Create an Accept Payment Transaction Sample");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -21,35 +22,53 @@ namespace net.authorize.sample
             {
                 name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item = ApiTransactionKey
+                Item = ApiTransactionKey,
             };
 
-            var payPalType = new payPalType
+            var opaqueData = new opaqueDataType
             {
-                cancelUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",
-                successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to            
+                dataDescriptor = "COMMON.ACCEPT.INAPP.PAYMENT",
+                dataValue = "119eyJjb2RlIjoiNTBfMl8wNjAwMDUyN0JEODE4RjQxOUEyRjhGQkIxMkY0MzdGQjAxQUIwRTY2NjhFNEFCN0VENzE4NTUwMjlGRUU0M0JFMENERUIwQzM2M0ExOUEwMDAzNzlGRDNFMjBCODJEMDFCQjkyNEJDIiwidG9rZW4iOiI5NDkwMjMyMTAyOTQwOTk5NDA0NjAzIiwidiI6IjEuMSJ9"
+                
+            };
+
+            var billingAddress = new customerAddressType
+            {
+                firstName = "John",
+                lastName = "Doe",
+                address = "123 My St",
+                city = "OurTown",
+                zip = "98004"
             };
 
             //standard api call to retrieve response
-            var paymentType = new paymentType { Item = payPalType };
+            var paymentType = new paymentType { Item = opaqueData };
+
+            // Add line Items
+            var lineItems = new lineItemType[2];
+            lineItems[0] = new lineItemType { itemId = "1", name = "t-shirt", quantity = 2, unitPrice = new Decimal(15.00) };
+            lineItems[1] = new lineItemType { itemId = "2", name = "snowboard", quantity = 1, unitPrice = new Decimal(450.00) };
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.authOnlyTransaction.ToString(),    // capture the card only
+                transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
+
+                amount = amount,
                 payment = paymentType,
-                amount = Amount
+                billTo = billingAddress,
+                lineItems = lineItems
             };
-
+            
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
-
-            // instantiate the contoller that will call the service
+            
+            // instantiate the controller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
-
+            
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null)
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)
@@ -60,6 +79,7 @@ namespace net.authorize.sample
                         Console.WriteLine("Response Code: " + response.transactionResponse.responseCode);
                         Console.WriteLine("Message Code: " + response.transactionResponse.messages[0].code);
                         Console.WriteLine("Description: " + response.transactionResponse.messages[0].description);
+						Console.WriteLine("Success, Auth Code : " + response.transactionResponse.authCode);
                     }
                     else
                     {

@@ -41,14 +41,14 @@ namespace net.authorize.sample
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
 
-            // instantiate the contoller that will call the service
+            // instantiate the controller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null)
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)

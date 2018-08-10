@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using net.authorize.sample.CustomerProfiles;
 
 namespace net.authorize.sample
 {
@@ -84,8 +85,9 @@ namespace net.authorize.sample
             Console.WriteLine("    CreateVisaCheckoutTransaction");
             Console.WriteLine("    PayPalVoid");
             Console.WriteLine("    PayPalAuthorizeCapture");
-            Console.WriteLine("    PayPalAuthorizeCaptureContinue");
+            Console.WriteLine("    PayPalAuthorizeCaptureContinued");
             Console.WriteLine("    PayPalAuthorizeOnly");
+            Console.WriteLine("    PayPalAuthorizeOnlyContinued");
             Console.WriteLine("    PayPalCredit");
             Console.WriteLine("    PayPalGetDetails");
             Console.WriteLine("    PayPalPriorAuthorizationCapture");
@@ -123,6 +125,12 @@ namespace net.authorize.sample
             Console.WriteLine("    GetTransactionDetails");
             Console.WriteLine("    GetTransactionList");
             Console.WriteLine("    UpdateSplitTenderGroup");
+            Console.WriteLine("    GetHeldTransactionList");
+            Console.WriteLine("    ApproveOrDeclineHeldTransaction");
+            Console.WriteLine("    GetMerchantDetails");
+            Console.WriteLine("    GetAnAcceptPaymentPage");
+            Console.WriteLine("    GetCustomerProfileTransactionList");
+            Console.WriteLine("    GetAccountUpdaterJobSummary");
         }
 
         private static void RunMethod(String methodName)
@@ -256,14 +264,14 @@ namespace net.authorize.sample
                 case "PayPalAuthorizeCapture":
                     PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, amount);
                     break;
-                case "PayPalAuthorizeCaptureContinue":                    
-                    PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, transactionId, payerId);
+                case "PayPalAuthorizeCaptureContinued":                    
+                    PayPalAuthorizeCaptureContinued.Run(apiLoginId, transactionKey, transactionId, payerId);
                     break;
                 case "PayPalAuthorizeOnly":
                     PayPalAuthorizeOnly.Run(apiLoginId, transactionKey, amount);
                     break;
-                case "PayPalAuthorizeOnlyContinue":
-                    PayPalAuthorizeOnlyContinue.Run(apiLoginId, transactionKey, transactionId, payerId);
+                case "PayPalAuthorizeOnlyContinued":
+                    PayPalAuthorizeOnlyContinued.Run(apiLoginId, transactionKey, transactionId, payerId);
                     break;
                 case "PayPalCredit":
                     PayPalCredit.Run(apiLoginId, transactionKey, transactionId);
@@ -313,11 +321,28 @@ namespace net.authorize.sample
                 case "UpdateSplitTenderGroup":
                      UpdateSplitTenderGroup.Run(apiLoginId, transactionKey);
                      break;
+                case "GetHeldTransactionList":
+                    GetHeldTransactionList.Run(apiLoginId, transactionKey);
+                    break;
+                case "ApproveOrDeclineHeldTransaction":
+                    ApproveOrDeclineHeldTransaction.Run(apiLoginId, transactionKey);
+                    break;
+                case "GetMerchantDetails":
+                     GetMerchantDetails.Run(apiLoginId, transactionKey);
+                     break;
+                case "GetAnAcceptPaymentPage":
+                    GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, 12.23m);
+                    break;
+                case "GetCustomerProfileTransactionList":
+                    GetCustomerProfileTransactionList.Run(apiLoginId, transactionKey, customerProfileId);
+                    break;
+                //case "GetAccountUpdaterJobSummary":
+                //    GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
+                //    break;
                 default:
                     ShowUsage();
                     break;
             }
         }
-
     }
 }

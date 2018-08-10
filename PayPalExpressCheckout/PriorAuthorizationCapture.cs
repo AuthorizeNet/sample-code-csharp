@@ -8,26 +8,26 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class PayPalVoid
+    public class PayPalPriorAuthorizationCapture
     {
         public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
         {
-            Console.WriteLine("PayPal Void Transaction");
+            Console.WriteLine("PayPal Prior Authorization Transaction");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
             // define the merchant information (authentication / transaction id)
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.MerchantAuthentication = new merchantAuthenticationType()
             {
-                name            = ApiLoginID,
+                name = ApiLoginID,
                 ItemElementName = ItemChoiceType.transactionKey,
-                Item            = ApiTransactionKey
+                Item = ApiTransactionKey
             };
 
             var payPalType = new payPalType
             {
-                cancelUrl   = "",
-                successUrl  = "",     // the url where the user will be returned to            
+                cancelUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",
+                successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to            
             };
 
             //standard api call to retrieve response
@@ -35,21 +35,22 @@ namespace net.authorize.sample
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.voidTransaction.ToString(),    // refund type
-                payment         = paymentType,
-                refTransId      = TransactionID
+                transactionType = transactionTypeEnum.priorAuthCaptureTransaction.ToString(),    // capture a prior authorization
+                payment     = paymentType,
+                amount      = 19.45m,
+                refTransId  = TransactionID                                                     // the TransID value that was returned from the first AuthOnlyTransaction call
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
 
-            // instantiate the contoller that will call the service
+            // instantiate the controller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null)
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)

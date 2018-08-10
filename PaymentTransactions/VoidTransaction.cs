@@ -24,32 +24,22 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey
             };
 
-            var creditCard = new creditCardType
-            {
-                cardNumber = "4111111111111111",
-                expirationDate = "0718"
-            };
-
-            //standard api call to retrieve response
-            var paymentType = new paymentType { Item = creditCard };
-
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.voidTransaction.ToString(),    // refund type
-                payment         = paymentType,
                 refTransId      = TransactionID
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
 
-            // instantiate the contoller that will call the service
+            // instantiate the controller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null)
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)

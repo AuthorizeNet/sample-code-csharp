@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>net.authorize.sample</RootNamespace>
     <AssemblyName>SampleCode</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,10 +32,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AuthorizeNet">
-      <HintPath>packages\AuthorizeNet.1.9.0\lib\AuthorizeNet.dll</HintPath>
+      <HintPath>packages\AuthorizeNet.1.9.5\lib\AuthorizeNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,9 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MobileInappTransactions\CreateAnAcceptTransaction.cs" />
-    <Compile Include="MobileInappTransactions\CreateAnAndroidPayTransaction.cs" />
-    <Compile Include="MobileInappTransactions\CreateAnApplePayTransaction.cs" />
+    <Compile Include="AcceptSuite\GetAnAcceptPaymentPage.cs" />
+    <Compile Include="AcceptSuite\CreateAnAcceptTransaction.cs" />
+    <Compile Include="MobileInAppTransactions\CreateAnAndroidPayTransaction.cs" />
+    <Compile Include="MobileInAppTransactions\CreateAnApplePayTransaction.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerPaymentProfile.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\CreateCustomerProfileFromTransaction.cs" />
@@ -59,11 +63,13 @@
     <Compile Include="CustomerProfiles\GetCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\GetCustomerProfileIds.cs" />
     <Compile Include="CustomerProfiles\GetCustomerShippingAddress.cs" />
-    <Compile Include="CustomerProfiles\GetAcceptCustomerProfilePage.cs" />
+    <Compile Include="AcceptSuite\GetAcceptCustomerProfilePage.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerPaymentProfile.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerShippingAddress.cs" />
     <Compile Include="CustomerProfiles\ValidateCustomerPaymentProfile.cs" />
+    <Compile Include="FraudManagement\GetHeldTransactionList.cs" />
+    <Compile Include="FraudManagement\ApproveOrDeclineHeldTransaction.cs" />
     <Compile Include="PaymentTransactions\AuthorizeCreditCard.cs" />
     <Compile Include="PaymentTransactions\CaptureFundsAuthorizedThroughAnotherChannel.cs" />
     <Compile Include="PaymentTransactions\CapturePreviouslyAuthorizedAmount.cs" />
@@ -72,19 +78,20 @@
     <Compile Include="PaymentTransactions\ChargeTrackData.cs" />
     <Compile Include="PaymentTransactions\ChargeEncryptedTrackData.cs" />
     <Compile Include="PaymentTransactions\ChargeTokenizedCreditCard.cs" />
+    <Compile Include="AcceptSuite\CreateAnAcceptPaymentTransaction.cs" />
     <Compile Include="PaymentTransactions\CreditBankAccount.cs" />
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />
     <Compile Include="PaymentTransactions\UpdateSplitTenderGroup.cs" />
     <Compile Include="PaymentTransactions\VoidTransaction.cs" />
-    <Compile Include="PaypalExpressCheckout\AuthorizationAndCapture.cs" />
-    <Compile Include="PaypalExpressCheckout\AuthorizationAndCaptureContinue.cs" />
-    <Compile Include="PaypalExpressCheckout\AuthorizationOnly.cs" />
-    <Compile Include="PaypalExpressCheckout\AuthorizationOnlyContinued.cs" />
-    <Compile Include="PaypalExpressCheckout\Credit.cs" />
-    <Compile Include="PaypalExpressCheckout\GetDetails.cs" />
-    <Compile Include="PaypalExpressCheckout\PriorAuthorizationCapture.cs" />
-    <Compile Include="PaypalExpressCheckout\Void.cs" />
+    <Compile Include="PayPalExpressCheckout\AuthorizationAndCapture.cs" />
+    <Compile Include="PayPalExpressCheckout\AuthorizationAndCaptureContinued.cs" />
+    <Compile Include="PayPalExpressCheckout\AuthorizationOnly.cs" />
+    <Compile Include="PayPalExpressCheckout\AuthorizationOnlyContinued.cs" />
+    <Compile Include="PayPalExpressCheckout\Credit.cs" />
+    <Compile Include="PayPalExpressCheckout\GetDetails.cs" />
+    <Compile Include="PayPalExpressCheckout\PriorAuthorizationCapture.cs" />
+    <Compile Include="PayPalExpressCheckout\Void.cs" />
     <Compile Include="RecurringBilling\CancelSubscription.cs" />
     <Compile Include="RecurringBilling\CreateSubscription.cs" />
     <Compile Include="RecurringBilling\CreateSubscriptionFromCustomerProfile.cs" />
@@ -94,9 +101,11 @@
     <Compile Include="RecurringBilling\UpdateSubscription.cs" />
     <Compile Include="SampleCode.cs" />
     <Compile Include="TransactionReporting\GetBatchStatistics.cs" />
+    <Compile Include="TransactionReporting\GetMerchantDetails.cs" />
     <Compile Include="TransactionReporting\GetSettledBatchList.cs" />
     <Compile Include="TransactionReporting\GetTransactionDetails.cs" />
     <Compile Include="TransactionReporting\GetTransactionList.cs" />
+    <Compile Include="TransactionReporting\GetCustomerProfileTransactionList.cs" />
     <Compile Include="TransactionReporting\GetUnsettledTransactionList.cs" />
     <Compile Include="VisaCheckout\DecryptVisaCheckoutData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

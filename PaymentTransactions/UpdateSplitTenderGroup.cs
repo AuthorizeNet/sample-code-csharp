@@ -33,12 +33,12 @@ namespace net.authorize.sample.PaymentTransactions
 
             var request = new updateSplitTenderGroupRequest { splitTenderId = splitTenderId, splitTenderStatus = splitTenderStatus };
 
-            // instantiate the contoller that will call the service
+            // instantiate the controller that will call the service
             var controller = new updateSplitTenderGroupController(request);
             controller.Execute();
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
                 Console.WriteLine("Successfully Updated ... ");

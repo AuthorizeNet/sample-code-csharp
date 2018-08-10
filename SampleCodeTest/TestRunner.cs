@@ -9,6 +9,7 @@ using System.Reflection;
 using AuthorizeNet;
 using net.authorize.sample.PaymentTransactions;
 using System.Threading;
+using net.authorize.sample.CustomerProfiles;
 using net.authorize.sample.MobileInappTransactions;
 
 namespace SampleCodeTest
@@ -25,7 +26,7 @@ namespace SampleCodeTest
 
         private static string GetEmail()
         {
-            return r.Next(1000, 8908) + "@test.com";
+            return r.Next(1000, 89999999) + "@test.com";
         }
 
         private static decimal GetAmount()
@@ -313,15 +314,15 @@ namespace SampleCodeTest
             return PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
         }
 
-        public ANetApiResponse TestPayPalAuthorizeCaptureContinue()
+        public ANetApiResponse TestPayPalAuthorizeCaptureContinued()
         {
             var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
-            return PayPalAuthorizeCaptureContinue.Run(apiLoginId, transactionKey, response.transactionResponse.transId, payerID);
+            return PayPalAuthorizeCaptureContinued.Run(apiLoginId, transactionKey, response.transactionResponse.transId, payerID);
         }  
                   
-        public ANetApiResponse TestPayPalAuthorizeOnlyContinue()
+        public ANetApiResponse TestPayPalAuthorizeOnlyContinued()
         {
-            return PayPalAuthorizeOnlyContinue.Run(apiLoginId, transactionKey, TransactionID, payerID);
+            return PayPalAuthorizeOnlyContinued.Run(apiLoginId, transactionKey, TransactionID, payerID);
         }
                     
         public ANetApiResponse TestPayPalCredit()
@@ -424,5 +425,15 @@ namespace SampleCodeTest
             var response = (createTransactionResponse)CreateAnAcceptTransaction.Run(apiLoginId, transactionKey, GetAmount());
             return response;
         }
+
+        public ANetApiResponse TestGetAnAcceptPaymentPage()
+        {
+            return GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, GetAmount());
+        }
+
+        //public ANetApiResponse TestGetAccountUpdaterJobSummary()
+        //{
+        //    return GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
+        //}
     }
 }

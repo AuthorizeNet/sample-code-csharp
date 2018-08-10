@@ -8,11 +8,11 @@ using AuthorizeNet.Api.Controllers.Bases;
 
 namespace net.authorize.sample
 {
-    public class PayPalPriorAuthorizationCapture
+    public class PayPalAuthorizeCaptureContinued
     {
-        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID)
+        public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, string TransactionID, string PayerID)
         {
-            Console.WriteLine("PayPal Prior Authorization Transaction");
+            Console.WriteLine("PayPal Authorization and Capture, Continued Transaction");
 
             ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
 
@@ -26,8 +26,9 @@ namespace net.authorize.sample
 
             var payPalType = new payPalType
             {
-                cancelUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",
-                successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to            
+                cancelUrl  = "http://www.merchanteCommerceSite.com/Success/TC25262",
+                successUrl = "http://www.merchanteCommerceSite.com/Success/TC25262",     // the url where the user will be returned to      
+                payerID = PayerID
             };
 
             //standard api call to retrieve response
@@ -35,22 +36,22 @@ namespace net.authorize.sample
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.priorAuthCaptureTransaction.ToString(),    // capture a prior authorization
-                payment     = paymentType,
-                amount      = 19.45m,
-                refTransId  = TransactionID                                                     // the TransID value that was returned from the first AuthOnlyTransaction call
+                transactionType = transactionTypeEnum.authCaptureContinueTransaction.ToString(),    // capture the card only
+                payment         = paymentType,
+                amount          = 19.45m,
+                refTransId      = TransactionID
             };
 
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
 
-            // instantiate the contoller that will call the service
+            // instantiate the controller that will call the service
             var controller = new createTransactionController(request);
             controller.Execute();
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
 
-            //validate
+            // validate response
             if (response != null)
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)
