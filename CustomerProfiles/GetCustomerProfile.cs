@@ -33,25 +33,45 @@ namespace net.authorize.sample
             controller.Execute();
 
             // get the response from the service (errors contained if any)
-            var response = controller.GetApiResponse();
+            var response = controller.GetApiResponse();          
 
-            if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
+            // validate response 
+            if (response != null)
             {
-                Console.WriteLine(response.messages.message[0].text);
-                Console.WriteLine("Customer Profile Id: " + response.profile.customerProfileId);
-
-                if (response.subscriptionIds != null && response.subscriptionIds.Length > 0)
+                if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    Console.WriteLine("List of subscriptions : ");
-                    for (int i = 0; i < response.subscriptionIds.Length; i++)
-                        Console.WriteLine(response.subscriptionIds[i]);
-                }
+                    //if (response.messages.message != null)
+                    //{
+                        Console.WriteLine(response.messages.message[0].text);
+                        Console.WriteLine("Customer Profile Id: " + response.profile.customerProfileId);
 
+                        if (response.subscriptionIds != null && response.subscriptionIds.Length > 0)
+                        {
+                            Console.WriteLine("List of subscriptions : ");
+                            for (int i = 0; i < response.subscriptionIds.Length; i++)
+                                Console.WriteLine(response.subscriptionIds[i]);
+                        }
+                   // }
+                }
+                else
+                {
+                    Console.WriteLine("Error Code: " + response.messages.message[0].code);
+                    Console.WriteLine("Error message: " + response.messages.message[0].text);
+                }
             }
-            else if(response != null)
+            else
             {
-                Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
-                                  response.messages.message[0].text);
+                ANetApiResponse errorResponse = controller.GetErrorResponse();
+                if (errorResponse.messages.message.Length > 0)
+                {
+                    Console.WriteLine("Customer Profile Creation Failed.");
+                    Console.WriteLine("Error Code: " + errorResponse.messages.message[0].code);
+                    Console.WriteLine("Error message: " + errorResponse.messages.message[0].text);
+                }
+                else
+                {
+                    Console.WriteLine("Null Response.");
+                }
             }
 
             return response;

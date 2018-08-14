@@ -106,11 +106,13 @@ namespace net.authorize.sample
             }
             else
             {
-                if (controller.GetErrorResponse().messages.message.Length > 0)
+                // Check for errors
+                ANetApiResponse errorResponse = controller.GetErrorResponse();
+                if (errorResponse.messages.message.Length > 0)
                 {
                     Console.WriteLine("Customer Profile Creation Failed.");
-                    Console.WriteLine("Error Code: " + response.messages.message[0].code);
-                    Console.WriteLine("Error message: " + response.messages.message[0].text);
+                    Console.WriteLine("Error Code: " + errorResponse.messages.message[0].code);
+                    Console.WriteLine("Error message: " + errorResponse.messages.message[0].text);
                 }
                 else
                 {
