@@ -25,7 +25,7 @@ namespace net.authorize.sample
             };
 
             Random rand = new Random(); 
-            int randomAccountNumber = rand.Next(100000000, int.MaxValue);
+            int randomAccountNumber = rand.Next(10000, int.MaxValue);
 
             var bankAccount = new bankAccountType
             {
