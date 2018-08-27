@@ -40,8 +40,8 @@ namespace net.authorize.sample
             {
                 if (response.messages.resultCode == messageTypeEnum.Ok)
                 {
-                    //if (response.messages.message != null)
-                    //{
+                    if (response.messages.message != null)
+                    {
                         Console.WriteLine(response.messages.message[0].text);
                         Console.WriteLine("Customer Profile Id: " + response.profile.customerProfileId);
 
@@ -51,7 +51,7 @@ namespace net.authorize.sample
                             for (int i = 0; i < response.subscriptionIds.Length; i++)
                                 Console.WriteLine(response.subscriptionIds[i]);
                         }
-                   // }
+                    }
                 }
                 else
                 {
