@@ -26,15 +26,12 @@ namespace net.authorize.sample
 
             var bankAccount = new bankAccountType
             {
-                accountType     = bankAccountTypeEnum.checking,
-                routingNumber   = "125000105",
-                accountNumber   = "1234567890",
-                nameOnAccount   = "John Doe",
-                echeckType      = echeckTypeEnum.WEB,   // change based on how you take the payment (web, telephone, etc)
-                bankName        = "Wells Fargo Bank NA",
-                // checkNumber     = "101"                 // needed if echeckType is "ARC" or "BOC"
+                accountNumber = "4111111",
+                routingNumber = "122235821",
+                //echeckType = echeckTypeEnum.WEB,   // change based on how you take the payment (web, telephone, etc)
+                nameOnAccount = "John Doe",
+                accountType = bankAccountTypeEnum.checking
             };
-
             // standard api call to retrieve response
             var paymentType = new paymentType { Item = bankAccount };
 

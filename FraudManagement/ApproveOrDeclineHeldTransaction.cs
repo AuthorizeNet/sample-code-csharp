@@ -29,7 +29,7 @@ namespace net.authorize.sample
             request.heldTransactionRequest = new heldTransactionRequestType
             {
                 action = afdsTransactionEnum.approve,
-                refTransId = "60012192922"
+                refTransId = "60108066607"
             };
             
             // instantiate the controller that will call the service
