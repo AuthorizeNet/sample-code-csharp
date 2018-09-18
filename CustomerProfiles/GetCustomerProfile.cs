@@ -25,12 +25,12 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey,
             };
 
-            var request = new getCustomerProfileRequest();
+			var request = new getCustomerProfileRequest();
             request.customerProfileId = customerProfileId;
 
             // instantiate the controller that will call the service
             var controller = new getCustomerProfileController(request);
-            controller.Execute();
+	        controller.Execute();
 
             // get the response from the service (errors contained if any)
             var response = controller.GetApiResponse();
