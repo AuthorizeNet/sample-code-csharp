@@ -32,7 +32,6 @@ namespace net.authorize.sample
                 accountType     = bankAccountTypeEnum.checking,
                 routingNumber   = "125008547",
                 accountNumber   = randomAccountNumber.ToString(), 
-
                 nameOnAccount   = "John Doe",
                 echeckType      = echeckTypeEnum.WEB,   // change based on how you take the payment (web, telephone, etc)
                 bankName        = "Wells Fargo Bank NA",

@@ -30,7 +30,6 @@ namespace net.authorize.sample
                 // Change the cardNumber and expiration Date as required
                 cardNumber = "4111111111111111",
                 expirationDate = "0725"
-
             };
 
             //standard api call to retrieve response
