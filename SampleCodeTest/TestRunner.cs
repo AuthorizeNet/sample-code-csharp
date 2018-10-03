@@ -435,5 +435,9 @@ namespace SampleCodeTest
         //{
         //    return GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
         //}
+        public ANetApiResponse TestGetAccountUpdaterJobDetails()
+        {
+            return GetAccountUpdaterJobDetails.Run(apiLoginId, transactionKey);
+        }
     }
 }
