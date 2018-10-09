@@ -67,16 +67,16 @@ namespace net.authorize.sample
 
                     if (details is auUpdateType)
                     {
-                        for (int i = 0; i < ((AuthorizeNet.Api.Contracts.V1.auUpdateType)details).SubscriptionIdList.Length; i++)
+                        for (int i = 0; i < ((AuthorizeNet.Api.Contracts.V1.auUpdateType)details).subscriptionIdList.Length; i++)
                         {
-                            Console.WriteLine("SubscriptionIdList: {0}", ((AuthorizeNet.Api.Contracts.V1.auUpdateType)details).SubscriptionIdList[i]);
+                            Console.WriteLine("SubscriptionIdList: {0}", ((AuthorizeNet.Api.Contracts.V1.auUpdateType)details).subscriptionIdList[i]);
                         }
                     }
                     else if (details is auDeleteType)
                     {
-                        for (int i = 0; i < ((AuthorizeNet.Api.Contracts.V1.auDeleteType)details).SubscriptionIdList.Length; i++)
+                        for (int i = 0; i < ((AuthorizeNet.Api.Contracts.V1.auDeleteType)details).subscriptionIdList.Length; i++)
                         {
-                            Console.WriteLine("SubscriptionIdList: {0}", ((AuthorizeNet.Api.Contracts.V1.auDeleteType)details).SubscriptionIdList[i]);
+                            Console.WriteLine("SubscriptionIdList: {0}", ((AuthorizeNet.Api.Contracts.V1.auDeleteType)details).subscriptionIdList[i]);
                         }
                     }
 
