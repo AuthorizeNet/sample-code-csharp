@@ -57,6 +57,8 @@ namespace net.authorize.sample
                 // Displaying the Audetails of each response in the list
                 foreach (var details in response.auDetails)
                 {
+
+
                     Console.WriteLine(" **** Customer profile details Start ****");
                     Console.WriteLine("Profile ID / Payment Profile ID: {0} / {1}", details.customerProfileID, details.customerPaymentProfileID);
                     Console.WriteLine("Firstname lastname : {0} / {1}", details.firstName, details.lastName);
@@ -67,16 +69,16 @@ namespace net.authorize.sample
 
                     if (details is auUpdateType)
                     {
-                        for (int i = 0; i < ((AuthorizeNet.Api.Contracts.V1.auUpdateType)details).subscriptionIdList.Length; i++)
+                        for (int i = 0; i < ((auUpdateType)details).subscriptionIdList.Length; i++)
                         {
-                            Console.WriteLine("SubscriptionIdList: {0}", ((AuthorizeNet.Api.Contracts.V1.auUpdateType)details).subscriptionIdList[i]);
+                            Console.WriteLine("SubscriptionIdList: {0}", ((auUpdateType)details).subscriptionIdList[i]);
                         }
                     }
                     else if (details is auDeleteType)
                     {
-                        for (int i = 0; i < ((AuthorizeNet.Api.Contracts.V1.auDeleteType)details).subscriptionIdList.Length; i++)
+                        for (int i = 0; i < ((auDeleteType)details).subscriptionIdList.Length; i++)
                         {
-                            Console.WriteLine("SubscriptionIdList: {0}", ((AuthorizeNet.Api.Contracts.V1.auDeleteType)details).subscriptionIdList[i]);
+                            Console.WriteLine("SubscriptionIdList: {0}", ((auDeleteType)details).subscriptionIdList[i]);
                         }
                     }
 
@@ -90,6 +92,7 @@ namespace net.authorize.sample
                         Console.WriteLine("Card Number: {0}", newCreditCardMaskedType.cardNumber);
                         Console.WriteLine("New Expiration Date: {0}", newCreditCardMaskedType.expirationDate);
                         Console.WriteLine("New Card Type: {0}", newCreditCardMaskedType.cardType);
+
                     }
 
                     if (details.GetType().GetField("oldCreditCard") != null)
@@ -113,7 +116,12 @@ namespace net.authorize.sample
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
                                   response.messages.message[0].text);
             }
-
+            else if (response == null)
+            {
+                var errResponse = controller.GetErrorResponse();
+                Console.WriteLine("Error: " + errResponse.messages.message[0].code + "  " +
+                                  response.messages.message[0].text);
+            }
             return response;
         }
     }
