@@ -35,6 +35,13 @@
   
   
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.1.1" />
+  </ItemGroup>
+  
+  
+  <ItemGroup>
     <Reference Include="AuthorizeNET">
       <HintPath>AuthorizeNet.dll</HintPath>
     </Reference>

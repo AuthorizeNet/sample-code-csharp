@@ -1,8 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>    
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>    
+    <Company>Microsoft</Company>    
+    <AssemblyVersion>0.9.0.0</AssemblyVersion>    
+    <FileVersion>0.9.0.0</FileVersion>    
+    <Version>0.9.0.0</Version>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SampleCode_DotNet_Core_Test\**" />
+    <EmbeddedResource Remove="SampleCode_DotNet_Core_Test\**" />
+    <None Remove="SampleCode_DotNet_Core_Test\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0-preview-20180610-02" />
@@ -16,12 +38,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AuthorizeNET\AuthorizeNET.csproj" />
-    <ProjectReference Include="..\SampleCodeTest_DotNet_Core.csproj" />
+    <ProjectReference Include="..\SampleCode_DotNet_Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AuthorizeNET">
+      <HintPath>..\AuthorizeNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
