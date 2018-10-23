@@ -5,18 +5,38 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
     <ApplicationIcon />
     <OutputTypeEx>exe</OutputTypeEx>
     <StartupObject />
+  </PropertyGroup> 
+ <PropertyGroup>
+     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-
+  
+ <ItemGroup>
+   <Compile Remove="packages\**" />
+   <Compile Remove="SampleCodeTest\**" />
+   <EmbeddedResource Remove="packages\**" />
+   <EmbeddedResource Remove="SampleCodeTest\**" />
+   <None Remove="packages\**" />
+   <None Remove="SampleCodeTest\**" />
+ </ItemGroup>
+  
+  
   <ItemGroup>
     <Compile Remove="TransactionReporting\GetCustomerProfileTransactionList.cs" />
   </ItemGroup>
-
+  
+  
   <ItemGroup>
-    <ProjectReference Include="..\..\AuthorizeNET\AuthorizeNET.csproj" />
+    <None Remove="README.md" />
   </ItemGroup>
-
+  
+  
+  <ItemGroup>
+    <Reference Include="AuthorizeNET">
+      <HintPath>AuthorizeNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

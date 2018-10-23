@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AuthorizeNet">
-      <HintPath>packages\AuthorizeNet.1.9.4\lib\AuthorizeNet.dll</HintPath>
+      <HintPath>packages\AuthorizeNet.1.9.6\lib\AuthorizeNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -78,7 +78,8 @@
     <Compile Include="PaymentTransactions\ChargeTrackData.cs" />
     <Compile Include="PaymentTransactions\ChargeEncryptedTrackData.cs" />
     <Compile Include="PaymentTransactions\ChargeTokenizedCreditCard.cs" />
-    <Compile Include="PaymentTransactions\CreditBankAccount.cs" />
+    <Compile Include="PaymentTransactions\CreditBankAccount.cs" />    
+	<Compile Include="PaymentTransactions\CreateAnAcceptPaymentTransaction.cs" />
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />
     <Compile Include="PaymentTransactions\UpdateSplitTenderGroup.cs" />
@@ -99,6 +100,8 @@
     <Compile Include="RecurringBilling\GetSubscriptionStatus.cs" />
     <Compile Include="RecurringBilling\UpdateSubscription.cs" />
     <Compile Include="SampleCode.cs" />
+    <Compile Include="TransactionReporting\GetAccountUpdaterJobDetails.cs" />
+    <Compile Include="TransactionReporting\GetAccountUpdaterJobSummary.cs" />
     <Compile Include="TransactionReporting\GetBatchStatistics.cs" />
     <Compile Include="TransactionReporting\GetMerchantDetails.cs" />
     <Compile Include="TransactionReporting\GetSettledBatchList.cs" />

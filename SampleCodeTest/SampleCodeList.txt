@@ -1,5 +1,4 @@
 SampleCode	IsDependent	RunApi
-CreateSubscription	1	1
 CreateSubscriptionFromCustomerProfile	1	1
 GetCustomerPaymentProfileList	0	1
 GetTransactionList	0	1
