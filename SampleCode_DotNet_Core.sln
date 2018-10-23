@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleCode_DotNet_Core", "SampleCode_DotNet_Core.csproj", "{50A29DBF-957F-4ECE-AC1C-4659DEAADB65}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleCodeTest_DotNet_Core", "SampleCodeTest\SampleCodeTest_DotNet_Core.csproj", "{A0955044-8446-45AE-A8E9-2D97299E5C6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizeNET", "..\AuthorizeNET\AuthorizeNET.csproj", "{973B1ED4-CFBC-4F8D-B254-22F4F4DE784A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50A29DBF-957F-4ECE-AC1C-4659DEAADB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A29DBF-957F-4ECE-AC1C-4659DEAADB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A29DBF-957F-4ECE-AC1C-4659DEAADB65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A29DBF-957F-4ECE-AC1C-4659DEAADB65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0955044-8446-45AE-A8E9-2D97299E5C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0955044-8446-45AE-A8E9-2D97299E5C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0955044-8446-45AE-A8E9-2D97299E5C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0955044-8446-45AE-A8E9-2D97299E5C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{973B1ED4-CFBC-4F8D-B254-22F4F4DE784A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973B1ED4-CFBC-4F8D-B254-22F4F4DE784A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973B1ED4-CFBC-4F8D-B254-22F4F4DE784A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973B1ED4-CFBC-4F8D-B254-22F4F4DE784A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

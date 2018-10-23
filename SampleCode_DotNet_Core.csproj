@@ -9,8 +9,7 @@
     <ApplicationIcon />
     <OutputTypeEx>exe</OutputTypeEx>
     <StartupObject />
-  </PropertyGroup>
-  
+  </PropertyGroup> 
  <PropertyGroup>
      <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
@@ -40,6 +39,4 @@
       <HintPath>AuthorizeNet.dll</HintPath>
     </Reference>
   </ItemGroup>
-
-  
 </Project>
