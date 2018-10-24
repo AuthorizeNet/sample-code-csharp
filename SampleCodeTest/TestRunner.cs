@@ -42,51 +42,66 @@ namespace SampleCodeTest
         [Test]
         public void TestAllSampleCodes()
         {
-            string fileName = Constants.CONFIG_FILE;
-            StreamReader reader = File.OpenText(fileName);
-            TestRunner tr = new TestRunner();
-            var numRetries = 3;
 
-            string line;
-            while ((line = reader.ReadLine()) != null)
+            try
             {
-                string[] items = line.Split('\t');
-                
-                string apiName = items[0];
-                string isDependent = items[1];
-                string shouldApiRun = items[2];
-
-                if (!shouldApiRun.Equals("1"))
-                    continue;
-
-                Console.WriteLine(new String('-', 20));
-                Console.WriteLine("Running test case for :: " + apiName);
-                Console.WriteLine(new String('-', 20));
-                ANetApiResponse response = null;
-                for (int i = 0; i < numRetries; ++i)
+                string fileName = Constants.CONFIG_FILE;
+                using (StreamReader reader = File.OpenText(fileName))
                 {
-                    try
+                    TestRunner tr = new TestRunner();
+                    var numRetries = 3;
+
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        if (isDependent.Equals("0"))
+                        string[] items = line.Split('\t');
+
+                        string apiName = items[0];
+                        string isDependent = items[1];
+                        string shouldApiRun = items[2];
+
+                        if (!shouldApiRun.Equals("1"))
+                            continue;
+
+                        Console.WriteLine(new String('-', 20));
+                        Console.WriteLine("Running test case for :: " + apiName);
+                        Console.WriteLine(new String('-', 20));
+                        ANetApiResponse response = null;
+                        for (int i = 0; i < numRetries; ++i)
                         {
-                            response = InvokeRunMethod(apiName);
-                        }
-                        else
-                        {
-                            response = (ANetApiResponse)typeof(TestRunner).GetMethod("Test" + apiName).Invoke(tr, new Object[] { });
+                            try
+                            {
+                                if (isDependent.Equals("0"))
+                                {
+                                    response = InvokeRunMethod(apiName);
+                                }
+                                else
+                                {
+                                    response = (ANetApiResponse)typeof(TestRunner).GetMethod("Test" + apiName).Invoke(tr, new Object[] { });
+                                }
+
+                                if ((response != null) && (response.messages.resultCode == messageTypeEnum.Ok))
+                                    break;
+
+                            }
+                            catch (Exception ex)
+
+                            {
+                                Console.WriteLine(ex.ToString());
+                            }
                         }
 
-                        if ((response != null) && (response.messages.resultCode == messageTypeEnum.Ok))
-                            break;
+                        Assert.IsNotNull(response);
+                        Assert.AreEqual(response.messages.resultCode, messageTypeEnum.Ok);
                     }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(apiName);
-                        Console.WriteLine(e.ToString());
-                    }
+
                 }
-                Assert.IsNotNull(response);
-                Assert.AreEqual(response.messages.resultCode, messageTypeEnum.Ok);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 
@@ -435,5 +450,9 @@ namespace SampleCodeTest
         //{
         //    return GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
         //}
+        public ANetApiResponse TestGetAccountUpdaterJobDetails()
+        {
+            return GetAccountUpdaterJobDetails.Run(apiLoginId, transactionKey);
+        }
     }
 }
