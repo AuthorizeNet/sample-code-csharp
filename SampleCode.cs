@@ -1,10 +1,6 @@
 using net.authorize.sample.MobileInappTransactions;
 using net.authorize.sample.PaymentTransactions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using net.authorize.sample.CustomerProfiles;
 
 namespace net.authorize.sample
