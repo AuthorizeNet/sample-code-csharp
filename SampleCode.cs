@@ -126,6 +126,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetMerchantDetails");
             Console.WriteLine("    GetAnAcceptPaymentPage");
             Console.WriteLine("    GetCustomerProfileTransactionList");
+            Console.WriteLine("    CreateAnAcceptPaymentTransaction");
             Console.WriteLine("    GetAccountUpdaterJobSummary");
         }
 
@@ -328,6 +329,9 @@ namespace net.authorize.sample
                      break;
                 case "GetAnAcceptPaymentPage":
                     GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, 12.23m);
+                    break;
+                case "CreateAnAcceptPaymentTransaction":
+                    CreateAnAcceptPaymentTransaction.Run(apiLoginId, transactionKey, 12.23m);
                     break;
                 case "GetCustomerProfileTransactionList":
                     GetCustomerProfileTransactionList.Run(apiLoginId, transactionKey, customerProfileId);
