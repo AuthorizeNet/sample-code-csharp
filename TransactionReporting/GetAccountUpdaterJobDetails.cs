@@ -26,12 +26,13 @@ namespace net.authorize.sample
             };
 
             // parameters for request
-            string month = "2018-08"; //"2017-06";
+            string month = "2017-06";
             string modifiedTypeFilter = "all";
-
+            string refId = "123456";
             var request = new getAUJobDetailsRequest();
             request.month = month;
             request.modifiedTypeFilter = AUJobTypeEnum.all;
+            request.refId = refId;
             request.paging = new Paging
             {
                 limit = 100,
@@ -47,10 +48,10 @@ namespace net.authorize.sample
 
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
-                Console.WriteLine("SUCCESS: Get Account Updater job details for Month and year : " + month);
+                Console.WriteLine("SUCCESS: Get Account Updater job details for Month : " + month);
                 if (response.auDetails == null)
                 {
-                    Console.WriteLine("No GetAccountUpdaterjobdetails for this month and year.");
+                    Console.WriteLine("No GetAccountUpdaterjobdetails for this month");
                     return response;
                 }
 
@@ -61,7 +62,7 @@ namespace net.authorize.sample
 
                     Console.WriteLine(" **** Customer profile details Start ****");
                     Console.WriteLine("Profile ID / Payment Profile ID: {0} / {1}", details.customerProfileID, details.customerPaymentProfileID);
-                    Console.WriteLine("Firstname lastname : {0} / {1}", details.firstName, details.lastName);
+                    Console.WriteLine("FirstName LastName : {0} / {1}", details.firstName, details.lastName);
                     Console.WriteLine("Update Time (UTC): {0}", details.updateTimeUTC);
                     Console.WriteLine("Reason Code: {0}", details.auReasonCode);
                     Console.WriteLine("Reason Description: {0}", details.reasonDescription);
@@ -105,7 +106,7 @@ namespace net.authorize.sample
                         Console.WriteLine("Old Expiration Date: {0}", oldCreditCardMaskedType.expirationDate);
                         Console.WriteLine("Old Card Type: {0}", oldCreditCardMaskedType.cardType);
 
-                        Console.WriteLine("**** Customer profile details End ****");
+                        Console.WriteLine("**** Customer Profile Details End ****");
                     }
                 }
 
