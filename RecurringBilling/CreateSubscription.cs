@@ -40,7 +40,7 @@ namespace net.authorize.sample
             var creditCard = new creditCardType
             {
                 cardNumber      = "4111111111111111",
-                expirationDate  = "1018"
+                expirationDate  = "1028"
             };
 
             //standard api call to retrieve response
