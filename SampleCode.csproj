@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PaymentTransactions\GetAnAcceptPaymentPage.cs" />
+    <Compile Include="AcceptSuite\CreateAnAcceptPaymentTransaction.cs" />
+    <Compile Include="AcceptSuite\GetAcceptCustomerProfilePage.cs" />
+    <Compile Include="AcceptSuite\GetAnAcceptPaymentPage.cs" />
     <Compile Include="MobileInAppTransactions\CreateAnAcceptTransaction.cs" />
     <Compile Include="MobileInAppTransactions\CreateAnAndroidPayTransaction.cs" />
     <Compile Include="MobileInAppTransactions\CreateAnApplePayTransaction.cs" />
@@ -63,7 +65,6 @@
     <Compile Include="CustomerProfiles\GetCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\GetCustomerProfileIds.cs" />
     <Compile Include="CustomerProfiles\GetCustomerShippingAddress.cs" />
-    <Compile Include="CustomerProfiles\GetAcceptCustomerProfilePage.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerPaymentProfile.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerProfile.cs" />
     <Compile Include="CustomerProfiles\UpdateCustomerShippingAddress.cs" />
@@ -78,8 +79,7 @@
     <Compile Include="PaymentTransactions\ChargeTrackData.cs" />
     <Compile Include="PaymentTransactions\ChargeEncryptedTrackData.cs" />
     <Compile Include="PaymentTransactions\ChargeTokenizedCreditCard.cs" />
-    <Compile Include="PaymentTransactions\CreditBankAccount.cs" />    
-	<Compile Include="PaymentTransactions\CreateAnAcceptPaymentTransaction.cs" />
+    <Compile Include="PaymentTransactions\CreditBankAccount.cs" />
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />
     <Compile Include="PaymentTransactions\UpdateSplitTenderGroup.cs" />

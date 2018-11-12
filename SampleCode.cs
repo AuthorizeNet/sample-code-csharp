@@ -1,10 +1,6 @@
 using net.authorize.sample.MobileInappTransactions;
 using net.authorize.sample.PaymentTransactions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using net.authorize.sample.CustomerProfiles;
 using AuthorizeNet.Api.Controllers.Bases;
 using AuthorizeNet.Api.Contracts.V1;
@@ -135,6 +131,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetMerchantDetails");
             Console.WriteLine("    GetAnAcceptPaymentPage");
             Console.WriteLine("    GetCustomerProfileTransactionList");
+            Console.WriteLine("    CreateAnAcceptPaymentTransaction");
             Console.WriteLine("    GetAccountUpdaterJobSummary");
         }
 
@@ -358,6 +355,15 @@ namespace net.authorize.sample
                 case "GetAnAcceptPaymentPage":
                     GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, 12.23m);
                     break;
+                case "CreateAnAcceptPaymentTransaction":
+                    CreateAnAcceptPaymentTransaction.Run(apiLoginId, transactionKey, 12.23m);
+                    break;
+                case "GetCustomerProfileTransactionList":
+                    GetCustomerProfileTransactionList.Run(apiLoginId, transactionKey, customerProfileId);
+                    break;
+                //case "GetAccountUpdaterJobSummary":
+                //    GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
+                //    break;
                 default:
                     ShowUsage();
                     break;
