@@ -2,6 +2,11 @@ using net.authorize.sample.MobileInappTransactions;
 using net.authorize.sample.PaymentTransactions;
 using System;
 using net.authorize.sample.CustomerProfiles;
+using AuthorizeNet.Api.Controllers.Bases;
+using AuthorizeNet.Api.Contracts.V1;
+#if NETCOREAPP2_0
+using AuthorizeNet.Utilities;
+#endif
 
 namespace net.authorize.sample
 {
@@ -34,7 +39,7 @@ namespace net.authorize.sample
             Console.WriteLine("");
             Console.Write("Press <Return> to finish ...");
             Console.ReadLine();
-           
+
         }
 
         private static void ShowUsage()
@@ -61,7 +66,7 @@ namespace net.authorize.sample
 
         private static void ShowMethods()
         {
-            
+
             Console.WriteLine("    ChargeCreditCard");
             Console.WriteLine("    AuthorizeCreditCard");
             Console.WriteLine("    CapturePreviouslyAuthorizedAmount");
@@ -143,13 +148,33 @@ namespace net.authorize.sample
             //Update PayerID for which you want to run the sample code
             const string payerId = "M8R9JRNJ3R28Y";
 
-            const string customerProfileId = "213213";
-            const string customerPaymentProfileId = "2132345";
+            const string customerProfileId = "1915435550"; //"213213";
+            const string customerPaymentProfileId = "1828811149"; //"2132345";
+
             const string shippingAddressId = "1223213";
             const decimal amount = 12.34m;
             const string subscriptionId = "1223213";
             const short day = 45;
             const string emailId = "test@test.com";
+
+#if NETCOREAPP2_0
+            // DOTNET CORE SPECIFIC
+            #region DOTNET CORE SPECIFIC
+
+            ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
+            ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpUseProxy = AuthorizeNet.Environment.getBooleanProperty(Constants.HttpsUseProxy);
+
+            if (ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpUseProxy)
+            {
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpUseProxy = AuthorizeNet.Environment.getBooleanProperty(Constants.HttpsUseProxy);
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpsProxyUsername = AuthorizeNet.Environment.GetProperty(Constants.HttpsProxyUsername);
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpsProxyPassword = AuthorizeNet.Environment.GetProperty(Constants.HttpsProxyPassword);
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpProxyHost = AuthorizeNet.Environment.GetProperty(Constants.HttpsProxyHost);
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpProxyPort = AuthorizeNet.Environment.getIntProperty(Constants.HttpsProxyPort);
+            }
+
+            #endregion
+#endif
 
             switch (methodName)
             {
@@ -261,7 +286,7 @@ namespace net.authorize.sample
                 case "PayPalAuthorizeCapture":
                     PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, amount);
                     break;
-                case "PayPalAuthorizeCaptureContinued":                    
+                case "PayPalAuthorizeCaptureContinued":
                     PayPalAuthorizeCaptureContinued.Run(apiLoginId, transactionKey, transactionId, payerId);
                     break;
                 case "PayPalAuthorizeOnly":
@@ -286,7 +311,7 @@ namespace net.authorize.sample
                     CreateSubscription.Run(apiLoginId, transactionKey, day);
                     break;
                 case "CreateSubscriptionFromCustomerProfile":
-                    CreateSubscriptionFromCustomerProfile.Run(apiLoginId, transactionKey, day, "12322","232321","123232");
+                    CreateSubscriptionFromCustomerProfile.Run(apiLoginId, transactionKey, day, "12322", "232321", "123232");
                     break;
                 case "GetListOfSubscriptions":
                     GetListOfSubscriptions.Run(apiLoginId, transactionKey);
@@ -313,11 +338,11 @@ namespace net.authorize.sample
                     GetBatchStatistics.Run(apiLoginId, transactionKey);
                     break;
                 case "GetSettledBatchList":
-                    GetSettledBatchList.Run(apiLoginId,transactionKey);
-                     break;
+                    GetSettledBatchList.Run(apiLoginId, transactionKey);
+                    break;
                 case "UpdateSplitTenderGroup":
-                     UpdateSplitTenderGroup.Run(apiLoginId, transactionKey);
-                     break;
+                    UpdateSplitTenderGroup.Run(apiLoginId, transactionKey);
+                    break;
                 case "GetHeldTransactionList":
                     GetHeldTransactionList.Run(apiLoginId, transactionKey);
                     break;
@@ -325,8 +350,8 @@ namespace net.authorize.sample
                     ApproveOrDeclineHeldTransaction.Run(apiLoginId, transactionKey);
                     break;
                 case "GetMerchantDetails":
-                     GetMerchantDetails.Run(apiLoginId, transactionKey);
-                     break;
+                    GetMerchantDetails.Run(apiLoginId, transactionKey);
+                    break;
                 case "GetAnAcceptPaymentPage":
                     GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, 12.23m);
                     break;
