@@ -28,7 +28,7 @@ namespace net.authorize.sample
             var creditCard = new creditCardType
             {
                 cardNumber = "4111111111111111",
-                expirationDate = "0725",
+                expirationDate = "1028",
                 // Set the token specific info
                 isPaymentToken = true,
                 cryptogram = "EjRWeJASNFZ4kBI0VniQEjRWeJA="             // Set this to the value of the cryptogram received from the token provide

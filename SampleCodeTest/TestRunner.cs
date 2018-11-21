@@ -11,6 +11,9 @@ using net.authorize.sample.PaymentTransactions;
 using System.Threading;
 using net.authorize.sample.CustomerProfiles;
 using net.authorize.sample.MobileInappTransactions;
+#if NETCOREAPP2_0
+using AuthorizeNet.Utilities;
+#endif
 
 namespace SampleCodeTest
 {
@@ -42,65 +45,99 @@ namespace SampleCodeTest
         [Test]
         public void TestAllSampleCodes()
         {
-            string fileName = Constants.CONFIG_FILE;
-            StreamReader reader = File.OpenText(fileName);
-            TestRunner tr = new TestRunner();
-            var numRetries = 3;
 
-            string line;
-            while ((line = reader.ReadLine()) != null)
+#if NETCOREAPP2_0
+            // DOTNET CORE SPECIFIC
+            #region DOTNET CORE SPECIFIC
+
+            ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = AuthorizeNet.Environment.SANDBOX;
+            ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpUseProxy = AuthorizeNet.Environment.getBooleanProperty(AuthorizeNet.Utilities.Constants.HttpsUseProxy);
+
+            if(ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpUseProxy)
             {
-                string[] items = line.Split('\t');
-                
-                string apiName = items[0];
-                string isDependent = items[1];
-                string shouldApiRun = items[2];
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpUseProxy = AuthorizeNet.Environment.getBooleanProperty(AuthorizeNet.Utilities.Constants.HttpsUseProxy);
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpsProxyUsername = AuthorizeNet.Environment.GetProperty(AuthorizeNet.Utilities.Constants.HttpsProxyUsername);
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpsProxyPassword = AuthorizeNet.Environment.GetProperty(AuthorizeNet.Utilities.Constants.HttpsProxyPassword);
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpProxyHost = AuthorizeNet.Environment.GetProperty(AuthorizeNet.Utilities.Constants.HttpsProxyHost);
+                ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment.HttpProxyPort = AuthorizeNet.Environment.getIntProperty(AuthorizeNet.Utilities.Constants.HttpsProxyPort);
+            }
 
-                if (!shouldApiRun.Equals("1"))
-                    continue;
+            #endregion
+#endif
 
-                Console.WriteLine(new String('-', 20));
-                Console.WriteLine("Running test case for :: " + apiName);
-                Console.WriteLine(new String('-', 20));
-                ANetApiResponse response = null;
-                for (int i = 0; i < numRetries; ++i)
+            try
+            {
+                string fileName = Constants.CONFIG_FILE;
+                using (StreamReader reader = File.OpenText(fileName))
                 {
-                    try
-                    {
-                        if (isDependent.Equals("0"))
-                        {
-                            response = InvokeRunMethod(apiName);
-                        }
-                        else
-                        {
-                            response = (ANetApiResponse)typeof(TestRunner).GetMethod("Test" + apiName).Invoke(tr, new Object[] { });
-                        }
+                    TestRunner tr = new TestRunner();
+                    var numRetries = 3;
 
-                        if ((response != null) && (response.messages.resultCode == messageTypeEnum.Ok))
-                            break;
-                    }
-                    catch (Exception e)
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        Console.WriteLine(apiName);
-                        Console.WriteLine(e.ToString());
+                        string[] items = line.Split('\t');
+
+                        string apiName = items[0];
+                        string isDependent = items[1];
+                        string shouldApiRun = items[2];
+
+                        if (!shouldApiRun.Equals("1"))
+                            continue;
+
+                        Console.WriteLine(new String('-', 20));
+                        Console.WriteLine("Running test case for :: " + apiName);
+                        Console.WriteLine(new String('-', 20));
+                        ANetApiResponse response = null;
+                        for (int i = 0; i < numRetries; ++i)
+                        {
+                            try
+                            {
+                                if (isDependent.Equals("0"))
+                                {
+                                    response = InvokeRunMethod(apiName);
+                                }
+                                else
+                                {
+                                    response = (ANetApiResponse)typeof(TestRunner).GetMethod("Test" + apiName).Invoke(tr, new Object[] { });
+                                }
+
+                                if ((response != null) && (response.messages.resultCode == messageTypeEnum.Ok))
+                                    break;
+                            }
+                            catch (Exception e)
+                            {
+                                Console.WriteLine(apiName);
+                                Console.WriteLine(e.ToString());
+                            }
+                        }
+                        Assert.IsNotNull(response);
+                        Assert.AreEqual(response.messages.resultCode, messageTypeEnum.Ok);
                     }
                 }
-                Assert.IsNotNull(response);
-                Assert.AreEqual(response.messages.resultCode, messageTypeEnum.Ok);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 
         public ANetApiResponse InvokeRunMethod(string className)
         {
             string namespaceString = "net.authorize.sample.";
-           
+
             if (className.Equals(typeof(UpdateSplitTenderGroup).Name))
                 namespaceString = namespaceString + "PaymentTransactions.";
 
             if (className.Equals(typeof(CreateAnApplePayTransaction).Name))
                 namespaceString = namespaceString + "ApplePayTransactions.";
-
-            Type classType = Type.GetType(namespaceString + className + ",SampleCode");            
+            Type classType = null;
+#if NETCOREAPP2_0
+            classType = Type.GetType(namespaceString + className + ",SampleCode_DotNet_Core");
+#else
+               classType = Type.GetType(namespaceString + className + ",SampleCode");
+#endif
             return (ANetApiResponse)classType.GetMethod("Run").Invoke(null, new Object[] { apiLoginId, transactionKey });
         }
 
@@ -110,25 +147,25 @@ namespace SampleCodeTest
             var customerPaymentProfile = (createCustomerPaymentProfileResponse)CreateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             var validateResponse = ValidateCustomerPaymentProfile.Run(apiLoginId, transactionKey, response.customerProfileId, customerPaymentProfile.customerPaymentProfileId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
-            
+
             return validateResponse;
         }
 
         public ANetApiResponse TestCaptureFundsAuthorizedThroughAnotherChannel()
         {
-            return CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey, GetAmount());                 
+            return CaptureFundsAuthorizedThroughAnotherChannel.Run(apiLoginId, transactionKey, GetAmount());
         }
 
         public ANetApiResponse TestDebitBankAccount()
         {
             return DebitBankAccount.Run(apiLoginId, transactionKey, GetAmount());
         }
-        
+
         public ANetApiResponse TestUpdateCustomerShippingAddress()
         {
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var shippingResponse = (createCustomerShippingAddressResponse)CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId);
-            var updateResponse = (updateCustomerShippingAddressResponse) UpdateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId, shippingResponse.customerAddressId);
+            var updateResponse = (updateCustomerShippingAddressResponse)UpdateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId, shippingResponse.customerAddressId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
 
             return updateResponse;
@@ -139,7 +176,7 @@ namespace SampleCodeTest
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var updateResponse = UpdateCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
-                    
+
             return updateResponse;
         }
 
@@ -159,13 +196,13 @@ namespace SampleCodeTest
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var shippingResponse = (createCustomerShippingAddressResponse)CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId);
 
-            var getResponse = GetCustomerShippingAddress.Run(apiLoginId, transactionKey, 
+            var getResponse = GetCustomerShippingAddress.Run(apiLoginId, transactionKey,
                 response.customerProfileId, shippingResponse.customerAddressId);
 
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             return getResponse;
         }
-                    
+
         public ANetApiResponse TestGetCustomerProfileIds()
         {
             return GetCustomerProfileIds.Run(apiLoginId, transactionKey);
@@ -199,7 +236,7 @@ namespace SampleCodeTest
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
             return getResponse;
         }
-                    
+
         public ANetApiResponse TestDeleteCustomerShippingAddress()
         {
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
@@ -233,7 +270,7 @@ namespace SampleCodeTest
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
             var shippingResponse = (createCustomerShippingAddressResponse)CreateCustomerShippingAddress.Run(apiLoginId, transactionKey, response.customerProfileId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, response.customerProfileId);
-                    
+
             return shippingResponse;
         }
 
@@ -248,7 +285,7 @@ namespace SampleCodeTest
             var response = (createTransactionResponse)AuthorizeCreditCard.Run(apiLoginId, transactionKey, GetAmount());
             var profileResponse = (createCustomerProfileResponse)CreateCustomerProfileFromTransaction.Run(apiLoginId, transactionKey, response.transactionResponse.transId);
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, profileResponse.customerProfileId);
-                    
+
             return profileResponse;
         }
 
@@ -301,13 +338,13 @@ namespace SampleCodeTest
         public ANetApiResponse TestPayPalAuthorizeOnly()
         {
             return PayPalAuthorizeOnly.Run(apiLoginId, transactionKey, GetAmount());
-        }  
-            
+        }
+
         public ANetApiResponse TestPayPalVoid()
         {
             var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
             return PayPalVoid.Run(apiLoginId, transactionKey, response.transactionResponse.transId);
-        }  
+        }
 
         public ANetApiResponse TestPayPalAuthorizeCapture()
         {
@@ -318,13 +355,13 @@ namespace SampleCodeTest
         {
             var response = (createTransactionResponse)PayPalAuthorizeCapture.Run(apiLoginId, transactionKey, GetAmount());
             return PayPalAuthorizeCaptureContinued.Run(apiLoginId, transactionKey, response.transactionResponse.transId, payerID);
-        }  
-                  
+        }
+
         public ANetApiResponse TestPayPalAuthorizeOnlyContinued()
         {
             return PayPalAuthorizeOnlyContinued.Run(apiLoginId, transactionKey, TransactionID, payerID);
         }
-                    
+
         public ANetApiResponse TestPayPalCredit()
         {
             return PayPalCredit.Run(apiLoginId, transactionKey, TransactionID);
@@ -364,7 +401,7 @@ namespace SampleCodeTest
             DeleteCustomerProfile.Run(apiLoginId, transactionKey, profileResponse.customerProfileId);
             return response;
         }
-    
+
         public ANetApiResponse TestCreateSubscription()
         {
             var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, GetMonth());
@@ -372,12 +409,12 @@ namespace SampleCodeTest
 
             return response;
         }
-                    
+
         public ANetApiResponse TestGetSubscriptionStatus()
         {
             var response = (ARBCreateSubscriptionResponse)CreateSubscription.Run(apiLoginId, transactionKey, GetMonth());
             var subscriptionResponse = GetSubscriptionStatus.Run(apiLoginId, transactionKey, response.subscriptionId);
-            
+
 
             return subscriptionResponse;
         }
@@ -403,7 +440,7 @@ namespace SampleCodeTest
         {
             return CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
         }
-                    
+
         public ANetApiResponse TestCreateCustomerPaymentProfile()
         {
             var response = (createCustomerProfileResponse)CreateCustomerProfile.Run(apiLoginId, transactionKey, GetEmail());
@@ -431,10 +468,6 @@ namespace SampleCodeTest
             return GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, GetAmount());
         }
 
-        //public ANetApiResponse TestGetAccountUpdaterJobSummary()
-        //{
-        //    return GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
-        //}
         public ANetApiResponse TestGetAccountUpdaterJobDetails()
         {
             return GetAccountUpdaterJobDetails.Run(apiLoginId, transactionKey);

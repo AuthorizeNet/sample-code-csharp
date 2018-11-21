@@ -37,7 +37,6 @@ namespace net.authorize.sample
                 bankName        = "Wells Fargo Bank NA",
                 // checkNumber     = "101"                 // needed if echeckType is "ARC" or "BOC"
             };
-
             // standard api call to retrieve response
             var paymentType = new paymentType { Item = bankAccount };
 

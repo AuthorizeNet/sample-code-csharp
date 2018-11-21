@@ -26,13 +26,12 @@ namespace net.authorize.sample
             };
 
             // parameters for request
-            string month = "2017-06";
-            string modifiedTypeFilter = "all";
-            string refId = "123456";
+
+            string month = "2018-05";           
+
             var request = new getAUJobDetailsRequest();
             request.month = month;
             request.modifiedTypeFilter = AUJobTypeEnum.all;
-            request.refId = refId;
             request.paging = new Paging
             {
                 limit = 100,
@@ -50,64 +49,22 @@ namespace net.authorize.sample
             {
                 Console.WriteLine("SUCCESS: Get Account Updater job details for Month : " + month);
                 if (response.auDetails == null)
-                {
-                    Console.WriteLine("No GetAccountUpdaterjobdetails for this month");
                     return response;
+
+                foreach (var update in response.auDetails)
+                {
+                    Console.WriteLine("Profile ID / Payment Profile ID: {0} / {1}", update.customerProfileID, update.customerPaymentProfileID);
+                    Console.WriteLine("Update Time (UTC): {0}", update.updateTimeUTC);
+                    Console.WriteLine("Reason Code: {0}", update.auReasonCode);
+                    Console.WriteLine("Reason Description: {0}", update.reasonDescription);                    
                 }
 
-                // Displaying the Audetails of each response in the list
-                foreach (var details in response.auDetails)
+                foreach (var delete in response.auDetails)
                 {
-
-
-                    Console.WriteLine(" **** Customer profile details Start ****");
-                    Console.WriteLine("Profile ID / Payment Profile ID: {0} / {1}", details.customerProfileID, details.customerPaymentProfileID);
-                    Console.WriteLine("FirstName LastName : {0} / {1}", details.firstName, details.lastName);
-                    Console.WriteLine("Update Time (UTC): {0}", details.updateTimeUTC);
-                    Console.WriteLine("Reason Code: {0}", details.auReasonCode);
-                    Console.WriteLine("Reason Description: {0}", details.reasonDescription);
-
-
-                    if (details is auUpdateType)
-                    {
-                        for (int i = 0; i < ((auUpdateType)details).subscriptionIdList.Length; i++)
-                        {
-                            Console.WriteLine("SubscriptionIdList: {0}", ((auUpdateType)details).subscriptionIdList[i]);
-                        }
-                    }
-                    else if (details is auDeleteType)
-                    {
-                        for (int i = 0; i < ((auDeleteType)details).subscriptionIdList.Length; i++)
-                        {
-                            Console.WriteLine("SubscriptionIdList: {0}", ((auDeleteType)details).subscriptionIdList[i]);
-                        }
-                    }
-
-
-                    if (details.GetType().GetField("newCreditCard") != null)
-                    {
-                        Console.WriteLine("Fetching New Card Details");
-                        // Fetching New Card Details
-                        var newCreditCard = details.GetType().GetField("newCreditCard").GetValue(details);
-                        creditCardMaskedType newCreditCardMaskedType = (creditCardMaskedType)newCreditCard;
-                        Console.WriteLine("Card Number: {0}", newCreditCardMaskedType.cardNumber);
-                        Console.WriteLine("New Expiration Date: {0}", newCreditCardMaskedType.expirationDate);
-                        Console.WriteLine("New Card Type: {0}", newCreditCardMaskedType.cardType);
-
-                    }
-
-                    if (details.GetType().GetField("oldCreditCard") != null)
-                    {
-                        Console.WriteLine("Fetching Old Card Details");
-                        // Fetching Old Card Details
-                        var oldCreditCard = details.GetType().GetField("oldCreditCard").GetValue(details);
-                        creditCardMaskedType oldCreditCardMaskedType = (creditCardMaskedType)oldCreditCard;
-                        Console.WriteLine("Old Card Number: {0}", oldCreditCardMaskedType.cardNumber);
-                        Console.WriteLine("Old Expiration Date: {0}", oldCreditCardMaskedType.expirationDate);
-                        Console.WriteLine("Old Card Type: {0}", oldCreditCardMaskedType.cardType);
-
-                        Console.WriteLine("**** Customer Profile Details End ****");
-                    }
+                    Console.WriteLine("Profile ID / Payment Profile ID: {0} / {1}", delete.customerProfileID, delete.customerPaymentProfileID);
+                    Console.WriteLine("Update Time (UTC): {0}", delete.updateTimeUTC);
+                    Console.WriteLine("Reason Code: {0}", delete.auReasonCode);
+                    Console.WriteLine("Reason Description: {0}", delete.reasonDescription);                   
                 }
 
             }

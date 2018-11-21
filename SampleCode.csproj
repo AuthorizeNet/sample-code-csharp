@@ -101,6 +101,7 @@
     <Compile Include="RecurringBilling\UpdateSubscription.cs" />
     <Compile Include="SampleCode.cs" />
     <Compile Include="TransactionReporting\GetAccountUpdaterJobDetails.cs" />
+    <Compile Include="TransactionReporting\GetAccountUpdaterJobSummary.cs" />
     <Compile Include="TransactionReporting\GetBatchStatistics.cs" />
     <Compile Include="TransactionReporting\GetMerchantDetails.cs" />
     <Compile Include="TransactionReporting\GetSettledBatchList.cs" />
