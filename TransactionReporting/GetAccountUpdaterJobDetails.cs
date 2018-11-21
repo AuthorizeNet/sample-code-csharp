@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Controllers.Bases;
+using System.Collections;
 
 namespace net.authorize.sample
 {
@@ -25,6 +26,7 @@ namespace net.authorize.sample
             };
 
             // parameters for request
+
             string month = "2018-05";           
 
             var request = new getAUJobDetailsRequest();
@@ -32,7 +34,7 @@ namespace net.authorize.sample
             request.modifiedTypeFilter = AUJobTypeEnum.all;
             request.paging = new Paging
             {
-                limit = 1000,
+                limit = 100,
                 offset = 1
             };
 
@@ -45,6 +47,7 @@ namespace net.authorize.sample
 
             if (response != null && response.messages.resultCode == messageTypeEnum.Ok)
             {
+                Console.WriteLine("SUCCESS: Get Account Updater job details for Month : " + month);
                 if (response.auDetails == null)
                     return response;
 
@@ -63,13 +66,20 @@ namespace net.authorize.sample
                     Console.WriteLine("Reason Code: {0}", delete.auReasonCode);
                     Console.WriteLine("Reason Description: {0}", delete.reasonDescription);                   
                 }
+
             }
+
             else if (response != null)
             {
                 Console.WriteLine("Error: " + response.messages.message[0].code + "  " +
-                                    response.messages.message[0].text);
+                                  response.messages.message[0].text);
             }
-
+            else if (response == null)
+            {
+                var errResponse = controller.GetErrorResponse();
+                Console.WriteLine("Error: " + errResponse.messages.message[0].code + "  " +
+                                  response.messages.message[0].text);
+            }
             return response;
         }
     }

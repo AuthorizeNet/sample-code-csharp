@@ -468,5 +468,9 @@ namespace SampleCodeTest
             return GetAnAcceptPaymentPage.Run(apiLoginId, transactionKey, GetAmount());
         }
 
+        public ANetApiResponse TestGetAccountUpdaterJobDetails()
+        {
+            return GetAccountUpdaterJobDetails.Run(apiLoginId, transactionKey);
+        }
     }
 }
