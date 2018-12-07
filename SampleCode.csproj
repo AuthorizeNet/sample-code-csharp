@@ -80,6 +80,7 @@
     <Compile Include="PaymentTransactions\ChargeTrackData.cs" />
     <Compile Include="PaymentTransactions\ChargeEncryptedTrackData.cs" />
     <Compile Include="PaymentTransactions\ChargeTokenizedCreditCard.cs" />
+    <Compile Include="PaymentTransactions\CreateChasePayTransaction.cs" />
     <Compile Include="PaymentTransactions\CreditBankAccount.cs" />
     <Compile Include="PaymentTransactions\DebitBankAccount.cs" />
     <Compile Include="PaymentTransactions\RefundTransaction.cs" />

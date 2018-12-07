@@ -133,6 +133,7 @@ namespace net.authorize.sample
             Console.WriteLine("    GetCustomerProfileTransactionList");
             Console.WriteLine("    CreateAnAcceptPaymentTransaction");
             Console.WriteLine("    GetAccountUpdaterJobSummary");
+            Console.WriteLine("    CreateChasePayTransaction");
         }
 
         private static void RunMethod(String methodName)
@@ -360,6 +361,9 @@ namespace net.authorize.sample
                     break;
                 case "GetCustomerProfileTransactionList":
                     GetCustomerProfileTransactionList.Run(apiLoginId, transactionKey, customerProfileId);
+                    break;
+                case "CreateChasePayTransaction":
+                    CreateChasePayTransaction.Run(apiLoginId, transactionKey);
                     break;
                 //case "GetAccountUpdaterJobSummary":
                 //    GetAccountUpdaterJobSummary.Run(apiLoginId, transactionKey);
