@@ -72,6 +72,12 @@
         <member name="F:AuthorizeNet.Api.Contracts.V1.opaqueDataType.dataKey">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.opaqueDataType.expirationTimeStamp">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.opaqueDataType.expirationTimeStampSpecified">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.processorType">
             <remarks/>
         </member>
@@ -319,6 +325,9 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.Api.Contracts.V1.tokenMaskedType.expirationDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.tokenMaskedType.tokenRequestorId">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.CustomerPaymentProfileSorting">
@@ -639,6 +648,9 @@
         <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.profile">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.networkTransId">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.transactionResponsePrePaidCard">
             <remarks/>
         </member>
@@ -924,6 +936,12 @@
         <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.tip">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.otherTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.shipFrom">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.subscriptionPaymentType">
             <remarks/>
         </member>
@@ -1095,6 +1113,63 @@
         <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.description">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.discountAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.discountAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.taxIsAfterDiscount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.taxIsAfterDiscountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.totalTaxTypeCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.purchaserVATRegistrationNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.merchantVATRegistrationNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.vatInvoiceReferenceNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.purchaserCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.summaryCommodityCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.purchaseOrderDateUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.purchaseOrderDateUTCSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.supplierOrderReference">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.authorizedContactName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.cardAcceptorRefNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.amexDataTAA1">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.amexDataTAA2">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.amexDataTAA3">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.amexDataTAA4">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.extendedAmountType">
             <remarks/>
         </member>
@@ -1129,6 +1204,102 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxableSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.unitOfMeasure">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.typeOfSupply">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.nationalTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.nationalTaxSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.localTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.localTaxSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.vatRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.vatRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxTypeApplied">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.totalAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.totalAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.commodityCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.productCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.productSKU">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.discountRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.discountRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.discountAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.discountAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxIncludedInTotal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxIncludedInTotalSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxIsAfterDiscount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxIsAfterDiscountSpecified">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.customerDataType">
@@ -1194,6 +1365,42 @@
         <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsTypeTag.data">
             <remarks/>
         </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.otherTaxType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.nationalTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.nationalTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.localTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.localTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.alternateTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.alternateTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.alternateTaxId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.vatTaxRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.vatTaxRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.vatTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.vatTaxAmountSpecified">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransactionType">
             <remarks/>
         </member>
@@ -1234,6 +1441,66 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.splitTenderId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.processingOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.subsequentAuthInformation">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.processingOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isFirstRecurringPayment">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isFirstRecurringPaymentSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isFirstSubsequentAuth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isFirstSubsequentAuthSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isSubsequentAuth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isSubsequentAuthSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isStoredCredentials">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isStoredCredentialsSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.subsequentAuthInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subsequentAuthInformation.originalNetworkTransId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subsequentAuthInformation.reason">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subsequentAuthInformation.reasonSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum.resubmission">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum.delayedCharge">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum.reauthorization">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum.noShow">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransAmountType">
@@ -1449,6 +1716,18 @@
         <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.tip">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.processingOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.subsequentAuthInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.otherTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.shipFrom">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.paymentType">
             <remarks/>
         </member>
@@ -1501,6 +1780,15 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.cryptogram">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.tokenRequestorName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.tokenRequestorId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.tokenRequestorEci">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.creditCardSimpleType">
@@ -2071,6 +2359,18 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.Api.Contracts.V1.merchantContactType.merchantPhone">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ContactDetailType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ContactDetailType.email">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ContactDetailType.firstName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ContactDetailType.lastName">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.permissionType">
@@ -3555,6 +3855,15 @@
         <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.publicClientKey">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.businessInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.merchantTimeZone">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.contactDetails">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum">
             <remarks/>
         </member>
@@ -3601,6 +3910,24 @@
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.updateMerchantDetailsResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceRequest.connectedAccessToken">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceRequest.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceResponse.opaqueData">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.Api.Contracts.V1.RequestFactoryWithSpecified">
@@ -4465,6 +4792,11 @@
             Initializes a new instance of the <see cref="T:AuthorizeNet.VoidRequest"/> class.
             </summary>
             <param name="transactionId">The transaction id.</param>
+        </member>
+        <member name="M:AuthorizeNet.SIMResponse.Validate(System.String,System.String)">
+            <summary>
+            Validates that what was passed by Auth.net is valid
+            </summary>
         </member>
         <member name="M:AuthorizeNet.SubscriptionGateway.#ctor(System.String,System.String,AuthorizeNet.ServiceMode)">
             <summary>
@@ -5910,6 +6242,12 @@
         <member name="F:AuthorizeNet.APICore.opaqueDataType.dataKey">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.APICore.opaqueDataType.expirationTimeStamp">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.opaqueDataType.expirationTimeStampSpecified">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.APICore.processorType">
             <remarks/>
         </member>
@@ -6157,6 +6495,9 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.APICore.tokenMaskedType.expirationDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.tokenMaskedType.tokenRequestorId">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.APICore.CustomerPaymentProfileSorting">
@@ -6477,6 +6818,9 @@
         <member name="F:AuthorizeNet.APICore.transactionResponse.profile">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.APICore.transactionResponse.networkTransId">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.APICore.transactionResponsePrePaidCard">
             <remarks/>
         </member>
@@ -6762,6 +7106,12 @@
         <member name="F:AuthorizeNet.APICore.transactionDetailsType.tip">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.APICore.transactionDetailsType.otherTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.transactionDetailsType.shipFrom">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.APICore.subscriptionPaymentType">
             <remarks/>
         </member>
@@ -6933,6 +7283,63 @@
         <member name="F:AuthorizeNet.APICore.orderType.description">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.APICore.orderType.discountAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.discountAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.taxIsAfterDiscount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.taxIsAfterDiscountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.totalTaxTypeCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.purchaserVATRegistrationNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.merchantVATRegistrationNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.vatInvoiceReferenceNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.purchaserCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.summaryCommodityCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.purchaseOrderDateUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.purchaseOrderDateUTCSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.supplierOrderReference">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.authorizedContactName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.cardAcceptorRefNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.amexDataTAA1">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.amexDataTAA2">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.amexDataTAA3">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.orderType.amexDataTAA4">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.APICore.extendedAmountType">
             <remarks/>
         </member>
@@ -6967,6 +7374,102 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.APICore.lineItemType.taxableSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.unitOfMeasure">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.typeOfSupply">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.taxRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.taxRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.taxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.taxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.nationalTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.nationalTaxSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.localTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.localTaxSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.vatRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.vatRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.alternateTaxId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.alternateTaxType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.alternateTaxTypeApplied">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.alternateTaxRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.alternateTaxRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.alternateTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.alternateTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.totalAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.totalAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.commodityCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.productCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.productSKU">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.discountRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.discountRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.discountAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.discountAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.taxIncludedInTotal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.taxIncludedInTotalSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.taxIsAfterDiscount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.lineItemType.taxIsAfterDiscountSpecified">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.APICore.customerDataType">
@@ -7032,6 +7535,42 @@
         <member name="F:AuthorizeNet.APICore.transactionDetailsTypeTag.data">
             <remarks/>
         </member>
+        <member name="T:AuthorizeNet.APICore.otherTaxType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.nationalTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.nationalTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.localTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.localTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.alternateTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.alternateTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.alternateTaxId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.vatTaxRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.vatTaxRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.vatTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.otherTaxType.vatTaxAmountSpecified">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.APICore.profileTransactionType">
             <remarks/>
         </member>
@@ -7072,6 +7611,66 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.APICore.profileTransOrderType.splitTenderId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.profileTransOrderType.processingOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.profileTransOrderType.subsequentAuthInformation">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.APICore.processingOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.processingOptions.isFirstRecurringPayment">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.processingOptions.isFirstRecurringPaymentSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.processingOptions.isFirstSubsequentAuth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.processingOptions.isFirstSubsequentAuthSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.processingOptions.isSubsequentAuth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.processingOptions.isSubsequentAuthSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.processingOptions.isStoredCredentials">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.processingOptions.isStoredCredentialsSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.APICore.subsequentAuthInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.subsequentAuthInformation.originalNetworkTransId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.subsequentAuthInformation.reason">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.subsequentAuthInformation.reasonSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.APICore.merchantInitTransReasonEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.merchantInitTransReasonEnum.resubmission">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.merchantInitTransReasonEnum.delayedCharge">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.merchantInitTransReasonEnum.reauthorization">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.merchantInitTransReasonEnum.noShow">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.APICore.profileTransAmountType">
@@ -7287,6 +7886,18 @@
         <member name="F:AuthorizeNet.APICore.transactionRequestType.tip">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.APICore.transactionRequestType.processingOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.transactionRequestType.subsequentAuthInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.transactionRequestType.otherTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.transactionRequestType.shipFrom">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.APICore.paymentType">
             <remarks/>
         </member>
@@ -7339,6 +7950,15 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.APICore.creditCardType.cryptogram">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.creditCardType.tokenRequestorName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.creditCardType.tokenRequestorId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.creditCardType.tokenRequestorEci">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.APICore.creditCardSimpleType">
@@ -7909,6 +8529,18 @@
             <remarks/>
         </member>
         <member name="F:AuthorizeNet.APICore.merchantContactType.merchantPhone">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.APICore.ContactDetailType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.ContactDetailType.email">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.ContactDetailType.firstName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.ContactDetailType.lastName">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.APICore.permissionType">
@@ -9393,6 +10025,15 @@
         <member name="F:AuthorizeNet.APICore.getMerchantDetailsResponse.publicClientKey">
             <remarks/>
         </member>
+        <member name="F:AuthorizeNet.APICore.getMerchantDetailsResponse.businessInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.getMerchantDetailsResponse.merchantTimeZone">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.getMerchantDetailsResponse.contactDetails">
+            <remarks/>
+        </member>
         <member name="T:AuthorizeNet.APICore.paymentMethodsTypeEnum">
             <remarks/>
         </member>
@@ -9439,6 +10080,24 @@
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.APICore.updateMerchantDetailsResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.APICore.getCustomerPaymentProfileNonceRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.getCustomerPaymentProfileNonceRequest.connectedAccessToken">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.getCustomerPaymentProfileNonceRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.getCustomerPaymentProfileNonceRequest.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.APICore.getCustomerPaymentProfileNonceResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.APICore.getCustomerPaymentProfileNonceResponse.opaqueData">
             <remarks/>
         </member>
         <member name="T:AuthorizeNet.ApiFields">
@@ -9583,6 +10242,7 @@
             <param name="timeStamp">The timeStamp</param>
             <returns>string</returns>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:AuthorizeNet.Crypto.IsMatch(System.String,System.String,System.String,System.Decimal,System.String)" -->
         <member name="M:AuthorizeNet.Crypto.EncryptHMAC(System.String,System.String)">
             <summary>
             Encrypts the key/value pair supplied using HMAC-MD5
