@@ -51,7 +51,7 @@
 
   <ItemGroup>
     <Reference Include="AuthorizeNET">
-      <HintPath>..\AuthorizeNet.dll</HintPath>
+      <HintPath>..\DotnetCoreArtifacts\AuthorizeNET.dll</HintPath>
     </Reference>
   </ItemGroup>
 
