@@ -33,7 +33,7 @@ namespace net.authorize.sample.PaymentTransactions
                 // Set the token specific info
                 isPaymentToken = true,
                 // Set this to the value of the cryptogram received from the token provide
-                //cryptogram = "EjRWeJASNFZ4kBI0VniQEjRWeJA=",           
+                cryptogram = "EjRWeJASNFZ4kBI0VniQEjRWeJA=",           
                 tokenRequestorName = "CHASE_PAY",
                 tokenRequestorId = "12345678901",
                 tokenRequestorEci = "07"
