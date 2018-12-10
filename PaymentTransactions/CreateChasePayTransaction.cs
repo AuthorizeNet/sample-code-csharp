@@ -32,7 +32,8 @@ namespace net.authorize.sample.PaymentTransactions
                 cardCode = "999",
                 // Set the token specific info
                 isPaymentToken = true,
-                cryptogram = "EjRWeJASNFZ4kBI0VniQEjRWeJA=",           // Set this to the value of the cryptogram received from the token provide
+                // Set this to the value of the cryptogram received from the token provide
+                //cryptogram = "EjRWeJASNFZ4kBI0VniQEjRWeJA=",           
                 tokenRequestorName = "CHASE_PAY",
                 tokenRequestorId = "12345678901",
                 tokenRequestorEci = "07"
@@ -43,7 +44,7 @@ namespace net.authorize.sample.PaymentTransactions
 
             var transactionRequest = new transactionRequestType
             {
-                transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // charge the card
+                transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),
                 amount = 133.45m,
                 payment = paymentType
             };
@@ -98,7 +99,14 @@ namespace net.authorize.sample.PaymentTransactions
             }
             else
             {
-                Console.WriteLine("Null Response.");
+                // Display the error code and message when response is null
+                ANetApiResponse errorResponse = controller.GetErrorResponse();
+                Console.WriteLine("Failed to get response");
+                if (!string.IsNullOrEmpty(errorResponse.messages.message.ToString()))
+                {
+                    Console.WriteLine("Error Code: " + errorResponse.messages.message[0].code);
+                    Console.WriteLine("Error message: " + errorResponse.messages.message[0].text);
+                }
             }
 
             return response;
