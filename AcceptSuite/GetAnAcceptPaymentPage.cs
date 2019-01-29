@@ -21,7 +21,7 @@ namespace net.authorize.sample.CustomerProfiles
                 Item = ApiTransactionKey,
             };
 
-            settingType[] settings = new settingType[2];
+            settingType[] settings = new settingType[3];
 
             settings[0] = new settingType();
             settings[0].settingName = settingNameEnum.hostedPaymentButtonOptions.ToString();
@@ -30,6 +30,10 @@ namespace net.authorize.sample.CustomerProfiles
             settings[1] = new settingType();
             settings[1].settingName = settingNameEnum.hostedPaymentOrderOptions.ToString();
             settings[1].settingValue = "{\"show\": false}";
+			
+			settings[2] = new settingType();
+            settings[2].settingName = settingNameEnum.hostedPaymentReturnOptions.ToString();
+            settings[2].settingValue = "{\"showReceipt\": true, \"url\": \"https://mysite.com/receipt?a=return%26id=123456\", \"urlText\": \"Continue\", \"cancelUrl\": \"https://mysite.com/receipt?a=cancel%26id=123456\", \"cancelUrlText\":\" Cancel\"}";
 
             var transactionRequest = new transactionRequestType
             {
