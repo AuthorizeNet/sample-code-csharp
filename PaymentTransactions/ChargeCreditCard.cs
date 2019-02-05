@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using AuthorizeNet.Api.Controllers;
 using AuthorizeNet.Api.Contracts.V1;
 using AuthorizeNet.Api.Controllers.Bases;
+using System.Security.Authentication;
+using System.Net;
 
 namespace net.authorize.sample
 {
@@ -58,7 +60,9 @@ namespace net.authorize.sample
                 billTo = billingAddress,
                 lineItems = lineItems
             };
-            
+
+            const SslProtocols _Tls12 = (SslProtocols)0x00000C00;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)_Tls12;
             var request = new createTransactionRequest { transactionRequest = transactionRequest };
             
             // instantiate the controller that will call the service
