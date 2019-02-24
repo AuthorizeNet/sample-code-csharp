@@ -25,11 +25,9 @@
   
   
   <ItemGroup>
-    <Compile Remove="TransactionReporting\GetCustomerProfileTransactionList.cs" />
-  </ItemGroup>
-  
-  
-  <ItemGroup>
+    <None Remove="AuthorizeNet.dll" />
+    <None Remove="AuthorizeNet.xml" />
+    <None Remove="packages.config" />
     <None Remove="README.md" />
   </ItemGroup>
   
@@ -42,8 +40,8 @@
   
   
   <ItemGroup>
-    <Reference Include="AuthorizeNET">
-      <HintPath>AuthorizeNet.dll</HintPath>
+    <Reference Include="AuthorizeNet">
+      <HintPath>DotnetCoreArtifacts\AuthorizeNET.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

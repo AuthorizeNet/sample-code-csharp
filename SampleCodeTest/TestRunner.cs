@@ -84,7 +84,9 @@ namespace SampleCodeTest
 
                         if (!shouldApiRun.Equals("1"))
                             continue;
-
+#if NETCOREAPP2_0
+                        Thread.Sleep(3000);
+#endif
                         Console.WriteLine(new String('-', 20));
                         Console.WriteLine("Running test case for :: " + apiName);
                         Console.WriteLine(new String('-', 20));

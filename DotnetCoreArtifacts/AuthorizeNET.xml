@@ -1,0 +1,3967 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AuthorizeNET</name>
+    </assembly>
+    <members>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.decryptPaymentDataRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.decryptPaymentDataRequest.opaqueData">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.decryptPaymentDataRequest.callId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.opaqueDataType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.opaqueDataType.dataDescriptor">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.opaqueDataType.dataValue">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.opaqueDataType.dataKey">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.opaqueDataType.expirationTimeStamp">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.opaqueDataType.expirationTimeStampSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.processorType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processorType.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processorType.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processorType.cardTypes">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.auDetailsType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auDetailsType.customerProfileID">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auDetailsType.customerPaymentProfileID">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auDetailsType.firstName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auDetailsType.lastName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auDetailsType.updateTimeUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auDetailsType.auReasonCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auDetailsType.reasonDescription">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.auDeleteType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auDeleteType.creditCard">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.creditCardMaskedType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardMaskedType.cardNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardMaskedType.expirationDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardMaskedType.cardType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardMaskedType.cardArt">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardMaskedType.issuerNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardMaskedType.isPaymentToken">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardMaskedType.isPaymentTokenSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.cardArt">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardArt.cardBrand">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardArt.cardImageHeight">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardArt.cardImageUrl">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardArt.cardImageWidth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardArt.cardType">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.auUpdateType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auUpdateType.newCreditCard">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auUpdateType.oldCreditCard">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.auResponseType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auResponseType.auReasonCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auResponseType.profileCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.auResponseType.reasonDescription">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileListItemType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileListItemType.defaultPaymentProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileListItemType.defaultPaymentProfileSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileListItemType.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileListItemType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileListItemType.billTo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileListItemType.payment">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerAddressType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerAddressType.phoneNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerAddressType.faxNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerAddressType.email">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.nameAndAddressType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.nameAndAddressType.firstName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.nameAndAddressType.lastName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.nameAndAddressType.company">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.nameAndAddressType.address">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.nameAndAddressType.city">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.nameAndAddressType.state">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.nameAndAddressType.zip">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.nameAndAddressType.country">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerAddressExType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerAddressExType.customerAddressId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentMaskedType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMaskedType.Item">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.bankAccountMaskedType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountMaskedType.accountType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountMaskedType.accountTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountMaskedType.routingNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountMaskedType.accountNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountMaskedType.nameOnAccount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountMaskedType.echeckType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountMaskedType.echeckTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountMaskedType.bankName">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.bankAccountTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountTypeEnum.checking">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountTypeEnum.savings">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountTypeEnum.businessChecking">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.echeckTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.echeckTypeEnum.PPD">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.echeckTypeEnum.WEB">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.echeckTypeEnum.CCD">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.echeckTypeEnum.TEL">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.echeckTypeEnum.ARC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.echeckTypeEnum.BOC">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.tokenMaskedType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.tokenMaskedType.tokenSource">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.tokenMaskedType.tokenNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.tokenMaskedType.expirationDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.tokenMaskedType.tokenRequestorId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.CustomerPaymentProfileSorting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.CustomerPaymentProfileSorting.orderBy">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.CustomerPaymentProfileSorting.orderDescending">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.CustomerPaymentProfileOrderFieldEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.CustomerPaymentProfileOrderFieldEnum.id">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerProfileSummaryType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileSummaryType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileSummaryType.description">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileSummaryType.merchantCustomerId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileSummaryType.email">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileSummaryType.createdDate">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.status">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.createTimeStampUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.firstName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.lastName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.totalOccurrences">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.pastOccurrences">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.paymentMethod">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.accountNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.invoice">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.amount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.currencyCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.customerShippingProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.SubscriptionDetail.customerShippingProfileIdSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionStatusEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionStatusEnum.active">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionStatusEnum.expired">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionStatusEnum.suspended">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionStatusEnum.canceled">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionStatusEnum.terminated">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentMethodEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodEnum.creditCard">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodEnum.eCheck">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodEnum.payPal">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListSorting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListSorting.orderBy">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListSorting.orderDescending">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum.status">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum.createTimeStampUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum.lastName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum.firstName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum.accountNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum.amount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListOrderFieldEnum.pastOccurrences">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.Paging">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.Paging.limit">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.Paging.offset">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.TransactionListSorting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.TransactionListSorting.orderBy">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.TransactionListSorting.orderDescending">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.TransactionListOrderFieldEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.TransactionListOrderFieldEnum.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.TransactionListOrderFieldEnum.submitTimeUTC">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.heldTransactionRequestType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.heldTransactionRequestType.action">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.heldTransactionRequestType.refTransId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.afdsTransactionEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.afdsTransactionEnum.approve">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.afdsTransactionEnum.decline">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createProfileResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createProfileResponse.messages">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createProfileResponse.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createProfileResponse.customerPaymentProfileIdList">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createProfileResponse.customerShippingAddressIdList">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.messagesType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.messagesType.resultCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.messagesType.message">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.messageTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.messageTypeEnum.Ok">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.messageTypeEnum.Error">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.messagesTypeMessage">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.messagesTypeMessage.code">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.messagesTypeMessage.text">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.responseCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.rawResponseCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.authCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.avsResultCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.cvvResultCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.cavvResultCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.transId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.refTransID">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.transHash">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.testRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.accountNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.entryMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.accountType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.splitTenderId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.prePaidCard">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.messages">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.errors">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.splitTenderPayments">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.userFields">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.shipTo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.secureAcceptance">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.emvResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.transHashSha2">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.profile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponse.networkTransId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionResponsePrePaidCard">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponsePrePaidCard.requestedAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponsePrePaidCard.approvedAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponsePrePaidCard.balanceOnCard">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionResponseMessage">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseMessage.code">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseMessage.description">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionResponseError">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseError.errorCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseError.errorText">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment.transId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment.responseCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment.responseToCustomer">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment.authCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment.accountNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment.accountType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment.requestedAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment.approvedAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSplitTenderPayment.balanceOnCard">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.userField">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.userField.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.userField.value">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionResponseSecureAcceptance">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSecureAcceptance.SecureAcceptanceUrl">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSecureAcceptance.PayerID">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseSecureAcceptance.PayerEmail">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionResponseEmvResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseEmvResponse.tlvData">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionResponseEmvResponse.tags">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.emvTag">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.emvTag.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.emvTag.value">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.emvTag.formatted">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerProfileIdType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileIdType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileIdType.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileIdType.customerAddressId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.returnedItemType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.returnedItemType.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.returnedItemType.dateUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.returnedItemType.dateLocal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.returnedItemType.code">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.returnedItemType.description">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionDetailsType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.transId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.refTransId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.splitTenderId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.submitTimeUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.submitTimeLocal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.transactionType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.transactionStatus">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.responseCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.responseReasonCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.subscription">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.responseReasonDescription">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.authCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.AVSResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.cardCodeResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.CAVVResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.FDSFilterAction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.FDSFilters">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.batch">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.order">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.requestedAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.requestedAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.authAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.settleAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.tax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.shipping">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.duty">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.lineItems">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.prepaidBalanceRemaining">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.prepaidBalanceRemainingSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.taxExempt">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.taxExemptSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.payment">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.customer">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.billTo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.shipTo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.recurringBilling">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.recurringBillingSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.customerIP">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.product">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.entryMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.marketType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.mobileDeviceId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.customerSignature">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.returnedItems">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.solution">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.emvDetails">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.profile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.surcharge">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.employeeId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.tip">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.otherTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsType.shipFrom">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.subscriptionPaymentType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subscriptionPaymentType.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subscriptionPaymentType.payNum">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.FDSFilterType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.FDSFilterType.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.FDSFilterType.action">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.batchDetailsType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.batchId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.settlementTimeUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.settlementTimeUTCSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.settlementTimeLocal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.settlementTimeLocalSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.settlementState">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.paymentMethod">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.marketType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.product">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchDetailsType.statistics">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.batchStatisticType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.accountType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.voidCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.declineCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.errorCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.returnedItemAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.returnedItemAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.returnedItemCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.returnedItemCountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargebackAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargebackAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargebackCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargebackCountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.correctionNoticeCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.correctionNoticeCountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeChargeBackAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeChargeBackAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeChargeBackCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeChargeBackCountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundChargeBackAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundChargeBackAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundChargeBackCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundChargeBackCountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeReturnedItemsAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeReturnedItemsAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeReturnedItemsCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.chargeReturnedItemsCountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundReturnedItemsAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundReturnedItemsAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundReturnedItemsCount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.batchStatisticType.refundReturnedItemsCountSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.orderExType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderExType.purchaseOrderNumber">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.orderType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.invoiceNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.description">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.discountAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.discountAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.taxIsAfterDiscount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.taxIsAfterDiscountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.totalTaxTypeCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.purchaserVATRegistrationNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.merchantVATRegistrationNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.vatInvoiceReferenceNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.purchaserCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.summaryCommodityCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.purchaseOrderDateUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.purchaseOrderDateUTCSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.supplierOrderReference">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.authorizedContactName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.cardAcceptorRefNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.amexDataTAA1">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.amexDataTAA2">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.amexDataTAA3">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.orderType.amexDataTAA4">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.extendedAmountType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.extendedAmountType.amount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.extendedAmountType.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.extendedAmountType.description">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.lineItemType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.itemId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.description">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.quantity">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.unitPrice">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxable">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxableSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.unitOfMeasure">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.typeOfSupply">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.nationalTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.nationalTaxSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.localTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.localTaxSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.vatRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.vatRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxTypeApplied">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.alternateTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.totalAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.totalAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.commodityCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.productCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.productSKU">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.discountRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.discountRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.discountAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.discountAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxIncludedInTotal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxIncludedInTotalSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxIsAfterDiscount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.lineItemType.taxIsAfterDiscountSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerDataType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerDataType.type">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerDataType.typeSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerDataType.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerDataType.email">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerDataType.driversLicense">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerDataType.taxId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerTypeEnum.individual">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerTypeEnum.business">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.driversLicenseType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.driversLicenseType.number">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.driversLicenseType.state">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.driversLicenseType.dateOfBirth">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.solutionType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.solutionType.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.solutionType.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.solutionType.vendorName">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionDetailsTypeTag">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsTypeTag.tagId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionDetailsTypeTag.data">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.otherTaxType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.nationalTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.nationalTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.localTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.localTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.alternateTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.alternateTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.alternateTaxId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.vatTaxRate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.vatTaxRateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.vatTaxAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.otherTaxType.vatTaxAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransactionType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransactionType.Item">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransAuthCaptureType">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransOrderType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.customerShippingAddressId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.order">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.taxExempt">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.taxExemptSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.recurringBilling">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.recurringBillingSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.cardCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.splitTenderId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.processingOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransOrderType.subsequentAuthInformation">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.processingOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isFirstRecurringPayment">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isFirstRecurringPaymentSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isFirstSubsequentAuth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isFirstSubsequentAuthSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isSubsequentAuth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isSubsequentAuthSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isStoredCredentials">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.processingOptions.isStoredCredentialsSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.subsequentAuthInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subsequentAuthInformation.originalNetworkTransId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subsequentAuthInformation.reason">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subsequentAuthInformation.reasonSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum.resubmission">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum.delayedCharge">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum.reauthorization">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantInitTransReasonEnum.noShow">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransAmountType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransAmountType.amount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransAmountType.tax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransAmountType.shipping">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransAmountType.duty">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransAmountType.lineItems">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransRefundType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransRefundType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransRefundType.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransRefundType.customerShippingAddressId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransRefundType.creditCardNumberMasked">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransRefundType.bankRoutingNumberMasked">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransRefundType.bankAccountNumberMasked">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransRefundType.order">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransRefundType.transId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransPriorAuthCaptureType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransPriorAuthCaptureType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransPriorAuthCaptureType.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransPriorAuthCaptureType.customerShippingAddressId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransPriorAuthCaptureType.transId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransCaptureOnlyType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransCaptureOnlyType.approvalCode">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransAuthOnlyType">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.profileTransVoidType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransVoidType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransVoidType.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransVoidType.customerShippingAddressId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.profileTransVoidType.transId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentProfile.paymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentProfile.cardCode">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerProfilePaymentType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfilePaymentType.createProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfilePaymentType.createProfileSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfilePaymentType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfilePaymentType.paymentProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfilePaymentType.shippingProfileId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionRequestType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.transactionType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.amount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.amountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.currencyCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.payment">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.profile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.solution">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.callId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.terminalNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.authCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.refTransId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.splitTenderId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.order">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.lineItems">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.tax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.duty">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.shipping">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.taxExempt">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.taxExemptSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.poNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.customer">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.billTo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.shipTo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.customerIP">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.cardholderAuthentication">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.retail">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.employeeId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.transactionSettings">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.userFields">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.surcharge">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.merchantDescriptor">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.subMerchant">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.tip">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.processingOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.subsequentAuthInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.otherTax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionRequestType.shipFrom">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentType.Item">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentType.dataSource">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.bankAccountType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountType.accountType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountType.accountTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountType.routingNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountType.accountNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountType.nameOnAccount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountType.echeckType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountType.echeckTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountType.bankName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.bankAccountType.checkNumber">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.creditCardType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.cardCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.isPaymentToken">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.isPaymentTokenSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.cryptogram">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.tokenRequestorName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.tokenRequestorId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardType.tokenRequestorEci">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.creditCardSimpleType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardSimpleType.cardNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardSimpleType.expirationDate">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentEmvType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentEmvType.emvData">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentEmvType.emvDescriptor">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentEmvType.emvVersion">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.encryptedTrackDataType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.encryptedTrackDataType.FormOfPayment">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.KeyBlock">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyBlock.Value">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.KeyValue">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyValue.Encoding">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyValue.EncryptionAlgorithm">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyValue.Scheme">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.EncodingType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EncodingType.Base64">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EncodingType.Hex">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.EncryptionAlgorithmType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EncryptionAlgorithmType.TDES">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EncryptionAlgorithmType.AES">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EncryptionAlgorithmType.RSA">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.KeyManagementScheme">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyManagementScheme.DUKPT">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPT">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPT.Operation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPT.Mode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPT.DeviceInfo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPT.EncryptedData">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.OperationType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.OperationType.DECRYPT">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPTMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPTMode.PIN">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPTMode.Data">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPTDeviceInfo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPTDeviceInfo.Description">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPTEncryptedData">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.KeyManagementSchemeDUKPTEncryptedData.Value">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.payPalType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.payPalType.successUrl">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.payPalType.cancelUrl">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.payPalType.paypalLc">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.payPalType.paypalHdrImg">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.payPalType.paypalPayflowcolor">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.payPalType.payerID">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.creditCardTrackType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardTrackType.Item">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.creditCardTrackType.ItemElementName">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ItemChoiceType1">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ItemChoiceType1.track1">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ItemChoiceType1.track2">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ccAuthenticationType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ccAuthenticationType.authenticationIndicator">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ccAuthenticationType.cardholderAuthenticationValue">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transRetailInfoType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transRetailInfoType.marketType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transRetailInfoType.deviceType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transRetailInfoType.customerSignature">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transRetailInfoType.terminalNumber">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.settingType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingType.settingName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingType.settingValue">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.subMerchantType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.identifier">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.doingBusinessAs">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.paymentServiceProviderName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.paymentServiceFacilitator">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.streetAddress">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.phone">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.email">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.postalCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.city">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.regionCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subMerchantType.countryCode">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.mobileDeviceType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceType.mobileDeviceId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceType.description">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceType.phoneNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceType.devicePlatform">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceType.deviceActivation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceType.deviceActivationSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.deviceActivationEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.deviceActivationEnum.Activate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.deviceActivationEnum.Disable">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileBaseType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileBaseType.customerType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileBaseType.customerTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileBaseType.billTo">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileMaskedType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileMaskedType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileMaskedType.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileMaskedType.defaultPaymentProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileMaskedType.defaultPaymentProfileSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileMaskedType.payment">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileMaskedType.driversLicense">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileMaskedType.taxId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileMaskedType.subscriptionIds">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.driversLicenseMaskedType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.driversLicenseMaskedType.number">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.driversLicenseMaskedType.state">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.driversLicenseMaskedType.dateOfBirth">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileType.payment">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileType.driversLicense">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileType.taxId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileType.defaultPaymentProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileType.defaultPaymentProfileSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileExType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerPaymentProfileExType.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerProfileBaseType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileBaseType.merchantCustomerId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileBaseType.description">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileBaseType.email">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerProfileExType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileExType.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerProfileMaskedType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileMaskedType.paymentProfiles">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileMaskedType.shipToList">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileMaskedType.profileType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileMaskedType.profileTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerProfileTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileTypeEnum.regular">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileTypeEnum.guest">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerProfileInfoExType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileInfoExType.profileType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileInfoExType.profileTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.subscriptionCustomerProfileType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subscriptionCustomerProfileType.paymentProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.subscriptionCustomerProfileType.shippingProfile">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerProfileType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileType.paymentProfiles">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileType.shipToList">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileType.profileType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerProfileType.profileTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.paymentSchedule">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.amount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.amountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.trialAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.trialAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.status">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.statusSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.profile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.order">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionMaskedType.arbTransactions">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentScheduleType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentScheduleType.interval">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentScheduleType.startDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentScheduleType.startDateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentScheduleType.totalOccurrences">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentScheduleType.totalOccurrencesSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentScheduleType.trialOccurrences">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentScheduleType.trialOccurrencesSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentScheduleTypeInterval">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentScheduleTypeInterval.length">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentScheduleTypeInterval.unit">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionUnitEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionUnitEnum.days">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionUnitEnum.months">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.arbTransaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.arbTransaction.transId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.arbTransaction.response">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.arbTransaction.submitTimeUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.arbTransaction.submitTimeUTCSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.arbTransaction.payNum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.arbTransaction.payNumSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.arbTransaction.attemptNum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.arbTransaction.attemptNumSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.securePaymentContainerErrorType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.securePaymentContainerErrorType.code">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.securePaymentContainerErrorType.description">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.customerType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerType.type">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerType.typeSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerType.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerType.email">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerType.phoneNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerType.faxNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerType.driversLicense">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.customerType.taxId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentSimpleType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentSimpleType.Item">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.merchantContactType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantContactType.merchantName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantContactType.merchantAddress">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantContactType.merchantCity">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantContactType.merchantState">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantContactType.merchantZip">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantContactType.merchantPhone">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ContactDetailType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ContactDetailType.email">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ContactDetailType.firstName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ContactDetailType.lastName">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.permissionType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.permissionType.permissionName">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ArrayOfSetting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ArrayOfSetting.setting">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.emailSettingsType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.emailSettingsType.version">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.fraudInformationType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.fraudInformationType.fraudFilterList">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.fraudInformationType.fraudAction">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionSummaryType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.transId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.submitTimeUTC">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.submitTimeLocal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.transactionStatus">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.invoiceNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.firstName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.lastName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.accountType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.accountNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.settleAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.marketType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.product">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.mobileDeviceId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.subscription">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.hasReturnedItems">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.hasReturnedItemsSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.fraudInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionSummaryType.profile">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.paymentSchedule">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.amount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.amountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.trialAmount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.trialAmountSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.payment">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.order">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.customer">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.billTo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.shipTo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBSubscriptionType.profile">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.webCheckOutDataTypeToken">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutDataTypeToken.cardNumber">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutDataTypeToken.expirationDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutDataTypeToken.cardCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutDataTypeToken.zip">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutDataTypeToken.fullName">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.webCheckOutDataType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutDataType.type">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutDataType.id">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutDataType.token">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutDataType.bankToken">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.webCheckOutTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutTypeEnum.PAN">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.webCheckOutTypeEnum.TOKEN">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentDetails">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.currency">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.promoCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.misc">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.giftWrap">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.discount">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.tax">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.shippingHandling">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.subTotal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.orderID">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentDetails.amount">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.fingerPrintType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.fingerPrintType.hashValue">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.fingerPrintType.sequence">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.fingerPrintType.timestamp">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.fingerPrintType.currencyCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.fingerPrintType.amount">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.impersonationAuthenticationType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.impersonationAuthenticationType.partnerLoginId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.impersonationAuthenticationType.partnerTransactionKey">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.merchantAuthenticationType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantAuthenticationType.name">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantAuthenticationType.Item">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantAuthenticationType.ItemElementName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.merchantAuthenticationType.mobileDeviceId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ItemChoiceType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ItemChoiceType.accessToken">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ItemChoiceType.clientKey">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ItemChoiceType.fingerPrint">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ItemChoiceType.impersonationAuthentication">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ItemChoiceType.password">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ItemChoiceType.sessionToken">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ItemChoiceType.transactionKey">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ANetApiRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ANetApiRequest.merchantAuthentication">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ANetApiRequest.clientId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ANetApiRequest.refId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.decryptPaymentDataResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.decryptPaymentDataResponse.shippingInfo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.decryptPaymentDataResponse.billingInfo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.decryptPaymentDataResponse.cardInfo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.decryptPaymentDataResponse.paymentDetails">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ANetApiResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ANetApiResponse.refId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ANetApiResponse.messages">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ANetApiResponse.sessionToken">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.securePaymentContainerRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.securePaymentContainerRequest.data">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.securePaymentContainerResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.securePaymentContainerResponse.opaqueData">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.isAliveRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.isAliveRequest.refId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.isAliveResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.authenticateTestRequest">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.authenticateTestResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBCreateSubscriptionRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBCreateSubscriptionRequest.subscription">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBCreateSubscriptionResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBCreateSubscriptionResponse.subscriptionId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBCreateSubscriptionResponse.profile">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBUpdateSubscriptionRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBUpdateSubscriptionRequest.subscriptionId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBUpdateSubscriptionRequest.subscription">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBUpdateSubscriptionResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBUpdateSubscriptionResponse.profile">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBCancelSubscriptionRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBCancelSubscriptionRequest.subscriptionId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBCancelSubscriptionResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionStatusRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionStatusRequest.subscriptionId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionStatusResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionStatusResponse.status">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionStatusResponse.statusSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createCustomerProfileRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileRequest.profile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileRequest.validationMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileRequest.validationModeSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.validationModeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validationModeEnum.none">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validationModeEnum.testMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validationModeEnum.liveMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validationModeEnum.oldLiveMode">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createCustomerProfileResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileResponse.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileResponse.customerPaymentProfileIdList">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileResponse.customerShippingAddressIdList">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileResponse.validationDirectResponseList">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createCustomerPaymentProfileRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerPaymentProfileRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerPaymentProfileRequest.paymentProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerPaymentProfileRequest.validationMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerPaymentProfileRequest.validationModeSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createCustomerPaymentProfileResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerPaymentProfileResponse.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerPaymentProfileResponse.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerPaymentProfileResponse.validationDirectResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createCustomerShippingAddressRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerShippingAddressRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerShippingAddressRequest.address">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerShippingAddressRequest.defaultShippingAddress">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerShippingAddressRequest.defaultShippingAddressSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createCustomerShippingAddressResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerShippingAddressResponse.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerShippingAddressResponse.customerAddressId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest.transId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest.customer">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest.defaultPaymentProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest.defaultPaymentProfileSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest.defaultShippingAddress">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest.defaultShippingAddressSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest.profileType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileFromTransactionRequest.profileTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerProfileRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileRequest.merchantCustomerId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileRequest.email">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileRequest.unmaskExpirationDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileRequest.unmaskExpirationDateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileRequest.includeIssuerInfo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileRequest.includeIssuerInfoSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerProfileResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileResponse.profile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileResponse.subscriptionIds">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileRequest.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileRequest.unmaskExpirationDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileRequest.unmaskExpirationDateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileRequest.includeIssuerInfo">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileRequest.includeIssuerInfoSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileResponse.paymentProfile">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerShippingAddressRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerShippingAddressRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerShippingAddressRequest.customerAddressId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerShippingAddressResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerShippingAddressResponse.defaultShippingAddress">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerShippingAddressResponse.defaultShippingAddressSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerShippingAddressResponse.address">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerShippingAddressResponse.subscriptionIds">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateCustomerProfileRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerProfileRequest.profile">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateCustomerProfileResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateCustomerPaymentProfileRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerPaymentProfileRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerPaymentProfileRequest.paymentProfile">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerPaymentProfileRequest.validationMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerPaymentProfileRequest.validationModeSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateCustomerPaymentProfileResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerPaymentProfileResponse.validationDirectResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateCustomerShippingAddressRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerShippingAddressRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerShippingAddressRequest.address">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerShippingAddressRequest.defaultShippingAddress">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateCustomerShippingAddressRequest.defaultShippingAddressSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateCustomerShippingAddressResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.deleteCustomerProfileRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.deleteCustomerProfileRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.deleteCustomerProfileResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.deleteCustomerPaymentProfileRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.deleteCustomerPaymentProfileRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.deleteCustomerPaymentProfileRequest.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.deleteCustomerPaymentProfileResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.deleteCustomerShippingAddressRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.deleteCustomerShippingAddressRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.deleteCustomerShippingAddressRequest.customerAddressId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.deleteCustomerShippingAddressResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createCustomerProfileTransactionRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileTransactionRequest.transaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileTransactionRequest.extraOptions">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createCustomerProfileTransactionResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileTransactionResponse.transactionResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createCustomerProfileTransactionResponse.directResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.validateCustomerPaymentProfileRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validateCustomerPaymentProfileRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validateCustomerPaymentProfileRequest.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validateCustomerPaymentProfileRequest.customerShippingAddressId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validateCustomerPaymentProfileRequest.cardCode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validateCustomerPaymentProfileRequest.validationMode">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.validateCustomerPaymentProfileResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.validateCustomerPaymentProfileResponse.directResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerProfileIdsRequest">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerProfileIdsResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerProfileIdsResponse.ids">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateSplitTenderGroupRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateSplitTenderGroupRequest.splitTenderId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateSplitTenderGroupRequest.splitTenderStatus">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.splitTenderStatusEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.splitTenderStatusEnum.completed">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.splitTenderStatusEnum.held">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.splitTenderStatusEnum.voided">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateSplitTenderGroupResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getTransactionDetailsRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionDetailsRequest.transId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getTransactionDetailsResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionDetailsResponse.transaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionDetailsResponse.clientId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionDetailsResponse.transrefId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createTransactionRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createTransactionRequest.transactionRequest">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.createTransactionResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createTransactionResponse.transactionResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.createTransactionResponse.profileResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateHeldTransactionRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateHeldTransactionRequest.heldTransactionRequest">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateHeldTransactionResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateHeldTransactionResponse.transactionResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getBatchStatisticsRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getBatchStatisticsRequest.batchId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getBatchStatisticsResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getBatchStatisticsResponse.batch">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getSettledBatchListRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getSettledBatchListRequest.includeStatistics">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getSettledBatchListRequest.includeStatisticsSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getSettledBatchListRequest.firstSettlementDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getSettledBatchListRequest.firstSettlementDateSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getSettledBatchListRequest.lastSettlementDate">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getSettledBatchListRequest.lastSettlementDateSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getSettledBatchListResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getSettledBatchListResponse.batchList">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getTransactionListRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListRequest.batchId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListRequest.sorting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListRequest.paging">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getTransactionListResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListResponse.transactions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListResponse.totalNumInResultSet">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListResponse.totalNumInResultSetSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getHostedProfilePageRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getHostedProfilePageRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getHostedProfilePageRequest.hostedProfileSettings">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getHostedProfilePageResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getHostedProfilePageResponse.token">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getUnsettledTransactionListRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getUnsettledTransactionListRequest.status">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getUnsettledTransactionListRequest.statusSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getUnsettledTransactionListRequest.sorting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getUnsettledTransactionListRequest.paging">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.TransactionGroupStatusEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.TransactionGroupStatusEnum.any">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.TransactionGroupStatusEnum.pendingApproval">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageRequest.transactionRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageRequest.hostedPaymentSettings">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getHostedPaymentPageResponse.token">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getUnsettledTransactionListResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getUnsettledTransactionListResponse.transactions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getUnsettledTransactionListResponse.totalNumInResultSet">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getUnsettledTransactionListResponse.totalNumInResultSetSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.mobileDeviceRegistrationRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceRegistrationRequest.mobileDevice">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.mobileDeviceRegistrationResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.mobileDeviceLoginRequest">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.mobileDeviceLoginResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceLoginResponse.merchantContact">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceLoginResponse.userPermissions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.mobileDeviceLoginResponse.merchantAccount">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.logoutRequest">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.logoutResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.sendCustomerTransactionReceiptRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.sendCustomerTransactionReceiptRequest.transId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.sendCustomerTransactionReceiptRequest.customerEmail">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.sendCustomerTransactionReceiptRequest.emailSettings">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.sendCustomerTransactionReceiptResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListRequest.searchType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListRequest.sorting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListRequest.paging">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListSearchTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListSearchTypeEnum.cardExpiringThisMonth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListSearchTypeEnum.subscriptionActive">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListSearchTypeEnum.subscriptionExpiringThisMonth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListSearchTypeEnum.subscriptionInactive">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListResponse.totalNumInResultSet">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListResponse.totalNumInResultSetSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionListResponse.subscriptionDetails">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.EnumCollection">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.customerProfileSummaryType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.paymentSimpleType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.accountTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.cardTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.FDSFilterActionEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.permissionsEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.settingNameEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.settlementStateEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.transactionStatusEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.EnumCollection.transactionTypeEnum">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.accountTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.accountTypeEnum.Visa">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.accountTypeEnum.MasterCard">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.accountTypeEnum.AmericanExpress">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.accountTypeEnum.Discover">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.accountTypeEnum.JCB">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.accountTypeEnum.DinersClub">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.accountTypeEnum.eCheck">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.cardTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardTypeEnum.Visa">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardTypeEnum.MasterCard">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardTypeEnum.AmericanExpress">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardTypeEnum.Discover">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardTypeEnum.JCB">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.cardTypeEnum.DinersClub">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.FDSFilterActionEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.FDSFilterActionEnum.reject">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.FDSFilterActionEnum.decline">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.FDSFilterActionEnum.hold">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.FDSFilterActionEnum.authAndHold">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.FDSFilterActionEnum.report">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.permissionsEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.permissionsEnum.API_Merchant_BasicReporting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.permissionsEnum.Submit_Charge">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.permissionsEnum.Submit_Refund">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.permissionsEnum.Submit_Update">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.permissionsEnum.Mobile_Admin">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.settingNameEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.emailCustomer">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.merchantEmail">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.allowPartialAuth">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.headerEmailReceipt">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.footerEmailReceipt">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.recurringBilling">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.duplicateWindow">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.testRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileReturnUrl">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileReturnUrlText">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfilePageBorderVisible">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileIFrameCommunicatorUrl">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileHeadingBgColor">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileValidationMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileBillingAddressRequired">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileCardCodeRequired">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileBillingAddressOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileManageOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentIFrameCommunicatorUrl">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentButtonOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentReturnOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentOrderOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentPaymentOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentBillingAddressOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentShippingAddressOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentSecurityOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentCustomerOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedPaymentStyleOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.typeEmailReceipt">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfilePaymentOptions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settingNameEnum.hostedProfileSaveButtonText">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.settlementStateEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settlementStateEnum.settledSuccessfully">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settlementStateEnum.settlementError">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.settlementStateEnum.pendingSettlement">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.authorizedPendingCapture">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.capturedPendingSettlement">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.communicationError">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.refundSettledSuccessfully">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.refundPendingSettlement">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.approvedReview">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.declined">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.couldNotVoid">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.expired">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.generalError">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.pendingFinalSettlement">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.pendingSettlement">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.failedReview">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.settledSuccessfully">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.settlementError">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.underReview">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.updatingSettlement">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.voided">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.FDSPendingReview">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.FDSAuthorizedPendingReview">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.returnedItem">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.chargeback">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.chargebackReversal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionStatusEnum.authorizedPendingRelease">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum.authOnlyTransaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum.authCaptureTransaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum.captureOnlyTransaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum.refundTransaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum.priorAuthCaptureTransaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum.voidTransaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum.getDetailsTransaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum.authOnlyContinueTransaction">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.transactionTypeEnum.authCaptureContinueTransaction">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileListRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileListRequest.searchType">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileListRequest.month">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileListRequest.sorting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileListRequest.paging">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.CustomerPaymentProfileSearchTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.CustomerPaymentProfileSearchTypeEnum.cardsExpiringInMonth">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileListResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileListResponse.totalNumInResultSet">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileListResponse.paymentProfiles">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionRequest.subscriptionId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionRequest.includeTransactions">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionRequest.includeTransactionsSpecified">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.ARBGetSubscriptionResponse.subscription">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getTransactionListForCustomerRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListForCustomerRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListForCustomerRequest.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListForCustomerRequest.sorting">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getTransactionListForCustomerRequest.paging">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getAUJobSummaryRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getAUJobSummaryRequest.month">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getAUJobSummaryResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getAUJobSummaryResponse.auSummary">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getAUJobDetailsRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getAUJobDetailsRequest.month">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getAUJobDetailsRequest.modifiedTypeFilter">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getAUJobDetailsRequest.modifiedTypeFilterSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getAUJobDetailsRequest.paging">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.AUJobTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.AUJobTypeEnum.all">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.AUJobTypeEnum.updates">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.AUJobTypeEnum.deletes">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getAUJobDetailsResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getAUJobDetailsResponse.totalNumInResultSet">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getAUJobDetailsResponse.totalNumInResultSetSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getAUJobDetailsResponse.auDetails">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsRequest">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.isTestMode">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.isTestModeSpecified">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.processors">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.merchantName">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.gatewayId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.marketTypes">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.productCodes">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.paymentMethods">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.currencies">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.publicClientKey">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.businessInformation">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.merchantTimeZone">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getMerchantDetailsResponse.contactDetails">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.Visa">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.MasterCard">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.Discover">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.AmericanExpress">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.DinersClub">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.JCB">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.EnRoute">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.Echeck">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.Paypal">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.VisaCheckout">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.ApplePay">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.paymentMethodsTypeEnum.AndroidPay">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateMerchantDetailsRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.updateMerchantDetailsRequest.isTestMode">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.updateMerchantDetailsResponse">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceRequest">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceRequest.connectedAccessToken">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceRequest.customerProfileId">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceRequest.customerPaymentProfileId">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceResponse">
+            <remarks/>
+        </member>
+        <member name="F:AuthorizeNet.Api.Contracts.V1.getCustomerPaymentProfileNonceResponse.opaqueData">
+            <remarks/>
+        </member>
+        <member name="T:AuthorizeNet.Api.Contracts.V1.RequestFactoryWithSpecified">
+            <summary> 
+            Special case handlers 
+            
+            validated on ????/??/?? for objects listed at the end 
+            should be validated after each update of AnetApiSchema.cs 
+            for fields/properties that are minOccurs="0" since xsd.exe 
+            generates "specified" property for such fields and requires 
+            special handling to set them seamlessly 
+            Make sure to update the respective controllers to call the respective request hand 
+             
+            </summary> 
+        </member>
+        <member name="T:AuthorizeNet.Api.Controllers.Bases.ErrorResponse">
+             Since JAXB does not generate the class for this element, custom coding it
+             @author ramittal
+            
+        </member>
+        <member name="T:AuthorizeNet.Api.Controllers.Bases.IApiOperation`2">
+             @author ramittal
+            
+        </member>
+        <member name="P:AuthorizeNet.Environment.BaseUrl">
+            <summary>
+            Gets the base url
+            </summary>
+        </member>
+        <member name="P:AuthorizeNet.Environment.XmlBaseUrl">
+            <summary>
+            Gets the xml base url
+            </summary>
+        </member>
+        <member name="P:AuthorizeNet.Environment.CardPresentUrl">
+            <summary>
+            Gets the card present url
+            </summary>
+        </member>
+        <member name="M:AuthorizeNet.Environment.createEnvironment(System.String,System.String)">
+            <summary>
+            Create a custom environment with the specified base url
+            </summary>
+            <param name="baseUrl">Base url</param>
+            <param name="xmlBaseUrl">Xml base url</param>
+            <returns>The custom environment</returns>
+        </member>
+        <member name="M:AuthorizeNet.Environment.createEnvironment(System.String,System.String,System.String)">
+            <summary>
+            Create a custom environment with the specified base url
+            </summary>
+            <param name="baseUrl">Base url</param>
+            <param name="xmlBaseUrl">Xml base url</param>
+            <param name="cardPresentUrl">Card present url</param>
+            <returns>The custom environment</returns>
+        </member>
+        <member name="M:AuthorizeNet.Environment.getIntProperty(System.String)">
+            <summary>
+            Reads an integer value from the environment
+            </summary>
+            <param name="propertyName">Name of the int property to read</param>
+            <returns>Integer property value</returns>
+        </member>
+        <member name="M:AuthorizeNet.Environment.getBooleanProperty(System.String)">
+            <summary>
+            Reads a boolean value from the environment
+            </summary>
+            <param name="propertyName">Name of the boolean property to read</param>
+            <returns>Boolean property value</returns>
+        </member>
+        <member name="M:AuthorizeNet.Environment.GetProperty(System.String)">
+            <summary>
+            Reads the value from the environment 
+            </summary>
+            <param name="propertyName">Name of the property to read</param>
+            <returns>String property value</returns>
+        </member>
+        <member name="T:AuthorizeNet.Utilities.CryptoRandom">
+            <summary>
+            Source Code from MSDN article http://msdn.microsoft.com/en-us/magazine/cc163367.aspx
+            </summary>
+        </member>
+    </members>
+</doc>
