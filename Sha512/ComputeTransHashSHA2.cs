@@ -9,7 +9,7 @@ namespace Sha512
 {
     class ComputeTransHashSHA2
     {
-        static void Main(string[] args)
+        static void TestTransHashSHA2(string[] args)
         {
             String key = "14B9609FFE2378449B3C0886046DD3B0F20DF12DEB758E48B5FFE1B5875615F0D2A50F7DDB1EAC417EBF76A1FAC374079793650AA493CE127601CB0960938E82";
             String transId = "60115446273";
