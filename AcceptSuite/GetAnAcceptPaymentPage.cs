@@ -34,7 +34,12 @@ namespace net.authorize.sample.CustomerProfiles
             var transactionRequest = new transactionRequestType
             {
                 transactionType = transactionTypeEnum.authCaptureTransaction.ToString(),    // authorize capture only
-                amount = amount
+                amount = amount,
+                order = new orderType
+                {
+                    invoiceNumber = "INV-123456",
+                    description = "TEST INVOICE"
+                }
             };
 
             var request = new getHostedPaymentPageRequest();
