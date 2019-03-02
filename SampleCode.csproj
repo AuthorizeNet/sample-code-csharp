@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AuthorizeNet, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\AuthorizeNet.1.9.7\lib\AuthorizeNet.dll</HintPath>
+      <HintPath>packages\AuthorizeNet.1.9.8\lib\AuthorizeNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
