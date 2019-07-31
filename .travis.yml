@@ -1,6 +1,8 @@
 language:
     csharp
 
+dist: trusty
+
 install:
     - nuget restore SampleCode.sln
     - sudo apt-get install nunit-console
