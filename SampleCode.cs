@@ -82,8 +82,8 @@ namespace net.authorize.sample
             Console.WriteLine("    CreateAnApplePayTransaction");
             Console.WriteLine("    CreateAnAndroidPayTransaction");
             Console.WriteLine("    CreateAnAcceptTransaction");
-            Console.WriteLine("    DecryptVisaCheckoutData");
-            Console.WriteLine("    CreateVisaCheckoutTransaction");
+            Console.WriteLine("    DecryptVisaSrcData");
+            Console.WriteLine("    CreateVisaSrcTransaction");
             Console.WriteLine("    PayPalVoid");
             Console.WriteLine("    PayPalAuthorizeCapture");
             Console.WriteLine("    PayPalAuthorizeCaptureContinued");
@@ -239,11 +239,11 @@ namespace net.authorize.sample
                 case "CreateAnAcceptTransaction":
                     CreateAnAcceptTransaction.Run(apiLoginId, transactionKey, 12.23m);
                     break;
-                case "DecryptVisaCheckoutData":
-                    DecryptVisaCheckoutData.Run(apiLoginId, transactionKey);
+                case "DecryptVisaSrcData":
+                    DecryptVisaSrcData.Run(apiLoginId, transactionKey);
                     break;
-                case "CreateVisaCheckoutTransaction":
-                    CreateVisaCheckoutTransaction.Run(apiLoginId, transactionKey);
+                case "CreateVisaSrcTransaction":
+                    CreateVisaSrcTransaction.Run(apiLoginId, transactionKey);
                     break;
                 case "ChargeCreditCard":
                     ChargeCreditCard.Run(apiLoginId, transactionKey, amount);
