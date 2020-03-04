@@ -111,9 +111,9 @@
     <Compile Include="TransactionReporting\GetTransactionList.cs" />
     <Compile Include="TransactionReporting\GetCustomerProfileTransactionList.cs" />
     <Compile Include="TransactionReporting\GetUnsettledTransactionList.cs" />
-    <Compile Include="VisaCheckout\DecryptVisaCheckoutData.cs" />
+    <Compile Include="VisaCheckout\DecryptVisaSrcData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisaCheckout\CreateVisaCheckoutTransaction.cs" />
+    <Compile Include="VisaCheckout\CreateVisaSrcTransaction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
