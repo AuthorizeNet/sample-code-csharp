@@ -22,7 +22,7 @@ UpdateCustomerShippingAddress	1	1
 UpdateCustomerProfile	1	1
 UpdateCustomerPaymentProfile	1	1
 GetCustomerShippingAddress	1	1
-GetCustomerProfileIds	1	1
+GetCustomerProfileIds	1	0
 GetCustomerProfile	1	1
 GetAcceptCustomerProfilePage	1	1
 GetCustomerPaymentProfile	1	1
