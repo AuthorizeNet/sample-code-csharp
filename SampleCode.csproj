@@ -51,6 +51,7 @@
     <Compile Include="AcceptSuite\CreateAnAcceptPaymentTransaction.cs" />
     <Compile Include="AcceptSuite\GetAcceptCustomerProfilePage.cs" />
     <Compile Include="AcceptSuite\GetAnAcceptPaymentPage.cs" />
+    <Compile Include="CustomerProfiles\GetCustomerPaymentProfileNonce.cs" />
     <Compile Include="MobileInAppTransactions\CreateAnAcceptTransaction.cs" />
     <Compile Include="MobileInAppTransactions\CreateAnAndroidPayTransaction.cs" />
     <Compile Include="MobileInAppTransactions\CreateAnApplePayTransaction.cs" />
