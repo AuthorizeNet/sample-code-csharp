@@ -1,4 +1,4 @@
-using net.authorize.sample.MobileInappTransactions;
+using net.authorize.sample.MobileInAppTransactions;
 using net.authorize.sample.PaymentTransactions;
 using System;
 using net.authorize.sample.CustomerProfiles;
@@ -82,6 +82,7 @@ namespace net.authorize.sample
             Console.WriteLine("    CreateAnApplePayTransaction");
             Console.WriteLine("    CreateAnAndroidPayTransaction");
             Console.WriteLine("    CreateAnAcceptTransaction");
+            Console.WriteLine("    CreateGooglePayTransaction");
             Console.WriteLine("    DecryptVisaSrcData");
             Console.WriteLine("    CreateVisaSrcTransaction");
             Console.WriteLine("    PayPalVoid");
@@ -238,6 +239,9 @@ namespace net.authorize.sample
                     break;
                 case "CreateAnAcceptTransaction":
                     CreateAnAcceptTransaction.Run(apiLoginId, transactionKey, 12.23m);
+                    break;
+                case "CreateGooglePayTransaction":
+                    CreateGooglePayTransaction.Run(apiLoginId, transactionKey, 50.00m);
                     break;
                 case "DecryptVisaSrcData":
                     DecryptVisaSrcData.Run(apiLoginId, transactionKey);
