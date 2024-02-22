@@ -10,7 +10,6 @@ using AuthorizeNet;
 using net.authorize.sample.PaymentTransactions;
 using System.Threading;
 using net.authorize.sample.CustomerProfiles;
-using net.authorize.sample.MobileInappTransactions;
 #if NETCOREAPP2_0
 using AuthorizeNet.Utilities;
 #endif

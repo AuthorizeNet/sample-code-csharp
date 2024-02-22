@@ -26,7 +26,7 @@ namespace net.authorize.sample
             var creditCard = new creditCardType
             {
                 cardNumber      = "4111111111111111",
-                expirationDate  = "1028"
+                expirationDate  = "1035"
             };
 
             var bankAccount = new bankAccountType

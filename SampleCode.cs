@@ -1,4 +1,3 @@
-using net.authorize.sample.MobileInAppTransactions;
 using net.authorize.sample.PaymentTransactions;
 using System;
 using net.authorize.sample.CustomerProfiles;

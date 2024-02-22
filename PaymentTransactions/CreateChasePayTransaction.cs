@@ -28,7 +28,7 @@ namespace net.authorize.sample.PaymentTransactions
             var creditCard = new creditCardType
             {
                 cardNumber = "4111111111111111",
-                expirationDate = "0725",
+                expirationDate = "0735",
                 cardCode = "999",
                 // Set the token specific info
                 isPaymentToken = true,

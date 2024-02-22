@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace net.authorize.sample.MobileInAppTransactions
+namespace net.authorize.sample
 {
     public class CreateGooglePayTransaction
     {
