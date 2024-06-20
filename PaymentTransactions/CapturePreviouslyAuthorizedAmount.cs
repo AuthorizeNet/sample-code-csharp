@@ -11,12 +11,12 @@ namespace net.authorize.sample
     public class CapturePreviouslyAuthorizedAmount
     {
         /// <summary>
-        /// Capture a Transaction Previously Submitted Via CaptureOnly
+        /// Capture a Transaction Previously Submitted Via AuthOnly
         /// </summary>
         /// <param name="ApiLoginID">Your ApiLoginID</param>
         /// <param name="ApiTransactionKey">Your ApiTransactionKey</param>
-        /// <param name="TransactionAmount">The amount submitted with CaptureOnly</param>
-        /// <param name="TransactionID">The TransactionID of the previous CaptureOnly operation</param>
+        /// <param name="TransactionAmount">The amount submitted with AuthOnly</param>
+        /// <param name="TransactionID">The TransactionID of the previous AuthOnly operation</param>
         public static ANetApiResponse Run(String ApiLoginID, String ApiTransactionKey, decimal TransactionAmount, string TransactionID)
         {
             Console.WriteLine("Capture Previously Authorized Amount");
