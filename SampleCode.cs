@@ -149,10 +149,10 @@ namespace net.authorize.sample
             //Update PayerID for which you want to run the sample code
             const string payerId = "M8R9JRNJ3R28Y";
 
-            const string customerProfileId = "1915435550"; //"213213";
-            const string customerPaymentProfileId = "1828811149"; //"2132345";
+            const string customerProfileId = "922449496"; //"213213";
+            const string customerPaymentProfileId = "921836008"; //"2132345";
 
-            const string shippingAddressId = "1223213";
+            const string shippingAddressId = "922279358";
             const decimal amount = 12.34m;
             const string subscriptionId = "1223213";
             const short day = 45;

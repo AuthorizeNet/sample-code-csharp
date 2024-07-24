@@ -48,7 +48,7 @@ namespace net.authorize.sample
             {
                 customerProfileId = customerProfileId,
                 paymentProfile = echeckPaymentProfile,
-                validationMode = validationModeEnum.none
+                validationMode = validationModeEnum.testMode
             };
 
             // instantiate the controller that will call the service
