@@ -35,7 +35,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AuthorizeNet, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AuthorizeNet">
       <HintPath>packages\AuthorizeNet.2.0.3\lib\AuthorizeNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
