@@ -24,7 +24,7 @@ namespace net.authorize.sample
                 Item = ApiTransactionKey,
             };
 
-            var profile = new customerProfileExType
+            var profile = new customerProfileInfoExType
             {
                 merchantCustomerId = "custId123",
                 description = "some description",

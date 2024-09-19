@@ -27,7 +27,7 @@ namespace net.authorize.sample
             var request = new validateCustomerPaymentProfileRequest();
             request.customerProfileId = customerProfileId;
             request.customerPaymentProfileId = customerPaymentProfileId;
-            request.validationMode = validationModeEnum.liveMode;
+            request.validationMode = validationModeEnum.testMode;
 
 
             // instantiate the controller that will call the service
