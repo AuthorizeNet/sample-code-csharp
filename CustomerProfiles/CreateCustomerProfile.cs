@@ -105,11 +105,11 @@ namespace net.authorize.sample
             }
             else
             {
-                if (controller.GetErrorResponse().messages.message.Length > 0)
+                if (controller.GetErrorResponse()?.messages?.message != null && controller.GetErrorResponse().messages.message.Length > 0)
                 {
                     Console.WriteLine("Customer Profile Creation Failed.");
-                    Console.WriteLine("Error Code: " + response.messages.message[0].code);
-                    Console.WriteLine("Error message: " + response.messages.message[0].text);
+                    Console.WriteLine("Error Code: " + controller.GetErrorResponse().messages.message[0].code);
+                    Console.WriteLine("Error message: " + controller.GetErrorResponse().messages.message[0].text);
                 }
                 else
                 {
